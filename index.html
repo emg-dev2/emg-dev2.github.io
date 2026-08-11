@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgar Maldonado González | Portfolio de Automatización & Finanzas</title>
+    <!-- Google Fonts: Cormorant Garamond for Old Money sophistication & Plus Jakarta Sans for modern minimalism -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Old Money + Modern Minimalist Palette */
+            --bg-primary: #0F1412;        /* Dark Emerald Charcoal */
+            --bg-secondary: #161D1A;      /* Elevated Dark Card BG */
+            --bg-tertiary: #1D2622;       /* Subtle Card Hover / Accent BG */
+            --text-primary: #F4F1EA;     /* Warm Cream / Champagne White */
+            --text-muted: #A3B1A8;       /* Sage Grey */
+            --accent-gold: #C5A059;       /* Muted Champagne Gold */
+            --accent-gold-hover: #D8B46E;
+            --accent-bronze: #8C6D46;
+            --border-color: rgba(197, 160, 89, 0.2);
+            --border-hover: rgba(197, 160, 89, 0.5);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Styles */
+        h1, h2, h3, .brand-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header / Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: radial-gradient(circle at 50% 30%, rgba(197, 160, 89, 0.08) 0%, rgba(15, 20, 18, 1) 70%);
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-title span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        /* Buttons */
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.25);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Filters */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-card.featured {
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-id {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .project-badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            background: rgba(197, 160, 89, 0.12);
+            color: var(--accent-gold);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .evidence-btn {
+            width: 100%;
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--accent-gold);
+            border: 1px dashed var(--accent-gold);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .evidence-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+        }
+
+        /* Modal Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 12, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            padding-right: 2rem;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.5rem; }
+            .section { padding: 4rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">Edgar Maldonado</a>
+        <ul class="nav-links">
+            <li><a href="#about">Perfil</a></li>
+            <li><a href="#stats">Impacto</a></li>
+            <li><a href="#projects">Proyectos (19)</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <p class="hero-subtitle">Especialista en Finanzas & Automatización RPA</p>
+            <h1 class="hero-title">Optimizando el futuro financiero con <span>Inteligencia & Elegancia</span></h1>
+            <p class="hero-description">
+                Especialista en Cuentas por Cobrar, Contraloría y Procesos Financieros con Maestría en Inteligencia Artificial (TecMilenio / IBM). 
+                Transformo operaciones complejas mediante Excel VBA, Power Automate, SAP y arquitecturas de datos de alto impacto.
+            </p>
+            
+            <div class="social-bar">
+                <a href="https://github.com/emg-dev2" target="_blank" class="btn btn-gold">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
+                <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:edgar0702@gmail.com" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> edgar0702@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" id="stats" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="section-header">
+            <p class="section-subtitle">Métricas de Rendimiento</p>
+            <h2 class="section-title">Impacto Cuantificable en Operaciones</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">+181,000</div>
+                <div class="stat-label">Horas Anuales Ahorradas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">19</div>
+                <div class="stat-label">Casos de Automatización Implementados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">90.5%</div>
+                <div class="stat-label">Eficiencia Operativa Promedio</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Regiones Atendidas (MX, CO, CA, DO)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section class="section" id="projects">
+        <div class="section-header">
+            <p class="section-subtitle">Portafolio de Mejora Continua</p>
+            <h2 class="section-title">19 Proyectos de Automatización Financiera</h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all')">Todos (19)</button>
+            <button class="filter-btn" onclick="filterProjects('facturacion')">Facturación & Auditoría</button>
+            <button class="filter-btn" onclick="filterProjects('tesoreria')">Tesorería & Pagos</button>
+            <button class="filter-btn" onclick="filterProjects('mailing')">Mailing & Notificaciones</button>
+            <button class="filter-btn" onclick="filterProjects('etl')">ETL & Integración de Datos</button>
+        </div>
+
+        <!-- 19 Projects Grid -->
+        <div class="projects-grid">
+
+            <!-- Project 1 (Evidence 1) -->
+            <div class="project-card featured" data-category="tesoreria">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#01</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Búsqueda e Identificación de Pagos</h3>
+                    <p class="project-desc">Algoritmo en VBA para búsqueda, pareo y conciliación automática de depósitos bancarios no identificados contra cartera en SAP y DMS.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Excel VBA</span>
+                        <span class="tech-tag">SAP</span>
+                        <span class="tech-tag">Conciliación</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Búsqueda e Identificación de Pagos', '1: Búsqueda e Identificación de Pagos.png', 'Vista previa del proceso automatizado de búsqueda e identificación de depósitos y pagos de clientes.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 2 (Evidence 2) -->
+            <div class="project-card featured" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#02</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Prefactura Colsanitas</h3>
+                    <p class="project-desc">Módulo de generación y validación masiva de prefacturación para la cuenta institucional Colsanitas en Colombia.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">VBA</span>
+                        <span class="tech-tag">DMS</span>
+                        <span class="tech-tag">Colsanitas</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Prefactura Colsanitas', '2: Prefactura Colsanitas.png', 'Módulo de prefacturación y validación automática de estados de cartera para cuentas institucionales.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 3 (Evidence 3) -->
+            <div class="project-card featured" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#03</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Validación de Entrega DIAN vs. DMS</h3>
+                    <p class="project-desc">Auditoría automatizada de transmisión y acuse de recibo de facturación electrónica ante el portal de la DIAN en Colombia.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">DIAN Portal</span>
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">Auditoría Fiscal</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Validación de Entrega DIAN vs. DMS', '3: Validación de Entrega DIAN vs. DMS.png', 'Cruce automático de estados de transmisión fiscal de comprobantes DIAN vs ERP.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 4 (Evidence 4) -->
+            <div class="project-card featured" data-category="tesoreria">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#04</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Programación de Pagos a Proveedores</h3>
+                    <p class="project-desc">Consolidador de flujo de caja y estructuración de la programación semanal de pagos de tesorería a proveedores internacionales.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Tesorería</span>
+                        <span class="tech-tag">VBA Macros</span>
+                        <span class="tech-tag">Cash Flow</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Programación de Pagos', '4: Programación de Pagos.png', 'Estructurador y generador de matrices de pagos semanales para tesorería.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 5 (Evidence 5) -->
+            <div class="project-card featured" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#05</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Prefactura Luxottica</h3>
+                    <p class="project-desc">Procesamiento automatizado de órdenes de venta, descuentos aplicables y emisión masiva de prefacturas comerciales.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Luxottica MX</span>
+                        <span class="tech-tag">VBA</span>
+                        <span class="tech-tag">Billing</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Prefactura Luxottica', '5: Prefactura Luxottica.png', 'Módulo interactivo para ingesta, cálculo y exportación de prefacturación Luxottica.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 6 (Evidence 6) -->
+            <div class="project-card featured" data-category="mailing">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#06</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Envío de Consolidados (Gmail / Outlook)</h3>
+                    <p class="project-desc">Automatización de mailing masivo personalizado con archivos adjuntos PDF/Excel para estados de cuenta de clientes.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">Gmail / Outlook API</span>
+                        <span class="tech-tag">Mailing</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Envío de Consolidados (Gmail)', '6: Envío de Consolidados (Gmail).png', 'Motor de distribución automatizada de correos consolidados con adjuntos dinámicos.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 7 (Evidence 7) -->
+            <div class="project-card featured" data-category="etl">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#07</span>
+                        <span class="project-badge">Evidencia Disponible</span>
+                    </div>
+                    <h3 class="project-title">Estructurador de Precios de Lentes Oftálmicos</h3>
+                    <p class="project-desc">Transformación ETL y formateo de catálogos masivos de tarifas y precios de lentes para carga limpia en DMS.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">VBA Master</span>
+                        <span class="tech-tag">DMS Ingestion</span>
+                    </div>
+                </div>
+                <button class="evidence-btn" onclick="openModal('Estructurador de Precios de Lentes Oftálmicos', '7: Estructurador de Precios de Lentes Oftálmicos.png', 'Herramienta de limpieza y mapeo de datos de precios para sistemas ERP/DMS.')">
+                    <i class="fas fa-image"></i> Ver Evidencia
+                </button>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" data-category="tesoreria">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#08</span>
+                        <span class="project-badge">Automatización</span>
+                    </div>
+                    <h3 class="project-title">Consolidación de Cobranza República Dominicana</h3>
+                    <p class="project-desc">Consolidación centralizada de saldos vencidos y cálculo dinámico de antigüedad de cartera para la región del Caribe.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">Excel Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card" data-category="mailing">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#09</span>
+                        <span class="project-badge">Automatización</span>
+                    </div>
+                    <h3 class="project-title">Envío de Correos de Cobranza Canadá</h3>
+                    <p class="project-desc">Notificaciones bilingües (Inglés/Francés) automatizadas de avisos de vencimiento e historial de facturas pendientes.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Bilingual Mailing</span>
+                        <span class="tech-tag">VBA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#10</span>
+                        <span class="project-badge">Automatización</span>
+                    </div>
+                    <h3 class="project-title">Generador de Notas de Crédito LAFAM</h3>
+                    <p class="project-desc">Cálculo de bonificaciones y generación automatizada de notas crédito comerciales para la cadena LAFAM.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Notas Crédito</span>
+                        <span class="tech-tag">SAP / DMS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div class="project-card" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#11</span>
+                        <span class="project-badge">Auditoría</span>
+                    </div>
+                    <h3 class="project-title">Conciliación Fiscal de Retenciones y Remisiones</h3>
+                    <p class="project-desc">Cruce masivo entre libros contables internos, certificados de retención y portales tributarios del gobierno.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Tax Matching</span>
+                        <span class="tech-tag">VBA Macro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 12 -->
+            <div class="project-card" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#12</span>
+                        <span class="project-badge">Automatización</span>
+                    </div>
+                    <h3 class="project-title">Facturación Masiva Precisionlab</h3>
+                    <p class="project-desc">Procesamiento por lotes de comprobantes de laboratorio óptico Precisionlab con transmisión en tiempo real.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Precisionlab</span>
+                        <span class="tech-tag">Batch Billing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 13 -->
+            <div class="project-card" data-category="etl">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#13</span>
+                        <span class="project-badge">ETL</span>
+                    </div>
+                    <h3 class="project-title">Ingesta e Integración QlikView a Excel/SAP</h3>
+                    <p class="project-desc">Extracción programada de reportes BI desde QlikView, limpieza de datos y carga de saldos operativos en SAP.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">QlikView</span>
+                        <span class="tech-tag">SAP Integration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 14 -->
+            <div class="project-card" data-category="tesoreria">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#14</span>
+                        <span class="project-badge">Dashboard</span>
+                    </div>
+                    <h3 class="project-title">Portal de Estado de Cuenta & Indicadores KPI</h3>
+                    <p class="project-desc">Dashboard ejecutivo interactivo para la medición de DSI, DSO y rotación de cuentas por cobrar en tiempo real.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">KPI Metrics</span>
+                        <span class="tech-tag">Executive Report</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 15 -->
+            <div class="project-card" data-category="etl">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#15</span>
+                        <span class="project-badge">Parser XML</span>
+                    </div>
+                    <h3 class="project-title">Clasificador Masivo de XML Fiscales</h3>
+                    <p class="project-desc">Lectura y extracción estructurada de nodos XML de facturación electrónica hacia base de datos relacional.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">XML Parsing</span>
+                        <span class="tech-tag">VBA DOM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 16 -->
+            <div class="project-card" data-category="tesoreria">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#16</span>
+                        <span class="project-badge">Modelado</span>
+                    </div>
+                    <h3 class="project-title">Proyección de Flujo de Caja & Cobranza Semanal</h3>
+                    <p class="project-desc">Modelo predictivo de entradas de efectivo basadas en comportamiento histórico de pagos e imprevistos.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Cash Flow</span>
+                        <span class="tech-tag">Financial Modeling</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 17 -->
+            <div class="project-card" data-category="etl">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#17</span>
+                        <span class="project-badge">Limpieza de Datos</span>
+                    </div>
+                    <h3 class="project-title">Depuración Masiva de Base de Datos de Clientes</h3>
+                    <p class="project-desc">Normalización y estandarización de RFC, direcciones, teléfonos y razones sociales en el maestro de clientes.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Data Cleaning</span>
+                        <span class="tech-tag">Regex VBA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 18 -->
+            <div class="project-card" data-category="facturacion">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#18</span>
+                        <span class="project-badge">Auditoría</span>
+                    </div>
+                    <h3 class="project-title">Auditoría de Diferencias de Cambio y Tarifas</h3>
+                    <p class="project-desc">Verificación automática de fluctuaciones de tipo de cambio aplicadas en facturación multimoneda (USD/COP/MXN).</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Forex Audit</span>
+                        <span class="tech-tag">Multi-currency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 19 -->
+            <div class="project-card" data-category="mailing">
+                <div>
+                    <div class="project-header">
+                        <span class="project-id">#19</span>
+                        <span class="project-badge">Alertas</span>
+                    </div>
+                    <h3 class="project-title">Sistema de Alertas Rápidas de Cartera Vencida</h3>
+                    <p class="project-desc">Bot de notificaciones en tiempo real para liberación de pedidos bloqueados tras confirmación de depósito.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Realtime Bot</span>
+                        <span class="tech-tag">Power Automate</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Lightbox for Evidences -->
+    <div id="evidenceModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" class="modal-title">Título del Proyecto</h3>
+            <p id="modalDesc" style="color: var(--text-muted); font-size: 0.95rem;"></p>
+            <img id="modalImage" class="modal-img" src="" alt="Evidencia de Proyecto">
+        </div>
+    </div>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold);">Edgar Maldonado González</p>
+        <p>Finance & Process Automation Specialist | Master in Artificial Intelligence</p>
+        <p style="margin-top: 1rem;">Chihuahua, Chihuahua, México</p>
+        
+        <div class="footer-links">
+            <a href="https://github.com/emg-dev2" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:edgar0702@gmail.com"><i class="fas fa-envelope"></i> edgar0702@gmail.com</a>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Edgar Maldonado González. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Modal functions
+        function openModal(title, imageSrc, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = encodeURI(imageSrc);
+            document.getElementById('modalDesc').innerText = description;
+            document.getElementById('evidenceModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('evidenceModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('evidenceModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Project filtering
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
