@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edgar Maldonado González — Portafolio de Automatización</title>
 <meta name="description" content="Portafolio de automatización de procesos financieros: 19 soluciones en cuentas por cobrar, facturación, cobranza, tesorería y operaciones, con 8,699.1 horas anuales ahorradas.">
+
+<!-- Open Graph / LinkedIn / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Edgar Maldonado González — Portafolio de Automatización">
+<meta property="og:description" content="Portafolio de automatización de procesos financieros: 19 soluciones en cuentas por cobrar, facturación, cobranza, tesorería y operaciones, con 8,699.1 horas anuales ahorradas.">
+<meta property="og:image" content="assets/Búsqueda e Identificación de Pagos.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -308,6 +318,50 @@
   }
   .award-box p{margin:0; font-size:0.92rem; line-height:1.6; color:rgba(252,250,243,0.9);}
 
+  /* ---------- DESTACADOS ---------- */
+  .featured-section{background:var(--paper);}
+  .featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .featured-card{border:1px solid var(--gold-dim);padding:30px;background:var(--cream);position:relative;}
+  .featured-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;letter-spacing:.08em;}
+  .featured-hours{font-family:'IBM Plex Mono',monospace;color:var(--forest);font-size:1.5rem;font-weight:600;margin-top:28px;}
+  .featured-card h3{font-size:1.35rem;color:var(--forest);margin-top:10px;}
+  .featured-card p{font-size:.9rem;line-height:1.7;color:#414238;margin-top:14px;}
+  .featured-meta{margin-top:24px;padding-top:14px;border-top:1px solid var(--gold-dim);font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--stone);}
+  .featured-meta strong{color:var(--forest);}
+  .featured-cta{text-align:center;margin-top:32px;}
+
+  /* ---------- AUTOMATIZACIÓN ---------- */
+  .automation-section{background:var(--cream);}
+  .automation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--gold-dim);}
+  .automation-item{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:26px 24px;border-bottom:1px solid var(--gold-dim);border-right:1px solid var(--gold-dim);}
+  .automation-item:nth-child(3n){border-right:none;}
+  .automation-item>span{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;}
+  .automation-item h3{font-family:'Fraunces',serif;color:var(--forest);font-size:1.12rem;}
+  .automation-item p{margin:7px 0 0;font-size:.86rem;line-height:1.6;color:var(--stone);}
+
+  /* ---------- PROCESO ---------- */
+  .process-section{background:var(--paper);border-top:1px solid var(--gold-dim);}
+  .process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);}
+  .process-step{padding:28px 20px;border-right:1px solid var(--gold-dim);}
+  .process-step:last-child{border-right:none;}
+  .process-step>span{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;}
+  .process-step h3{font-size:1.15rem;color:var(--forest);margin-top:24px;}
+  .process-step p{font-size:.84rem;line-height:1.65;color:var(--stone);margin-top:8px;}
+
+  @media (max-width:900px){
+    .featured-grid{grid-template-columns:1fr;}
+    .automation-grid{grid-template-columns:repeat(2,1fr);}
+    .automation-item:nth-child(3n){border-right:1px solid var(--gold-dim);}
+    .automation-item:nth-child(2n){border-right:none;}
+    .process-grid{grid-template-columns:1fr;}
+    .process-step{border-right:none;border-bottom:1px solid var(--gold-dim);}
+    .process-step:last-child{border-bottom:none;}
+  }
+  @media (max-width:600px){
+    .automation-grid{grid-template-columns:1fr;}
+    .automation-item,.automation-item:nth-child(3n),.automation-item:nth-child(2n){border-right:none;}
+  }
+
   /* ---------- FOOTER / CONTACTO ---------- */
   footer{background:var(--ink); color:var(--white); padding:80px 0 40px; text-align:center;}
   footer h2{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--white);}
@@ -344,7 +398,8 @@
     <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
     <nav class="links" id="navLinks">
       <a href="#perfil">Perfil</a>
-      <a href="#ledger">Casos de uso</a>
+      <a href="#destacados">Proyectos</a>
+      <a href="#ledger">19 casos</a>
       <a href="#experiencia">Experiencia</a>
       <a href="#educacion">Educación</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
@@ -356,18 +411,19 @@
 <section class="hero" id="inicio">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Portafolio de automatización de procesos</span>
-      <h1>Donde había procesos manuales, <em>hoy hay eficiencia</em>.</h1>
-      <p class="hero-sub">Especialista en cuentas por cobrar enfocado en transformar y automatizar flujos operativos mediante Excel VBA, Power Automate y UiPath, reduciendo tiempos de respuesta y carga manual en equipos multinacionales de LATAM y Norteamérica.</p>
+      <span class="eyebrow">AUTOMATIZACIÓN &amp; CONTROL FINANCIERO</span>
+      <h1>Transformo procesos manuales en <em>operaciones medibles y eficientes</em>.</h1>
+      <p class="hero-sub">Rediseño la operación financiera y administrativa convirtiendo flujos repetitivos y desordenados en ejecuciones de un solo clic. Con Excel VBA, Power Automate y UiPath, transformo cuellos de botella manuales en flujos automáticos que reducen tiempos de procesamiento en más del 80%.</p>
       <div class="hero-actions">
-        <a href="#ledger" class="btn btn-gold">Ver los 19 casos →</a>
-        <a href="http://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="#destacados" class="btn btn-gold">Ver proyectos destacados →</a>
+        <a href="assets/Edgar-Maldonado-CV.pdf" class="btn btn-outline" download>Descargar CV</a>
+        <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
       </div>
     </div>
     <div class="ledger-strip">
       <div class="stat"><span class="num" data-count="8699.1">0</span><span class="lbl">Horas / año ahorradas</span></div>
       <div class="stat"><span class="num" data-count="19">0</span><span class="lbl">Soluciones implementadas</span></div>
-      <div class="stat"><span class="num" data-count="84.4" data-decimal="1">0</span><span class="lbl">% reducción promedio</span></div>
+      <div class="stat"><span class="num" data-count="84.4" data-decimal="1">0</span><span class="lbl">% reducción promedio / proceso</span></div>
       <div class="stat"><span class="num" data-count="4">0</span><span class="lbl">Países operados</span></div>
     </div>
   </div>
@@ -415,13 +471,85 @@
   </div>
 </section>
 
+<!-- PROYECTOS DESTACADOS -->
+<section id="destacados" class="featured-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Impacto destacado</span>
+      <h2>Tres automatizaciones que resumen cómo trabajo.</h2>
+      <p>Seleccioné los casos con mayor impacto anual para mostrar primero el tipo de problemas que puedo detectar, automatizar y medir.</p>
+    </div>
+    <div class="featured-grid">
+      <article class="featured-card reveal">
+        <span class="featured-num">01</span>
+        <div class="featured-hours">5,756.8 hrs/año</div>
+        <h3>Envío de Correos de Cobranza</h3>
+        <p>Automatización de reportes y despacho masivo para más de 300 clientes mediante Excel VBA, Power Automate, OneDrive y Outlook API.</p>
+        <div class="featured-meta"><strong>99.9%</strong> reducción · Canadá (CAD)</div>
+      </article>
+      <article class="featured-card reveal">
+        <span class="featured-num">02</span>
+        <div class="featured-hours">1,178 hrs/año</div>
+        <h3>Consolidación de Cobranza</h3>
+        <p>Saneamiento, estandarización y consolidación de archivos masivos para convertir bases operativas en información lista para análisis.</p>
+        <div class="featured-meta"><strong>98.2%</strong> reducción · República Dominicana</div>
+      </article>
+      <article class="featured-card reveal">
+        <span class="featured-num">03</span>
+        <div class="featured-hours">380 hrs/año</div>
+        <h3>Clasificador de Pagos</h3>
+        <p>Motor ETL en VBA para leer estados bancarios TXT, estructurar registros y asignar clasificaciones automáticamente.</p>
+        <div class="featured-meta"><strong>93.1%</strong> reducción · Canadá (CAD)</div>
+      </article>
+    </div>
+    <div class="featured-cta">
+      <a href="#ledger" class="btn btn-gold">Explorar los 19 casos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ PUEDO AUTOMATIZAR -->
+<section class="automation-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Problemas que resuelvo</span>
+      <h2>De tareas repetitivas a flujos controlados.</h2>
+    </div>
+    <div class="automation-grid reveal">
+      <div class="automation-item"><span>01</span><div><h3>Reportes manuales</h3><p>Generación, limpieza, segmentación y distribución automática de información.</p></div></div>
+      <div class="automation-item"><span>02</span><div><h3>Facturación y prefacturación</h3><p>Validación de datos, reglas de negocio, conciliaciones y preparación para ERP.</p></div></div>
+      <div class="automation-item"><span>03</span><div><h3>Conciliaciones</h3><p>Cruce de fuentes, identificación de diferencias y clasificación de excepciones.</p></div></div>
+      <div class="automation-item"><span>04</span><div><h3>Archivos CSV / TXT</h3><p>Parsing, transformación, limpieza y enriquecimiento de bases operativas.</p></div></div>
+      <div class="automation-item"><span>05</span><div><h3>Envíos masivos</h3><p>Automatización de distribución mediante Power Automate, Outlook y servicios de correo.</p></div></div>
+      <div class="automation-item"><span>06</span><div><h3>Procesos repetitivos</h3><p>Identificación de tareas candidatas a VBA, Power Automate o RPA con UiPath.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJO -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Método de trabajo</span>
+      <h2>No empiezo por la herramienta. Empiezo por el proceso.</h2>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-step"><span>01</span><h3>Detectar</h3><p>Identifico tareas repetitivas, cuellos de botella y puntos de error.</p></div>
+      <div class="process-step"><span>02</span><h3>Analizar</h3><p>Mapeo entradas, reglas de negocio, excepciones y resultado esperado.</p></div>
+      <div class="process-step"><span>03</span><h3>Automatizar</h3><p>Construyo la solución con la herramienta adecuada al problema.</p></div>
+      <div class="process-step"><span>04</span><h3>Validar</h3><p>Pruebo resultados y mantengo controles humanos donde son necesarios.</p></div>
+      <div class="process-step"><span>05</span><h3>Medir</h3><p>Comparo antes vs. después para cuantificar tiempo e impacto operativo.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- LEDGER: CASOS DE USO -->
 <section class="ledger-section" id="ledger">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Catálogo Operativo · 19 casos de uso</span>
       <h2>Ordenado por impacto, no por antigüedad.</h2>
-      <p>Soluciones diseñadas para transformar horas de carga manual en ejecuciones automatizadas de pocos minutos. Selecciona cualquier registro para consultar el problema, la solución implementada, las herramientas utilizadas y la comparativa de eficiencia. Los flujos con evidencia cuentan con validación técnica del área de Mejora Continua.</p>
+      <p>Soluciones diseñadas para transformar horas de carga manual en ejecuciones automatizadas de pocos minutos. Selecciona cualquier registro para consultar el problema, la solución implementada, las herramientas utilizadas y la comparativa antes vs. después. Las evidencias publicadas deben revisarse y sanitizarse antes de hacer público el repositorio.</p>
     </div>
 
     <div class="filters reveal" id="filters">
@@ -539,7 +667,7 @@
     <p class="hero-sub">Chihuahua, México · Disponible para conversar sobre automatización de procesos financieros y operativos.</p>
     <div class="contact-links">
       <a href="mailto:edgar079302@gmail.com" class="btn btn-gold">edgar079302@gmail.com</a>
-      <a href="http://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
     </div>
     <div class="foot-meta">EDGAR MALDONADO GONZÁLEZ · +52 614 405 9373 · PORTAFOLIO DE AUTOMATIZACIÓN</div>
   </div>
