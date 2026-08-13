@@ -1,975 +1,783 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Maldonado González | Portfolio de Automatización & Finanzas</title>
-    <!-- Google Fonts: Cormorant Garamond for Old Money sophistication & Plus Jakarta Sans for modern minimalism -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            /* Old Money + Modern Minimalist Palette */
-            --bg-primary: #0F1412;        /* Dark Emerald Charcoal */
-            --bg-secondary: #161D1A;      /* Elevated Dark Card BG */
-            --bg-tertiary: #1D2622;       /* Subtle Card Hover / Accent BG */
-            --text-primary: #F4F1EA;     /* Warm Cream / Champagne White */
-            --text-muted: #A3B1A8;       /* Sage Grey */
-            --accent-gold: #C5A059;       /* Muted Champagne Gold */
-            --accent-gold-hover: #D8B46E;
-            --accent-bronze: #8C6D46;
-            --border-color: rgba(197, 160, 89, 0.2);
-            --border-hover: rgba(197, 160, 89, 0.5);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edgar Maldonado González — Portafolio de Automatización</title>
+<meta name="description" content="Portafolio de automatización de procesos financieros: 19 soluciones en cuentas por cobrar, facturación, cobranza, tesorería y operaciones, con 8,699.1 horas anuales ahorradas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D110E;
+    --forest:#1E3226;
+    --forest-light:#2C4736;
+    --cream:#EFEAD9;
+    --paper:#F8F5EC;
+    --gold:#C7A159;
+    --gold-light:#E6CD91;
+    --gold-dim:rgba(199,161,89,0.35);
+    --stone:#807869;
+    --stone-light:#AFA792;
+    --white:#FCFAF3;
+    --maxw:1180px;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold); color:var(--ink);}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  /* paper grain texture */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:0.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif; margin:0; font-weight:600; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+  }
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .container{padding:0 20px;} }
 
-        /* Typography Styles */
-        h1, h2, h3, .brand-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(13,17,14,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--gold-dim);
+    transition:transform .4s ease;
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'Fraunces',serif; font-weight:700; font-size:1.15rem; color:var(--white);
+    display:flex; align-items:center; gap:10px; letter-spacing:0.02em;
+  }
+  .logo .mono{
+    width:34px; height:34px; border:1px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--gold); letter-spacing:0.02em;
+  }
+  nav.links{display:flex; gap:34px; align-items:center;}
+  nav.links a{
+    color:var(--stone-light); text-decoration:none; font-size:0.85rem; font-weight:500;
+    letter-spacing:0.02em; position:relative; padding-bottom:4px;
+  }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold);
+    transition:width .3s ease;
+  }
+  nav.links a:hover{color:var(--white);}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    border:1px solid var(--gold); color:var(--gold) !important; padding:8px 16px; font-size:0.78rem !important;
+    font-family:'IBM Plex Mono',monospace; letter-spacing:0.05em; text-transform:uppercase;
+  }
+  .nav-cta:hover{background:var(--gold); color:var(--ink) !important;}
+  .burger{display:none; background:none; border:none; color:var(--white); font-size:1.4rem; cursor:pointer;}
+  @media (max-width:860px){
+    nav.links{position:fixed; top:64px; left:0; right:0; background:var(--ink); flex-direction:column; gap:0;
+      max-height:0; overflow:hidden; transition:max-height .4s ease; border-bottom:1px solid var(--gold-dim);}
+    nav.links.open{max-height:400px;}
+    nav.links a{width:100%; padding:16px 32px; border-top:1px solid rgba(255,255,255,0.06);}
+    nav.links a::after{display:none;}
+    .burger{display:block;}
+  }
 
-        /* Header / Navbar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 20, 18, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; background:var(--ink); color:var(--white);
+    padding:170px 0 90px; overflow:hidden;
+  }
+  .hero::before{
+    content:''; position:absolute; top:-30%; right:-10%; width:60%; height:160%;
+    background:radial-gradient(circle, rgba(199,161,89,0.10) 0%, rgba(199,161,89,0) 65%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid; grid-template-columns:1fr; gap:40px; position:relative; z-index:2;}
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem); line-height:1.02; color:var(--white); max-width:900px;
+  }
+  .hero h1 em{color:var(--gold); font-style:italic; font-weight:500;}
+  .hero-sub{
+    font-size:1.08rem; color:var(--stone-light); max-width:560px; margin-top:22px; line-height:1.6; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em;
+    padding:14px 26px; border-radius:var(--radius); text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    transition:all .25s ease; cursor:pointer; border:1px solid transparent;
+  }
+  .btn-gold{background:var(--gold); color:var(--ink); font-weight:600;}
+  .btn-gold:hover{background:var(--gold-light); transform:translateY(-2px);}
+  .btn-outline{border-color:rgba(252,250,243,0.35); color:var(--white);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px);}
 
-        .nav-logo {
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+  /* ledger strip */
+  .ledger-strip{
+    margin-top:64px; border-top:1px solid var(--gold-dim); border-bottom:1px solid var(--gold-dim);
+    padding:28px 0; display:grid; grid-template-columns:repeat(4,1fr); position:relative; z-index:2;
+  }
+  .ledger-strip::before, .ledger-strip::after{content:none;}
+  .stat{padding:0 24px; border-left:1px solid var(--gold-dim);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .num{
+    font-family:'IBM Plex Mono',monospace; font-size:clamp(1.5rem,3vw,2.2rem); color:var(--gold); font-weight:600;
+    display:block; letter-spacing:-0.01em;
+  }
+  .stat .lbl{font-size:0.72rem; color:var(--stone-light); text-transform:uppercase; letter-spacing:0.1em; margin-top:6px; display:block;}
+  @media (max-width:760px){
+    .ledger-strip{grid-template-columns:repeat(2,1fr); row-gap:26px;}
+    .stat:nth-child(3){border-left:none;}
+  }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
+  /* ---------- SECTIONS GENERIC ---------- */
+  section{padding:100px 0; position:relative; z-index:2;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-top:10px;}
+  .section-head p{color:var(--stone); margin-top:16px; line-height:1.7; font-size:1rem;}
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-smooth);
-        }
+  /* ---------- PERFIL ---------- */
+  .perfil{background:var(--paper); border-top:1px solid var(--gold-dim); border-bottom:1px solid var(--gold-dim);}
+  .perfil-grid{display:grid; grid-template-columns:280px 1fr; gap:64px; align-items:start;}
+  @media (max-width:800px){ .perfil-grid{grid-template-columns:1fr;} }
+  .monogram{
+    width:220px; height:220px; border:1px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .monogram::before{
+    content:''; position:absolute; inset:12px; border:1px solid var(--gold-dim); border-radius:50%;
+  }
+  .monogram span{font-family:'Fraunces',serif; font-size:3.4rem; color:var(--forest); font-weight:600;}
+  .perfil-text p{line-height:1.85; font-size:1.02rem; color:#2b2c26; margin:0 0 18px;}
+  .perfil-text strong{color:var(--forest);}
+  .badge-row{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .badge{
+    border:1px solid var(--gold-dim); padding:10px 16px; font-family:'IBM Plex Mono',monospace; font-size:0.74rem;
+    letter-spacing:0.04em; color:var(--forest); background:var(--cream);
+  }
 
-        .nav-links a:hover {
-            color: var(--accent-gold);
-        }
+  /* ---------- STACK ---------- */
+  .chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;}
+  .chip{
+    border:1px solid var(--forest); color:var(--forest); padding:9px 18px; font-size:0.85rem; font-weight:600;
+    border-radius:20px; background:transparent; transition:all .25s ease;
+  }
+  .chip:hover{background:var(--forest); color:var(--white);}
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            background: radial-gradient(circle at 50% 30%, rgba(197, 160, 89, 0.08) 0%, rgba(15, 20, 18, 1) 70%);
-        }
+  /* ---------- LEDGER (CASOS) ---------- */
+  .ledger-section{background:var(--ink); color:var(--white);}
+  .ledger-section .eyebrow{color:var(--gold);}
+  .ledger-section .section-head h2{color:var(--white);}
+  .ledger-section .section-head p{color:var(--stone-light);}
 
-        .hero-container {
-            max-width: 1100px;
-            width: 100%;
-            text-align: center;
-        }
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+  .filter-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase;
+    padding:9px 16px; border:1px solid rgba(252,250,243,0.25); background:transparent; color:var(--stone-light);
+    cursor:pointer; border-radius:20px; transition:all .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--gold); color:var(--gold);}
+  .filter-btn.active{background:var(--gold); border-color:var(--gold); color:var(--ink); font-weight:600;}
 
-        .hero-subtitle {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
+  .ledger-summary{
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem; color:var(--gold-light); margin:26px 0 30px;
+    border-top:1px solid var(--gold-dim); border-bottom:1px solid var(--gold-dim); padding:14px 0;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
 
-        .hero-title {
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
+  .ledger-list{display:flex; flex-direction:column;}
+  .ledger-row{border-bottom:1px solid rgba(252,250,243,0.12);}
+  .ledger-row-head{
+    display:grid; grid-template-columns:52px 1fr 140px 150px 110px 24px; align-items:center; gap:18px;
+    padding:20px 4px; cursor:pointer; transition:background .2s ease;
+  }
+  .ledger-row-head:hover{background:rgba(199,161,89,0.06);}
+  .ledger-row.open .ledger-row-head{background:rgba(199,161,89,0.08);}
+  .l-num{font-family:'IBM Plex Mono',monospace; color:var(--gold); font-size:0.85rem;}
+  .l-name{font-family:'Fraunces',serif; font-size:1.08rem; font-weight:500;}
+  .l-name .market{
+    display:block; font-family:'Manrope',sans-serif; font-size:0.76rem; color:var(--stone-light); margin-top:3px; font-weight:400;
+  }
+  .l-bar-wrap{display:flex; flex-direction:column; gap:6px;}
+  .l-bar-track{height:4px; background:rgba(252,250,243,0.12); width:100%; overflow:hidden;}
+  .l-bar-fill{height:100%; background:var(--gold);}
+  .l-hours{font-family:'IBM Plex Mono',monospace; font-size:0.82rem; color:var(--white);}
+  .l-pct{font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:var(--gold-light); text-align:right;}
+  .l-chevron{font-size:1.1rem; color:var(--stone-light); transition:transform .3s ease; text-align:center;}
+  .ledger-row.open .l-chevron{transform:rotate(45deg); color:var(--gold);}
 
-        .hero-title span {
-            color: var(--accent-gold);
-            font-style: italic;
-        }
+  .ledger-detail{
+    max-height:0; overflow:hidden; transition:max-height .5s ease, padding .5s ease;
+    padding:0 4px;
+  }
+  .ledger-row.open .ledger-detail{max-height:900px; padding:4px 4px 32px;}
+  .detail-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; padding-top:12px;}
+  @media (max-width:760px){ .detail-grid{grid-template-columns:1fr;} }
+  .detail-block h4{
+    font-family:'IBM Plex Mono',monospace; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.1em;
+    color:var(--gold); font-weight:600; margin-bottom:10px;
+  }
+  .detail-block p{font-size:0.92rem; line-height:1.7; color:var(--stone-light); margin:0;}
+  .flow{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
+  .flow-line{font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--white); display:flex; gap:10px;}
+  .flow-line .tag{color:var(--gold); min-width:56px;}
+  .stack-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .stack-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; border:1px solid rgba(252,250,243,0.25);
+    padding:5px 10px; color:var(--stone-light); letter-spacing:0.02em;
+  }
+  .evidence-btn{
+    margin-top:20px; display:inline-flex; align-items:center; gap:8px; background:transparent;
+    border:1px solid var(--gold); color:var(--gold); font-family:'IBM Plex Mono',monospace; font-size:0.75rem;
+    text-transform:uppercase; letter-spacing:0.05em; padding:11px 18px; cursor:pointer; transition:all .25s ease;
+  }
+  .evidence-btn:hover{background:var(--gold); color:var(--ink);}
 
-        .hero-description {
-            max-width: 750px;
-            margin: 0 auto 2.5rem;
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            font-weight: 300;
-        }
+  @media (max-width:760px){
+    .ledger-row-head{grid-template-columns:32px 1fr 24px; row-gap:8px;}
+    .l-bar-wrap, .l-pct, .l-hours{grid-column:2 / 3;}
+    .ledger-row-head{grid-template-areas:
+      "num name chev"
+      ". hours ."
+      ". bar .";
+    }
+    .l-num{grid-area:num;} .l-name{grid-area:name;} .l-chevron{grid-area:chev;}
+    .l-hours{grid-area:hours;} .l-bar-wrap{grid-area:bar;} .l-pct{display:none;}
+  }
 
-        /* Buttons */
-        .social-bar {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
+  /* ---------- EXPERIENCIA ---------- */
+  .timeline{border-left:1px solid var(--gold-dim); margin-left:8px; padding-left:36px; display:flex; flex-direction:column; gap:44px;}
+  .tl-item{position:relative;}
+  .tl-item::before{
+    content:''; position:absolute; left:-42px; top:6px; width:9px; height:9px; border-radius:50%;
+    background:var(--gold); border:2px solid var(--cream);
+  }
+  .tl-date{font-family:'IBM Plex Mono',monospace; font-size:0.74rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em;}
+  .tl-role{font-family:'Fraunces',serif; font-size:1.28rem; margin-top:6px; color:var(--forest);}
+  .tl-company{font-size:0.92rem; color:var(--stone); margin-top:2px; font-weight:600;}
+  .tl-item ul{margin:14px 0 0; padding-left:18px; color:#2b2c26;}
+  .tl-item li{margin-bottom:8px; line-height:1.6; font-size:0.94rem;}
+  .tl-item li strong{color:var(--forest);}
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            cursor: pointer;
-        }
+  /* ---------- EDUCACION ---------- */
+  .edu-section{background:var(--forest); color:var(--white);}
+  .edu-section .eyebrow{color:var(--gold-light);}
+  .edu-section .section-head h2{color:var(--white);}
+  .edu-section .section-head p{color:rgba(252,250,243,0.75);}
+  .edu-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:24px;}
+  @media (max-width:800px){ .edu-grid{grid-template-columns:1fr;} }
+  .edu-card{
+    border:1px solid rgba(199,161,89,0.4); padding:32px; background:rgba(252,250,243,0.03);
+  }
+  .edu-card h3{font-size:1.2rem; color:var(--gold-light); font-weight:500;}
+  .edu-card .school{color:rgba(252,250,243,0.7); font-size:0.88rem; margin-top:6px;}
+  .edu-card .meta{font-family:'IBM Plex Mono',monospace; font-size:0.74rem; color:var(--gold); margin-top:12px; letter-spacing:0.02em;}
+  .cert-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;}
+  .cert-list li{
+    border-bottom:1px solid rgba(252,250,243,0.12); padding-bottom:12px; font-size:0.92rem; color:rgba(252,250,243,0.85);
+    display:flex; justify-content:space-between; gap:12px;
+  }
+  .cert-list li span{color:var(--stone-light); font-size:0.78rem; font-family:'IBM Plex Mono',monospace;}
+  .award-box{
+    margin-top:24px; border-left:2px solid var(--gold); padding:18px 22px; background:rgba(199,161,89,0.08);
+  }
+  .award-box p{margin:0; font-size:0.92rem; line-height:1.6; color:rgba(252,250,243,0.9);}
 
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--bg-primary);
-            border: 1px solid var(--accent-gold);
-        }
+  /* ---------- FOOTER / CONTACTO ---------- */
+  footer{background:var(--ink); color:var(--white); padding:80px 0 40px; text-align:center;}
+  footer h2{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--white);}
+  footer .hero-sub{margin:18px auto 0; text-align:center;}
+  .contact-links{display:flex; gap:20px; justify-content:center; margin-top:38px; flex-wrap:wrap;}
+  .foot-meta{
+    margin-top:70px; padding-top:26px; border-top:1px solid rgba(252,250,243,0.1);
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--stone-light); letter-spacing:0.03em;
+  }
 
-        .btn-gold:hover {
-            background-color: var(--accent-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.25);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-            transition: var(--transition-smooth);
-        }
-
-        .stat-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-4px);
-        }
-
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Sections */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-        }
-
-        .section-subtitle {
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Filters */
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--bg-secondary);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 0.6rem 1.4rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--accent-gold);
-            color: var(--bg-primary);
-            border-color: var(--accent-gold);
-            font-weight: 600;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: var(--transition-smooth);
-        }
-
-        .project-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-6px);
-            box-shadow: var(--card-shadow);
-        }
-
-        .project-card.featured {
-            border-left: 4px solid var(--accent-gold);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .project-id {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .project-badge {
-            font-size: 0.7rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            font-weight: 600;
-            background: rgba(197, 160, 89, 0.12);
-            color: var(--accent-gold);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            font-size: 0.75rem;
-            background: var(--bg-tertiary);
-            color: var(--text-muted);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .evidence-btn {
-            width: 100%;
-            background: rgba(197, 160, 89, 0.1);
-            color: var(--accent-gold);
-            border: 1px dashed var(--accent-gold);
-            padding: 0.75rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .evidence-btn:hover {
-            background: var(--accent-gold);
-            color: var(--bg-primary);
-        }
-
-        /* Modal Lightbox */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 14, 12, 0.92);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            padding: 2rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 1.8rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .modal-close:hover {
-            color: var(--accent-gold);
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            padding-right: 2rem;
-        }
-
-        .modal-img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            margin-top: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            background: var(--bg-secondary);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2.5rem; }
-            .section { padding: 4rem 1.5rem; }
-        }
-    </style>
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(6,8,7,0.94); z-index:1000; display:none;
+    align-items:center; justify-content:center; padding:40px; flex-direction:column;
+  }
+  .lightbox.show{display:flex;}
+  .lightbox img{max-width:min(1000px,92vw); max-height:78vh; border:1px solid var(--gold-dim); background:#111;}
+  .lightbox-cap{
+    font-family:'IBM Plex Mono',monospace; color:var(--gold-light); font-size:0.8rem; margin-top:18px; text-align:center; letter-spacing:0.03em;
+  }
+  .lightbox-close{
+    position:absolute; top:28px; right:32px; background:none; border:1px solid rgba(252,250,243,0.3); color:var(--white);
+    width:42px; height:42px; border-radius:50%; cursor:pointer; font-size:1.2rem; transition:all .2s ease;
+  }
+  .lightbox-close:hover{border-color:var(--gold); color:var(--gold);}
+</style>
 </head>
 <body>
+<div class="grain"></div>
 
-    <!-- Header Navigation -->
-    <nav>
-        <a href="#" class="nav-logo">Edgar Maldonado</a>
-        <ul class="nav-links">
-            <li><a href="#about">Perfil</a></li>
-            <li><a href="#stats">Impacto</a></li>
-            <li><a href="#projects">Proyectos (19)</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="mono">EM</span> Edgar Maldonado</div>
+    <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+    <nav class="links" id="navLinks">
+      <a href="#perfil">Perfil</a>
+      <a href="#ledger">Casos de uso</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#educacion">Educación</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-        <div class="hero-container">
-            <p class="hero-subtitle">Especialista en Finanzas & Automatización RPA</p>
-            <h1 class="hero-title">Optimizando el futuro financiero con <span>Inteligencia & Elegancia</span></h1>
-            <p class="hero-description">
-                Especialista en Cuentas por Cobrar, Contraloría y Procesos Financieros con Maestría en Inteligencia Artificial (TecMilenio / IBM). 
-                Transformo operaciones complejas mediante Excel VBA, Power Automate, SAP y arquitecturas de datos de alto impacto.
-            </p>
-            
-            <div class="social-bar">
-                <a href="https://github.com/emg-dev2" target="_blank" class="btn btn-gold">
-                    <i class="fab fa-github"></i> GitHub Profile
-                </a>
-                <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="mailto:edgar0702@gmail.com" class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> edgar0702@gmail.com
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Portafolio de automatización de procesos</span>
+      <h1>Donde había procesos manuales, <em>hoy hay eficiencia</em>.</h1>
+      <p class="hero-sub">Especialista en cuentas por cobrar enfocado en transformar y automatizar flujos operativos mediante Excel VBA, Power Automate y UiPath, reduciendo tiempos de respuesta y carga manual en equipos multinacionales de LATAM y Norteamérica.</p>
+      <div class="hero-actions">
+        <a href="#ledger" class="btn btn-gold">Ver los 19 casos →</a>
+        <a href="http://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+    <div class="ledger-strip">
+      <div class="stat"><span class="num" data-count="8699.1">0</span><span class="lbl">Horas / año ahorradas</span></div>
+      <div class="stat"><span class="num" data-count="19">0</span><span class="lbl">Soluciones implementadas</span></div>
+      <div class="stat"><span class="num" data-count="84.4" data-decimal="1">0</span><span class="lbl">% reducción promedio</span></div>
+      <div class="stat"><span class="num" data-count="4">0</span><span class="lbl">Países operados</span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Stats Section -->
-    <section class="section" id="stats" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="section-header">
-            <p class="section-subtitle">Métricas de Rendimiento</p>
-            <h2 class="section-title">Impacto Cuantificable en Operaciones</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">+181,000</div>
-                <div class="stat-label">Horas Anuales Ahorradas</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">19</div>
-                <div class="stat-label">Casos de Automatización Implementados</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">90.5%</div>
-                <div class="stat-label">Eficiencia Operativa Promedio</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Regiones Atendidas (MX, CO, CA, DO)</div>
-            </div>
-        </div>
-    </section>
+<!-- PERFIL -->
+<section class="perfil" id="perfil">
+  <div class="container perfil-grid">
+    <div class="reveal">
+      <div class="monogram"><span>EM</span></div>
+      <div class="badge-row">
+        <span class="badge">CHIHUAHUA, MX</span>
+        <span class="badge">MENCIÓN HONORÍFICA IA</span>
+      </div>
+    </div>
+    <div class="perfil-text reveal">
+      <span class="eyebrow">Perfil profesional</span>
+      <h2 style="margin-top:10px; color:var(--forest);">Rigor en control financiero y auditoría operativa, visión de reingeniería de procesos.</h2>
+      <p style="margin-top:22px;"><strong>Especialista en cuentas por cobrar</strong> en EssilorLuxottica México, donde optimizo la operación de AR para <strong>54 clientes en Colombia</strong> (incluidos 4 estratégicos) y gestiono más de <strong>8,000 órdenes anuales</strong> de facturación, notas de crédito y conciliación.</p>
+      <p>Mi trabajo diario combina el rigor de la contraloría financiera con la construcción de herramientas: domino Excel avanzado con VBA, Power Automate y UiPath StudioX para eliminar cuellos de botella operativos, y actualmente curso el <strong>Máster en Inteligencia Artificial</strong> (Universidad TecMilenio × IBM), con beca del 100% por el impacto operativo de mis soluciones.</p>
+      <p>Asesoro en promedio a <strong>15 colaboradores</strong> de distintas áreas en Excel, Power Automate y ERP, impulsando no solo la automatización de tareas, sino también una mentalidad orientada a la optimización y mejora de procesos.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Projects Portfolio Section -->
-    <section class="section" id="projects">
-        <div class="section-header">
-            <p class="section-subtitle">Portafolio de Mejora Continua</p>
-            <h2 class="section-title">19 Proyectos de Automatización Financiera</h2>
-        </div>
+<!-- STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Herramientas de trabajo</span>
+      <h2>El stack detrás de miles de horas recuperadas.</h2>
+    </div>
+    <div class="chips reveal">
+      <span class="chip">Excel Avanzado (VBA / Macros)</span>
+      <span class="chip">Power Automate</span>
+      <span class="chip">UiPath StudioX</span>
+      <span class="chip">SAP FI (AR/AP)</span>
+      <span class="chip">DMS Advance ERP</span>
+      <span class="chip">Microsip ERP</span>
+      <span class="chip">QlikView</span>
+      <span class="chip">Parsing ETL (CSV/TXT)</span>
+      <span class="chip">CDO / SMTP</span>
+      <span class="chip">OneDrive · Outlook API</span>
+    </div>
+  </div>
+</section>
 
-        <!-- Category Filters -->
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="filterProjects('all')">Todos (19)</button>
-            <button class="filter-btn" onclick="filterProjects('facturacion')">Facturación & Auditoría</button>
-            <button class="filter-btn" onclick="filterProjects('tesoreria')">Tesorería & Pagos</button>
-            <button class="filter-btn" onclick="filterProjects('mailing')">Mailing & Notificaciones</button>
-            <button class="filter-btn" onclick="filterProjects('etl')">ETL & Integración de Datos</button>
-        </div>
-
-        <!-- 19 Projects Grid -->
-        <div class="projects-grid">
-
-            <!-- Project 1 (Evidence 1) -->
-            <div class="project-card featured" data-category="tesoreria">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#01</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Búsqueda e Identificación de Pagos</h3>
-                    <p class="project-desc">Algoritmo en VBA para búsqueda, pareo y conciliación automática de depósitos bancarios no identificados contra cartera en SAP y DMS.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Excel VBA</span>
-                        <span class="tech-tag">SAP</span>
-                        <span class="tech-tag">Conciliación</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Búsqueda e Identificación de Pagos', '1: Búsqueda e Identificación de Pagos.png', 'Vista previa del proceso automatizado de búsqueda e identificación de depósitos y pagos de clientes.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 2 (Evidence 2) -->
-            <div class="project-card featured" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#02</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Prefactura Colsanitas</h3>
-                    <p class="project-desc">Módulo de generación y validación masiva de prefacturación para la cuenta institucional Colsanitas en Colombia.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">VBA</span>
-                        <span class="tech-tag">DMS</span>
-                        <span class="tech-tag">Colsanitas</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Prefactura Colsanitas', '2: Prefactura Colsanitas.png', 'Módulo de prefacturación y validación automática de estados de cartera para cuentas institucionales.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 3 (Evidence 3) -->
-            <div class="project-card featured" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#03</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Validación de Entrega DIAN vs. DMS</h3>
-                    <p class="project-desc">Auditoría automatizada de transmisión y acuse de recibo de facturación electrónica ante el portal de la DIAN en Colombia.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">DIAN Portal</span>
-                        <span class="tech-tag">Power Automate</span>
-                        <span class="tech-tag">Auditoría Fiscal</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Validación de Entrega DIAN vs. DMS', '3: Validación de Entrega DIAN vs. DMS.png', 'Cruce automático de estados de transmisión fiscal de comprobantes DIAN vs ERP.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 4 (Evidence 4) -->
-            <div class="project-card featured" data-category="tesoreria">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#04</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Programación de Pagos a Proveedores</h3>
-                    <p class="project-desc">Consolidador de flujo de caja y estructuración de la programación semanal de pagos de tesorería a proveedores internacionales.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tesorería</span>
-                        <span class="tech-tag">VBA Macros</span>
-                        <span class="tech-tag">Cash Flow</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Programación de Pagos', '4: Programación de Pagos.png', 'Estructurador y generador de matrices de pagos semanales para tesorería.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 5 (Evidence 5) -->
-            <div class="project-card featured" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#05</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Prefactura Luxottica</h3>
-                    <p class="project-desc">Procesamiento automatizado de órdenes de venta, descuentos aplicables y emisión masiva de prefacturas comerciales.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Luxottica MX</span>
-                        <span class="tech-tag">VBA</span>
-                        <span class="tech-tag">Billing</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Prefactura Luxottica', '5: Prefactura Luxottica.png', 'Módulo interactivo para ingesta, cálculo y exportación de prefacturación Luxottica.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 6 (Evidence 6) -->
-            <div class="project-card featured" data-category="mailing">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#06</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Envío de Consolidados (Gmail / Outlook)</h3>
-                    <p class="project-desc">Automatización de mailing masivo personalizado con archivos adjuntos PDF/Excel para estados de cuenta de clientes.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Power Automate</span>
-                        <span class="tech-tag">Gmail / Outlook API</span>
-                        <span class="tech-tag">Mailing</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Envío de Consolidados (Gmail)', '6: Envío de Consolidados (Gmail).png', 'Motor de distribución automatizada de correos consolidados con adjuntos dinámicos.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 7 (Evidence 7) -->
-            <div class="project-card featured" data-category="etl">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#07</span>
-                        <span class="project-badge">Evidencia Disponible</span>
-                    </div>
-                    <h3 class="project-title">Estructurador de Precios de Lentes Oftálmicos</h3>
-                    <p class="project-desc">Transformación ETL y formateo de catálogos masivos de tarifas y precios de lentes para carga limpia en DMS.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">ETL</span>
-                        <span class="tech-tag">VBA Master</span>
-                        <span class="tech-tag">DMS Ingestion</span>
-                    </div>
-                </div>
-                <button class="evidence-btn" onclick="openModal('Estructurador de Precios de Lentes Oftálmicos', '7: Estructurador de Precios de Lentes Oftálmicos.png', 'Herramienta de limpieza y mapeo de datos de precios para sistemas ERP/DMS.')">
-                    <i class="fas fa-image"></i> Ver Evidencia
-                </button>
-            </div>
-
-            <!-- Project 8 -->
-            <div class="project-card" data-category="tesoreria">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#08</span>
-                        <span class="project-badge">Automatización</span>
-                    </div>
-                    <h3 class="project-title">Consolidación de Cobranza República Dominicana</h3>
-                    <p class="project-desc">Consolidación centralizada de saldos vencidos y cálculo dinámico de antigüedad de cartera para la región del Caribe.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Power Automate</span>
-                        <span class="tech-tag">Excel Analytics</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9 -->
-            <div class="project-card" data-category="mailing">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#09</span>
-                        <span class="project-badge">Automatización</span>
-                    </div>
-                    <h3 class="project-title">Envío de Correos de Cobranza Canadá</h3>
-                    <p class="project-desc">Notificaciones bilingües (Inglés/Francés) automatizadas de avisos de vencimiento e historial de facturas pendientes.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Bilingual Mailing</span>
-                        <span class="tech-tag">VBA</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 10 -->
-            <div class="project-card" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#10</span>
-                        <span class="project-badge">Automatización</span>
-                    </div>
-                    <h3 class="project-title">Generador de Notas de Crédito LAFAM</h3>
-                    <p class="project-desc">Cálculo de bonificaciones y generación automatizada de notas crédito comerciales para la cadena LAFAM.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Notas Crédito</span>
-                        <span class="tech-tag">SAP / DMS</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 11 -->
-            <div class="project-card" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#11</span>
-                        <span class="project-badge">Auditoría</span>
-                    </div>
-                    <h3 class="project-title">Conciliación Fiscal de Retenciones y Remisiones</h3>
-                    <p class="project-desc">Cruce masivo entre libros contables internos, certificados de retención y portales tributarios del gobierno.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tax Matching</span>
-                        <span class="tech-tag">VBA Macro</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 12 -->
-            <div class="project-card" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#12</span>
-                        <span class="project-badge">Automatización</span>
-                    </div>
-                    <h3 class="project-title">Facturación Masiva Precisionlab</h3>
-                    <p class="project-desc">Procesamiento por lotes de comprobantes de laboratorio óptico Precisionlab con transmisión en tiempo real.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Precisionlab</span>
-                        <span class="tech-tag">Batch Billing</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 13 -->
-            <div class="project-card" data-category="etl">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#13</span>
-                        <span class="project-badge">ETL</span>
-                    </div>
-                    <h3 class="project-title">Ingesta e Integración QlikView a Excel/SAP</h3>
-                    <p class="project-desc">Extracción programada de reportes BI desde QlikView, limpieza de datos y carga de saldos operativos en SAP.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">QlikView</span>
-                        <span class="tech-tag">SAP Integration</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 14 -->
-            <div class="project-card" data-category="tesoreria">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#14</span>
-                        <span class="project-badge">Dashboard</span>
-                    </div>
-                    <h3 class="project-title">Portal de Estado de Cuenta & Indicadores KPI</h3>
-                    <p class="project-desc">Dashboard ejecutivo interactivo para la medición de DSI, DSO y rotación de cuentas por cobrar en tiempo real.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">KPI Metrics</span>
-                        <span class="tech-tag">Executive Report</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 15 -->
-            <div class="project-card" data-category="etl">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#15</span>
-                        <span class="project-badge">Parser XML</span>
-                    </div>
-                    <h3 class="project-title">Clasificador Masivo de XML Fiscales</h3>
-                    <p class="project-desc">Lectura y extracción estructurada de nodos XML de facturación electrónica hacia base de datos relacional.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">XML Parsing</span>
-                        <span class="tech-tag">VBA DOM</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 16 -->
-            <div class="project-card" data-category="tesoreria">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#16</span>
-                        <span class="project-badge">Modelado</span>
-                    </div>
-                    <h3 class="project-title">Proyección de Flujo de Caja & Cobranza Semanal</h3>
-                    <p class="project-desc">Modelo predictivo de entradas de efectivo basadas en comportamiento histórico de pagos e imprevistos.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Cash Flow</span>
-                        <span class="tech-tag">Financial Modeling</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 17 -->
-            <div class="project-card" data-category="etl">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#17</span>
-                        <span class="project-badge">Limpieza de Datos</span>
-                    </div>
-                    <h3 class="project-title">Depuración Masiva de Base de Datos de Clientes</h3>
-                    <p class="project-desc">Normalización y estandarización de RFC, direcciones, teléfonos y razones sociales en el maestro de clientes.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Data Cleaning</span>
-                        <span class="tech-tag">Regex VBA</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 18 -->
-            <div class="project-card" data-category="facturacion">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#18</span>
-                        <span class="project-badge">Auditoría</span>
-                    </div>
-                    <h3 class="project-title">Auditoría de Diferencias de Cambio y Tarifas</h3>
-                    <p class="project-desc">Verificación automática de fluctuaciones de tipo de cambio aplicadas en facturación multimoneda (USD/COP/MXN).</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Forex Audit</span>
-                        <span class="tech-tag">Multi-currency</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 19 -->
-            <div class="project-card" data-category="mailing">
-                <div>
-                    <div class="project-header">
-                        <span class="project-id">#19</span>
-                        <span class="project-badge">Alertas</span>
-                    </div>
-                    <h3 class="project-title">Sistema de Alertas Rápidas de Cartera Vencida</h3>
-                    <p class="project-desc">Bot de notificaciones en tiempo real para liberación de pedidos bloqueados tras confirmación de depósito.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Realtime Bot</span>
-                        <span class="tech-tag">Power Automate</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Modal Lightbox for Evidences -->
-    <div id="evidenceModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 id="modalTitle" class="modal-title">Título del Proyecto</h3>
-            <p id="modalDesc" style="color: var(--text-muted); font-size: 0.95rem;"></p>
-            <img id="modalImage" class="modal-img" src="" alt="Evidencia de Proyecto">
-        </div>
+<!-- LEDGER: CASOS DE USO -->
+<section class="ledger-section" id="ledger">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Catálogo Operativo · 19 casos de uso</span>
+      <h2>Ordenado por impacto, no por antigüedad.</h2>
+      <p>Soluciones diseñadas para transformar horas de carga manual en ejecuciones automatizadas de pocos minutos. Selecciona cualquier registro para consultar el problema, la solución implementada, las herramientas utilizadas y la comparativa de eficiencia. Los flujos con evidencia cuentan con validación técnica del área de Mejora Continua.</p>
     </div>
 
-    <!-- Contact & Footer -->
-    <footer id="contact">
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold);">Edgar Maldonado González</p>
-        <p>Finance & Process Automation Specialist | Master in Artificial Intelligence</p>
-        <p style="margin-top: 1rem;">Chihuahua, Chihuahua, México</p>
-        
-        <div class="footer-links">
-            <a href="https://github.com/emg-dev2" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:edgar0702@gmail.com"><i class="fas fa-envelope"></i> edgar0702@gmail.com</a>
+    <div class="filters reveal" id="filters">
+      <button class="filter-btn active" data-cat="all">Todos (19)</button>
+      <button class="filter-btn" data-cat="mailing">Mailing &amp; Cloud (3)</button>
+      <button class="filter-btn" data-cat="etl">Ingesta &amp; Cobranza (5)</button>
+      <button class="filter-btn" data-cat="facturacion">Facturación &amp; Auditoría (10)</button>
+      <button class="filter-btn" data-cat="tesoreria">Tesorería (1)</button>
+    </div>
+
+    <div class="ledger-summary reveal" id="ledgerSummary"></div>
+
+    <div class="ledger-list reveal" id="ledgerList"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Trayectoria Profesional</span>
+      <h2>Evolución en la gestión financiera y optimización de procesos.</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">Sep 2021 — Actualidad</div>
+        <div class="tl-role">Especialista de Cuentas por Cobrar</div>
+        <div class="tl-company">EssilorLuxottica México</div>
+        <ul>
+          <li>Optimizo AR para <strong>54 clientes</strong> en Colombia, gestionando +8,000 órdenes anuales de facturación y conciliación.</li>
+          <li>Aumenté la facturación semanal <strong>50%</strong> con un control de órdenes pendientes.</li>
+          <li>Desarrollé <strong>19 automatizaciones</strong> (VBA + Power Automate) que representan <strong>8,699.1 hrs/año</strong> de ahorro operativo.</li>
+          <li>Soporte a pagos SAP (F-28) para Luxottica Argentina: hasta 146 aplicaciones diarias con 99% de precisión.</li>
+          <li><strong>3.er lugar</strong> en el Hackathon Corporativo de Automatización 2.0 — robot UiPath que redujo 15% el tiempo de facturación.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2020 — Mayo 2021</div>
+        <div class="tl-role">Auxiliar Contable en Cuentas por Cobrar</div>
+        <div class="tl-company">GWS Grupo Watt Solar</div>
+        <ul><li>Diseñé un sistema de alertas de riesgo en Excel para 60 clientes, recuperando <strong>54%</strong> de cartera vencida en 3 meses.</li></ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jul 2019 — Feb 2020</div>
+        <div class="tl-role">Jefe Administrativo</div>
+        <div class="tl-company">INIFAP Centro Experimental La Campana</div>
+        <ul>
+          <li>Incrementé la eficiencia administrativa <strong>30%</strong> liderando un equipo de 3 personas.</li>
+          <li>Controlé un presupuesto de <strong>$50 MDP</strong> en 5 proyectos con un tablero analítico en Excel.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2018 — Dic 2018</div>
+        <div class="tl-role">Analista de Contraloría de Crédito</div>
+        <div class="tl-company">Unión de Crédito Progreso</div>
+        <ul><li>Auditoría de expedientes en 4 sucursales, fortaleciendo el cumplimiento normativo.</li></ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 2016 — Jul 2017</div>
+        <div class="tl-role">Analista Financiero Regional</div>
+        <div class="tl-company">Grupo Yazaki</div>
+        <ul><li>Capacité a 35 empleados en conteos cíclicos; mejoré el control de inventarios <strong>25%</strong> en 7 plantas.</li></ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2015 — Mar 2016</div>
+        <div class="tl-role">Auxiliar Financiero en Cuentas por Pagar</div>
+        <div class="tl-company">Southco Inc.</div>
+        <ul><li>Administré pagos a +100 proveedores en SAP; incrementé eficiencia de recepción y AP <strong>40%</strong>.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCACION -->
+<section class="edu-section" id="educacion">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Formación</span>
+      <h2>Certificado por el impacto, becado por los resultados.</h2>
+    </div>
+    <div class="edu-grid reveal">
+      <div>
+        <div class="edu-card" style="margin-bottom:20px;">
+          <h3>Máster en Inteligencia Artificial</h3>
+          <div class="school">Universidad TecMilenio · en colaboración con IBM</div>
+          <div class="meta">SEP 2024 — ABR 2026 · BECA 100% · MENCIÓN HONORÍFICA DE EXCELENCIA</div>
         </div>
+        <div class="edu-card">
+          <h3>Licenciatura en Administración Financiera</h3>
+          <div class="school">Universidad Autónoma de Chihuahua</div>
+          <div class="meta">2012 — 2016 · TITULADO</div>
+        </div>
+        <div class="award-box">
+          <p>Becado por el comité corporativo de EssilorLuxottica para cursar el Máster en Inteligencia Artificial, en reconocimiento al impacto operativo y financiero de las soluciones de automatización implementadas.</p>
+        </div>
+      </div>
+      <div class="edu-card">
+        <h3 style="margin-bottom:18px;">Certificaciones</h3>
+        <ul class="cert-list">
+          <li>RPA Developer <span>UiPath Academy</span></li>
+          <li>Excel avanzado <span>Vanguardia Académica</span></li>
+          <li>Dashboards y análisis de datos <span>Udemy</span></li>
+          <li>Excel profesional <span>Udemy</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Edgar Maldonado González. Todos los derechos reservados.</p>
-    </footer>
+<!-- CONTACTO -->
+<footer id="contacto">
+  <div class="container">
+    <span class="eyebrow">Hablemos</span>
+    <h2 style="margin-top:12px;">Si tu equipo pierde horas en captura manual, ya sé por dónde empezar.</h2>
+    <p class="hero-sub">Chihuahua, México · Disponible para conversar sobre automatización de procesos financieros y operativos.</p>
+    <div class="contact-links">
+      <a href="mailto:edgar079302@gmail.com" class="btn btn-gold">edgar079302@gmail.com</a>
+      <a href="http://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+    <div class="foot-meta">EDGAR MALDONADO GONZÁLEZ · +52 614 405 9373 · PORTAFOLIO DE AUTOMATIZACIÓN</div>
+  </div>
+</footer>
 
-    <!-- JavaScript for Interactivity -->
-    <script>
-        // Modal functions
-        function openModal(title, imageSrc, description) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalImage').src = encodeURI(imageSrc);
-            document.getElementById('modalDesc').innerText = description;
-            document.getElementById('evidenceModal').classList.add('active');
-        }
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <img id="lightboxImg" src="" alt="Evidencia de automatización">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
 
-        function closeModal() {
-            document.getElementById('evidenceModal').classList.remove('active');
-        }
+<script>
+// ---------------- DATA: 19 CASOS ----------------
+const projects = [
+  {id:1, name:"Envío de Correos de Cobranza", market:"Canadá (CAD)", hours:5756.8, pct:99.9, cat:"mailing",
+    stack:["Excel VBA","Power Automate","OneDrive","Outlook API"],
+    problem:"Creación manual de reportes de cobranza y edición individual de plantillas para más de 300 clientes.",
+    solution:"Motor VBA que separa los datos y genera archivos independientes, integrado con un flujo de Power Automate para el despacho masivo y desatendido vía OneDrive.",
+    before:"7,200 min/ejecución", after:"4 min/ejecución", evidence:null},
+  {id:2, name:"Consolidación de Cobranza", market:"República Dominicana", hours:1178, pct:98.2, cat:"etl",
+    stack:["Excel VBA","Suite ETL","Data Cleaning"],
+    problem:"Archivos masivos con miles de filas en blanco que bloquean los filtros operacionales de las sucursales Santo Domingo y Santiago.",
+    solution:"Suite en VBA para saneamiento profundo de registros vacíos, estandarización y unificación instantánea de sucursales en una sola base analítica.",
+    before:"600 min/ejecución", after:"11 min/ejecución", evidence:null},
+  {id:3, name:"Clasificador de Pagos", market:"Canadá (CAD)", hours:380, pct:93.1, cat:"etl",
+    stack:["Excel VBA","Parsing TXT/ASCII","Lookup dinámico"],
+    problem:"Ingesta manual de estados bancarios en TXT a Excel, con clasificación y actualización manual en reportes compartidos.",
+    solution:"Motor de ingesta ETL en VBA que lee el archivo TXT directo, estructura los datos y asigna clasificaciones por tipo de pago.",
+    before:"510 min/ejecución", after:"7 min/ejecución", evidence:null},
+  {id:4, name:"Búsqueda e Identificación de Pagos", market:"México (MEX)", hours:292.5, pct:37.5, cat:"etl",
+    stack:["Excel VBA","Algoritmos de búsqueda","Depuración de duplicados"],
+    problem:"Elevada carga operativa diaria en Cuentas por Cobrar para identificar pagos no reconocidos en extractos bancarios.",
+    solution:"Motor de búsqueda y conciliación avanzada en VBA que concilia automáticamente entre 80% y 90% de los pagos no identificados sobre bases de Banamex y Santander.",
+    before:"60 min/ejecución", after:"37.5 min/ejecución", evidence:"Búsqueda e Identificación de Pagos.png"},
+  {id:5, name:"Prefactura Luxottica", market:"Operación propia (COL)", hours:205.4, pct:91.9, cat:"facturacion",
+    stack:["Excel VBA","Motor de reglas de precio","SAP"],
+    problem:"Actualización manual de códigos SAP cruzando listas de precios, ajuste por renglón y segregación de devoluciones.",
+    solution:"Solución VBA que consolida reportes, consulta la lista de precios del cliente, mapea códigos SAP/precios y aísla devoluciones para revisión focalizada.",
+    before:"258 min/ejecución", after:"21 min/ejecución", evidence:"Prefactura Luxottica.png"},
+  {id:6, name:"Envío de Consolidados (Outlook)", market:"Operación propia (COL)", hours:177.7, pct:95.3, cat:"mailing",
+    stack:["Excel VBA","Power Automate","Outlook API"],
+    problem:"Despacho manual de adjuntos divididos por cliente, complicado tras la migración corporativa de Gmail a Outlook Web.",
+    solution:"Solución híbrida: macro VBA que separa el reporte por NIT, y flujo desatendido en Power Automate que lee destinatarios y adjuntos desde OneDrive para el envío vía Outlook API.",
+    before:"215 min/ejecución", after:"10 min/ejecución", evidence:null},
+  {id:7, name:"Envío de Consolidados (Gmail)", market:"Operación propia (COL)", hours:123.1, pct:90.4, cat:"mailing",
+    stack:["Excel VBA","CDO / SMTP","QlikView"],
+    problem:"Formateo manual, segregación por NIT y envío uno a uno del reporte semanal de facturación.",
+    solution:"Automatización VBA en dos fases: macro de división por NIT y macro de envío masivo vía CDO/SMTP a cada destinatario.",
+    before:"157 min/ejecución", after:"15 min/ejecución", evidence:"Envío de Consolidados (Gmail).png"},
+  {id:8, name:"Estructurador de Precios de Lentes Oftálmicos", market:"Operación propia (COL)", hours:117, pct:34.6, cat:"facturacion",
+    stack:["Excel VBA","Conversión de divisas","CSV / DMS"],
+    problem:"Alto tiempo depurando bases de importación, ajustando unidades de lentes y asignando precios antes de cargar al ERP DMS.",
+    solution:"Depuración de registros, asignación de precios USD por cliente/categoría (PCAT) y exportación de CSV listo para ingesta en DMS.",
+    before:"26 min/factura", after:"17 min/factura", evidence:"Estructurador de Precios de Lentes Oftálmicos.png"},
+  {id:9, name:"Programación de Pagos", market:"Colombia (AP / CxP)", hours:104, pct:12.5, cat:"tesoreria",
+    stack:["Excel VBA","Tablas dinámicas","Validaciones de tesorería"],
+    problem:"Recolección y captura manual de información para el archivo semanal de pagos a proveedores del equipo de Tesorería.",
+    solution:"Modelo de preparación en VBA que elimina la digitación de fechas, categorías y comentarios, manteniendo la validación humana de liquidez.",
+    before:"16 hrs/ejecución", after:"14 hrs/ejecución", evidence:"Programación de Pagos.png"},
+  {id:10, name:"Segmentación Masiva por Clientes", market:"Operación propia (COL)", hours:103.1, pct:95.2, cat:"etl",
+    stack:["Excel VBA","Split Engine"],
+    problem:"Filtrado, copiado y generación manual de archivos independientes por cliente desde el reporte general de facturación.",
+    solution:"Motor VBA de segmentación masiva que filtra por NIT y guarda automáticamente libros individuales con nombres parametrizados.",
+    before:"125 min/ejecución", after:"6 min/ejecución", evidence:null},
+  {id:11, name:"Prefactura Colsanitas (Laboratorios)", market:"Operación propia (COL)", hours:67.6, pct:92.9, cat:"facturacion",
+    stack:["Excel VBA","Consolidación multi-fuente"],
+    problem:"Inversión excesiva de tiempo en formateo y consolidación manual de remisiones pendientes quincenales.",
+    solution:"Script VBA que consolida de forma desatendida datos de 3 fuentes distintas, aplicando la estructura solicitada por el cliente.",
+    before:"182 min quincenal", after:"13 min quincenal", evidence:"Prefactura Colsanitas.png"},
+  {id:12, name:"Prefactura Precisionlab", market:"Operación propia (COL)", hours:46.8, pct:75, cat:"facturacion",
+    stack:["Excel VBA","Dynamic VLOOKUP"],
+    problem:"Aplicación manual de fórmulas de búsqueda complejas y formateo sobre el reporte de órdenes pendientes.",
+    solution:"Script VBA parametrizado (InputBox) con VLOOKUPs dinámicos para depuración y formateo automático.",
+    before:"72 min/ejecución", after:"18 min/ejecución", evidence:null},
+  {id:13, name:"Criterio de Facturación", market:"Operación propia (COL)", hours:45.9, pct:75.7, cat:"facturacion",
+    stack:["Excel VBA","Pivot Tables","Slicers"],
+    problem:"Proceso manual extenso para categorizar clientes según esquemas de facturación y armar resúmenes operacionales.",
+    solution:"Solución VBA que limpia la base, aplica reglas de negocio de categorización y genera tablas dinámicas interactivas con Slicers.",
+    before:"70 min/ejecución", after:"17 min/ejecución", evidence:null},
+  {id:14, name:"Validación de Entrega DIAN vs. DMS", market:"Operación propia (COL)", hours:43.3, pct:83.3, cat:"facturacion",
+    stack:["Excel VBA","Conciliación fiscal"],
+    problem:"Revisión manual línea por línea para verificar si las facturas del ERP DMS se enviaron a la DIAN y llegaron al cliente.",
+    solution:"Motor de conciliación y auditoría en VBA que cruza bases, clasifica el estado real de notificación y genera el reporte de facturas no entregadas.",
+    before:"60 min/ejecución", after:"10 min/ejecución", evidence:"Validación de Entrega DIAN vs. DMS.png"},
+  {id:15, name:"Asignación Automática de Facturas", market:"Operación propia (COL)", hours:33.8, pct:78, cat:"facturacion",
+    stack:["Excel VBA","Cross-Validation","External Lookup"],
+    problem:"Búsqueda y asignación manual del número de factura correcta cruzando QlikView contra ERP DMS Advance.",
+    solution:"Script VBA que ejecuta la validación cruzada multicriterio y aplica fórmulas de asignación de forma instantánea.",
+    before:"50 min/ejecución", after:"11 min/ejecución", evidence:null},
+  {id:16, name:"Prefactura LAFAM", market:"Operación propia (COL)", hours:7.8, pct:40.9, cat:"facturacion",
+    stack:["Excel VBA","Formateo dinámico"],
+    problem:"Edición y estructuración visual manual del reporte de órdenes pendientes por facturar para el cliente LAFAM.",
+    solution:"Automatización VBA que aplica la maquetación y estructura exacta requerida con un solo clic.",
+    before:"22 min/ejecución", after:"13 min/ejecución", evidence:null},
+  {id:17, name:"Prefactura Colsanitas (Stellest)", market:"Operación propia (COL)", hours:7.6, pct:76, cat:"facturacion",
+    stack:["Excel VBA","FileDialog API","VLOOKUP condicional"],
+    problem:"Formateo y consolidación manual de la estructura de facturación desde ERP DMS hacia las plantillas requeridas.",
+    solution:"Script VBA con cuadro de diálogo para selección de archivos y unificación automática con la prefactura de laboratorios.",
+    before:"25 min/ejecución", after:"6 min/ejecución", evidence:null},
+  {id:18, name:"Analizador de Antigüedad de Cartera", market:"Canadá (CAD)", hours:5.2, pct:86.7, cat:"etl",
+    stack:["Excel VBA","CSV Parsing","Multi-VLOOKUP"],
+    problem:"Procesamiento manual de reportes CSV de antigüedad de saldo, con conversión de formato y enriquecimiento de contacto.",
+    solution:"Script que convierte CSV a XLSX, enriquece registros con datos de contacto mediante búsquedas dinámicas y clasifica saldos por antigüedad.",
+    before:"30 min/ejecución", after:"4 min/ejecución", evidence:null},
+  {id:19, name:"Prefactura Stellest (LAFAM & Luxottica)", market:"Operación propia (COL)", hours:3.5, pct:40, cat:"facturacion",
+    stack:["Excel VBA","Data Cleaning"],
+    problem:"Ajuste visual y saneamiento de columnas sobre el reporte del producto Stellest extraído del ERP DMS.",
+    solution:"Script VBA de formateo estándar y eliminación de inconsistencias de datos.",
+    before:"10 min/ejecución", after:"6 min/ejecución", evidence:null},
+];
 
-        // Close modal on outside click
-        window.onclick = function(event) {
-            const modal = document.getElementById('evidenceModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
+const ledgerList = document.getElementById('ledgerList');
+const summaryEl = document.getElementById('ledgerSummary');
 
-        // Project filtering
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+function renderLedger(filter){
+  const filtered = projects.filter(p => filter==='all' ? true : p.cat===filter);
+  ledgerList.innerHTML = filtered.map(p => `
+    <div class="ledger-row" data-id="${p.id}">
+      <div class="ledger-row-head">
+        <span class="l-num">${String(p.id).padStart(2,'0')}</span>
+        <span class="l-name">${p.name}<span class="market">${p.market}</span></span>
+        <span class="l-bar-wrap">
+          <span class="l-bar-track">
+            <span class="l-bar-fill" style="width:${p.pct}%"></span>
+          </span>
+          <span class="l-hours">${p.hours.toLocaleString('es-MX')} hrs/año</span>
+        </span>
+        <span class="l-pct">${p.pct}% reducción</span>
+        <span class="l-chevron">+</span>
+      </div>
+      <div class="ledger-detail">
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Problema</h4>
+            <p>${p.problem}</p>
+            <h4 style="margin-top:20px;">Solución implementada</h4>
+            <p>${p.solution}</p>
+            <div class="stack-tags">${p.stack.map(s=>`<span class="stack-tag">${s}</span>`).join('')}</div>
+          </div>
+          <div class="detail-block">
+            <h4>Impacto operativo</h4>
+            <div class="flow">
+              <div class="flow-line"><span class="tag">ANTES</span> ${p.before}</div>
+              <div class="flow-line"><span class="tag">DESPUÉS</span> ${p.after}</div>
+            </div>
+            ${p.evidence ? `<button class="evidence-btn" data-img="${p.evidence}" data-name="${p.name}">Ver evidencia — Mejora Continua ↗</button>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
 
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+  const totalHours = filtered.reduce((a,p)=>a+p.hours,0);
+  const avgPct = (filtered.reduce((a,p)=>a+p.pct,0)/filtered.length).toFixed(1);
+  summaryEl.innerHTML = `<span>Mostrando ${filtered.length} de 19 casos</span><span>${totalHours.toLocaleString('es-MX',{maximumFractionDigits:1})} hrs/año · ${avgPct}% reducción promedio por proceso</span>`;
+
+  // row expand
+  document.querySelectorAll('.ledger-row-head').forEach(head=>{
+    head.addEventListener('click', ()=>{
+      const row = head.parentElement;
+      const wasOpen = row.classList.contains('open');
+      document.querySelectorAll('.ledger-row.open').forEach(r=>r.classList.remove('open'));
+      if(!wasOpen) row.classList.add('open');
+    });
+  });
+
+  // evidence buttons
+  document.querySelectorAll('.evidence-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      openLightbox(btn.dataset.img, btn.dataset.name);
+    });
+  });
+}
+renderLedger('all');
+
+// filters
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderLedger(btn.dataset.cat);
+  });
+});
+
+// lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCap = document.getElementById('lightboxCap');
+function openLightbox(src, name){
+  lightboxImg.src = src;
+  lightboxImg.alt = "Evidencia: " + name;
+  lightboxCap.textContent = "EVIDENCIA · MEJORA CONTINUA — " + name.toUpperCase();
+  lightbox.classList.add('show');
+}
+function closeLightbox(){ lightbox.classList.remove('show'); lightboxImg.src=''; }
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+// burger menu
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+
+// count-up numbers
+const counters = document.querySelectorAll('.num[data-count]');
+let counted = false;
+function runCounters(){
+  if(counted) return; counted = true;
+  counters.forEach(el=>{
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimal || 0);
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const p = Math.min((now-start)/duration, 1);
+      const eased = 1 - Math.pow(1-p, 3);
+      const val = target * eased;
+      el.textContent = decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('es-MX');
+      if(p<1) requestAnimationFrame(tick);
+      else el.textContent = decimals ? target.toFixed(decimals) : target.toLocaleString('es-MX');
+    }
+    requestAnimationFrame(tick);
+  });
+}
+setTimeout(runCounters, 300);
+
+// reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+  });
+}, {threshold:0.12});
+revealEls.forEach(el=> io.observe(el));
+</script>
 </body>
 </html>
