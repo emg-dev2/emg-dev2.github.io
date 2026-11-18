@@ -15,19 +15,14 @@
 <link rel="canonical" href="https://emg-dev2.github.io/">
 
 <!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Edgar Maldonado — Automatización Financiera">
-<meta property="og:locale" content="es_MX">
-<meta property="og:url" content="https://emg-dev2.github.io/">
-<meta property="og:title" content="Edgar Maldonado González — Automatización de Procesos Financieros">
-<meta property="og:description" content="21 soluciones de automatización financiera con 9,052 horas anuales de ahorro. Excel VBA, Power Automate, ETL, conciliación, facturación y cobranza.">
-<meta property="og:image" content="https://emg-dev2.github.io/assets/B%C3%BAsqueda%20e%20Identificaci%C3%B3n%20de%20Pagos.png">
+<meta property="og:image" content="https://emg-dev2.github.io/assets/busqueda-identificacion-pagos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portafolio de automatización financiera — Edgar Maldonado">
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edgar Maldonado González — Automatización de Procesos Financieros">
-<meta name="twitter:description" content="21 soluciones de automatización financiera con 9,052 horas anuales de ahorro.">
-<meta name="twitter:image" content="https://emg-dev2.github.io/assets/B%C3%BAsqueda%20e%20Identificaci%C3%B3n%20de%20Pagos.png">
+<meta name="twitter:image" content="https://emg-dev2.github.io/assets/busqueda-identificacion-pagos.png">
+<meta name="twitter:image:alt" content="Portafolio de automatización financiera — Edgar Maldonado">
 
 <!-- Favicon inline (evita 404 del favicon.ico) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0D0A'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%23BE9D5D' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='22' font-weight='700' fill='%23BE9D5D' text-anchor='middle'%3EEM%3C/text%3E%3C/svg%3E">
@@ -1519,12 +1514,12 @@ const projects = [
     stack:["Excel VBA","Algoritmos de búsqueda","Depuración de duplicados"],
     problem:"Elevada carga operativa diaria en Cuentas por Cobrar para identificar pagos no reconocidos en extractos bancarios.",
     solution:"Motor de búsqueda y conciliación avanzada en VBA que concilia automáticamente entre 80% y 90% de los pagos no identificados sobre bases de Banamex y Santander.",
-    before:"60 min/ejecución",after:"37.5 min/ejecución",evidence:"Búsqueda e Identificación de Pagos.png"},
+    before:"60 min/ejecución",after:"37.5 min/ejecución",evidence:"busqueda-identificacion-pagos.png"},
   {id:5,name:"Prefactura Luxottica",market:"Operación propia (COL)",hours:205.4,pct:91.9,cat:"facturacion",
     stack:["Excel VBA","Motor de reglas de precio","SAP"],
     problem:"Actualización manual de códigos SAP cruzando listas de precios, ajuste por renglón y segregación de devoluciones.",
     solution:"Solución VBA que consolida reportes, consulta la lista de precios del cliente, mapea códigos SAP/precios y aísla devoluciones para revisión focalizada.",
-    before:"258 min/ejecución",after:"21 min/ejecución",evidence:"Prefactura Luxottica.png"},
+    before:"258 min/ejecución",after:"21 min/ejecución",evidence:"prefactura-luxottica.png"},
   {id:6,name:"Envío de Edo. Cuenta Opti Express",market:"República Dominicana",hours:184.0,pct:95.8,cat:"mailing",
     stack:["Excel VBA","Power Automate","Outlook"],
     problem:"Envío manual y procesamiento individual de estados de cuenta para los clientes de Opti Express en República Dominicana.",
@@ -1544,17 +1539,17 @@ const projects = [
     stack:["Excel VBA","CDO / SMTP","QlikView"],
     problem:"Formateo manual, segregación por NIT y envío uno a uno del reporte semanal de facturación.",
     solution:"Automatización VBA en dos fases: macro de división por NIT y macro de envío masivo vía CDO/SMTP a cada destinatario.",
-    before:"157 min/ejecución",after:"15 min/ejecución",evidence:"Envío de Consolidados (Gmail).png"},
+    before:"157 min/ejecución",after:"15 min/ejecución",evidence:"envio-consolidados-gmail.png"},
   {id:10,name:"Estructurador de Precios de Lentes Oftálmicos",market:"Operación propia (COL)",hours:117,pct:34.6,cat:"facturacion",
     stack:["Excel VBA","Conversión de divisas","CSV / DMS"],
     problem:"Alto tiempo depurando bases de importación, ajustando unidades de lentes y asignando precios antes de cargar al ERP DMS.",
     solution:"Depuración de registros, asignación de precios USD por cliente/categoría (PCAT) y exportación de CSV listo para ingesta en DMS.",
-    before:"26 min/factura",after:"17 min/factura",evidence:"Estructurador de Precios de Lentes Oftálmicos.png"},
+    before:"26 min/factura",after:"17 min/factura",evidence:"estructurador-precios-lentes-oftalmicos.png"},
   {id:11,name:"Programación de Pagos",market:"Colombia (AP / CxP)",hours:104,pct:12.5,cat:"tesoreria",
     stack:["Excel VBA","Tablas dinámicas","Validaciones de tesorería"],
     problem:"Recolección y captura manual de información para el archivo semanal de pagos a proveedores del equipo de Tesorería.",
     solution:"Modelo de preparación en VBA que elimina la digitación de fechas, categorías y comentarios, manteniendo la validación humana de liquidez.",
-    before:"16 hrs/ejecución",after:"14 hrs/ejecución",evidence:"Programación de Pagos.png"},
+    before:"16 hrs/ejecución",after:"14 hrs/ejecución",evidence:"programacion-pagos.png"},
   {id:12,name:"Segmentación Masiva por Clientes",market:"Operación propia (COL)",hours:103.1,pct:95.2,cat:"etl",
     stack:["Excel VBA","Split Engine"],
     problem:"Filtrado, copiado y generación manual de archivos independientes por cliente desde el reporte general de facturación.",
@@ -1564,7 +1559,7 @@ const projects = [
     stack:["Excel VBA","Consolidación multi-fuente"],
     problem:"Inversión excesiva de tiempo en formateo y consolidación manual de remisiones pendientes quincenales.",
     solution:"Script VBA que consolida de forma desatendida datos de 3 fuentes distintas, aplicando la estructura solicitada por el cliente.",
-    before:"182 min quincenal",after:"13 min quincenal",evidence:"Prefactura Colsanitas.png"},
+    before:"182 min quincenal",after:"13 min quincenal",evidence:"prefactura-colsanitas.png"},
   {id:14,name:"Prefactura Precisionlab",market:"Operación propia (COL)",hours:46.8,pct:75,cat:"facturacion",
     stack:["Excel VBA","Dynamic VLOOKUP"],
     problem:"Aplicación manual de fórmulas de búsqueda complejas y formateo sobre el reporte de órdenes pendientes.",
@@ -1579,7 +1574,7 @@ const projects = [
     stack:["Excel VBA","Conciliación fiscal"],
     problem:"Revisión manual línea por línea para verificar si las facturas del ERP DMS se enviaron a la DIAN y llegaron al cliente.",
     solution:"Motor de conciliación y auditoría en VBA que cruza bases, clasifica el estado real de notificación y genera el reporte de facturas no entregadas.",
-    before:"60 min/ejecución",after:"10 min/ejecución",evidence:"Validación de Entrega DIAN vs. DMS.png"},
+    before:"60 min/ejecución",after:"10 min/ejecución",evidence:"validacion-entrega-dian-dms.png"},
   {id:17,name:"Asignación Automática de Facturas",market:"Operación propia (COL)",hours:33.8,pct:78,cat:"facturacion",
     stack:["Excel VBA","Cross-Validation","External Lookup"],
     problem:"Búsqueda y asignación manual del número de factura correcta cruzando QlikView contra ERP DMS Advance.",
