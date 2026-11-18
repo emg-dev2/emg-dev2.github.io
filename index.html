@@ -3,57 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0D0A">
+<meta name="author" content="Edgar Maldonado González">
+<meta name="robots" content="index, follow">
 
 <title>Edgar Maldonado González — Automatización de Procesos Financieros</title>
 
-<meta name="description" content="Edgar Maldonado González — Automatización de procesos financieros con Excel VBA, Power Automate y RPA. 21 soluciones implementadas y 9,052 horas anuales de ahorro operativo.">
+<meta name="description" content="Diseño soluciones de automatización para procesos financieros y administrativos: ETL, conciliaciones, facturación, cobranza, validaciones, segmentación y distribución de información. Excel VBA es mi principal motor de automatización, complementado con Power Automate y RPA cuando el proceso lo requiere.">
 
-<!-- Open Graph / LinkedIn / Facebook -->
+<!--Canónico -->
+<link rel="canonical" href="https://emg-dev2.github.io/">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Edgar Maldonado — Automatización Financiera">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://emg-dev2.github.io/">
 <meta property="og:title" content="Edgar Maldonado González — Automatización de Procesos Financieros">
-<meta property="og:description" content="21 soluciones de automatización financiera con 9,052 horas anuales de ahorro operativo. Especialista en Excel VBA, ETL, conciliación, facturación, cobranza y automatización híbrida.">
-<meta property="og:image" content="assets/Búsqueda e Identificación de Pagos.png">
+<meta property="og:description" content="21 soluciones de automatización financiera con 9,052 horas anuales de ahorro. Excel VBA, Power Automate, ETL, conciliación, facturación y cobranza.">
+<meta property="og:image" content="https://emg-dev2.github.io/assets/B%C3%BAsqueda%20e%20Identificaci%C3%B3n%20de%20Pagos.png">
 
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edgar Maldonado González — Automatización de Procesos Financieros">
+<meta name="twitter:description" content="21 soluciones de automatización financiera con 9,052 horas anuales de ahorro.">
+<meta name="twitter:image" content="https://emg-dev2.github.io/assets/B%C3%BAsqueda%20e%20Identificaci%C3%B3n%20de%20Pagos.png">
 
-<!-- Fonts -->
+<!-- Favicon inline (evita 404 del favicon.ico) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0D0A'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%23BE9D5D' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='22' font-weight='700' fill='%23BE9D5D' text-anchor='middle'%3EEM%3C/text%3E%3C/svg%3E">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Edgar Maldonado González",
+  "jobTitle": "Especialista de Cuentas por Cobrar",
+  "email": "edgar079302@gmail.com",
+  "telephone": "+526144059373",
+  "url": "https://TU-USUARIO.github.io/TU-REPO/",
+  "image": "https://emg-dev2.github.io/assets/B%C3%BAsqueda%20e%20Identificaci%C3%B3n%20de%20Pagos.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chihuahua",
+    "addressRegion": "Chihuahua",
+    "addressCountry": "MX"
+  },
+  "sameAs": ["https://www.linkedin.com/in/maldonadoedgar"],
+  "knowsAbout": [
+    "Excel VBA", "Power Automate", "UiPath StudioX",
+    "Automatización de procesos", "ETL", "Conciliaciones",
+    "Cuentas por cobrar", "SAP FI", "Business Intelligence"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&amp;family=Manrope:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-  --ink:#0D110E;
-  --forest:#1E3226;
-  --forest-light:#2C4736;
-  --cream:#EFEAD9;
-  --paper:#F8F5EC;
-  --gold:#C7A159;
-  --gold-light:#E6CD91;
-  --gold-dim:rgba(199,161,89,0.35);
-  --stone:#807869;
-  --stone-light:#AFA792;
+  /* === Ink / dark === */
+  --ink:#17231C;              /* casi negro con subtono verde */
+  --forest:#1A2B20;           /* verde biblioteca */
+
+  /* === Warm neutrals === */
+  --cream:#F0E9D6;            /* marfil cálido - pergamino */
+  --paper:#F9F4E8;            /* papel pergamino */
   --white:#FCFAF3;
+
+  /* === Metals === */
+  --gold:#BE9D5D;             /* latón antiguo - SOLO sobre fondos oscuros */
+  --gold-light:#D5BC82;       /* latón iluminado - SOLO sobre fondos oscuros */
+  --gold-muted:#7D6230;       /* latón oscurecido - SOLO sobre fondos claros (AA 4.7:1) */
+  --gold-dim:rgba(190,157,93,0.32);
+
+  /* === Heritage accents === */
+  --burgundy:#6B2E2E;         /* oxblood profundo */
+  --burgundy-light:#9C5252;
+
+  /* === Stones === */
+  --stone:#514B40;            /* taupe cálido */
+  --stone-light:#B3AB96;
+
+  /* === Highlight === */
+  --champagne:#E8D9B2;        /* highlight muy sutil */
+
   --maxw:1180px;
   --radius:2px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-html{
-  scroll-behavior:smooth;
-}
+/* Anclas: la nav fija no tapa los títulos */
+section[id], footer[id]{scroll-margin-top:90px;}
 
 @media (prefers-reduced-motion: reduce){
-  html{
-    scroll-behavior:auto;
-  }
-
+  html{scroll-behavior:auto;}
   *{
     animation-duration:0.001ms !important;
     animation-iteration-count:1 !important;
@@ -70,19 +118,38 @@ body{
   overflow-x:hidden;
 }
 
-::selection{
+::selection{background:var(--gold);color:var(--ink);}
+a{color:inherit;}
+
+/* Accesibilidad: foco visible */
+*:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:1px;
+}
+.ledger-row-head:focus-visible{outline-offset:-2px;}
+
+/* Skip link */
+.skip-link{
+  position:absolute;
+  top:-100px;
+  left:16px;
+  z-index:200;
   background:var(--gold);
   color:var(--ink);
+  padding:12px 20px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.8rem;
+  font-weight:600;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  transition:top .2s ease;
+  border-radius:2px;
 }
+.skip-link:focus{top:16px;}
 
-a{
-  color:inherit;
-}
-
-h1,
-h2,
-h3,
-h4{
+h1,h2,h3,h4{
   font-family:'Fraunces',serif;
   margin:0;
   font-weight:600;
@@ -98,1540 +165,642 @@ h4{
   font-weight:500;
 }
 
-.container{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:0 32px;
+/* Mayor contraste en secciones claras */
+.perfil .eyebrow,
+#stack .eyebrow,
+.architecture-section .eyebrow,
+.featured-section .eyebrow,
+.automation-section .eyebrow,
+.process-section .eyebrow,
+#experiencia .eyebrow {
+  color: var(--forest);
+  font-weight: 600;
 }
 
-@media(max-width:640px){
-  .container{
-    padding:0 20px;
-  }
+/* Fechas de trayectoria profesional */
+#experiencia .tl-date {
+  color: var(--forest);
+  font-weight: 600;
 }
 
-/* =========================================================
-   GRAIN
-========================================================= */
+/* Etiquetas numéricas (01, 02, 03…) sobre fondos claros */
+.architecture-num,
+.architecture-flow b,
+.featured-num,
+.automation-item > span,
+.process-step > span {
+  color: var(--gold-muted);
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+@media(max-width:640px){.container{padding:0 20px;}}
 
 .grain{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:1;
-  opacity:0.035;
+  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.035;
   mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* =========================================================
-   NAV
-========================================================= */
-
 header.nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  background:rgba(13,17,14,0.92);
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,13,10,0.92);
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--gold-dim);
   transition:transform .4s ease;
 }
 
 .nav-inner{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:16px 32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  max-width:var(--maxw);margin:0 auto;padding:16px 32px;
+  display:flex;align-items:center;justify-content:space-between;
 }
 
 .logo{
-  font-family:'Fraunces',serif;
-  font-weight:700;
-  font-size:1.15rem;
-  color:var(--white);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  letter-spacing:0.02em;
+  font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;
+  color:var(--white);display:flex;align-items:center;gap:10px;letter-spacing:0.02em;
 }
 
 .logo .mono{
-  width:34px;
-  height:34px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  color:var(--gold);
-  letter-spacing:0.02em;
+  width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--gold);letter-spacing:0.02em;
 }
 
-nav.links{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
+nav.links{display:flex;gap:30px;align-items:center;}
 
 nav.links a{
-  color:var(--stone-light);
-  text-decoration:none;
-  font-size:0.85rem;
-  font-weight:500;
-  letter-spacing:0.02em;
-  position:relative;
-  padding-bottom:4px;
+  color:var(--stone-light);text-decoration:none;font-size:0.85rem;
+  font-weight:500;letter-spacing:0.02em;position:relative;padding-bottom:4px;
 }
 
 nav.links a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:1px;
-  background:var(--gold);
-  transition:width .3s ease;
+  content:'';position:absolute;left:0;bottom:0;width:0;height:1px;
+  background:var(--gold);transition:width .3s ease;
 }
 
-nav.links a:hover{
-  color:var(--white);
-}
-
-nav.links a:hover::after{
-  width:100%;
-}
+nav.links a:hover{color:var(--white);}
+nav.links a:hover::after{width:100%;}
 
 .nav-cta{
-  border:1px solid var(--gold);
-  color:var(--gold) !important;
-  padding:8px 16px;
-  font-size:0.78rem !important;
-  font-family:'IBM Plex Mono',monospace;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold) !important;
+  padding:8px 16px;font-size:0.78rem !important;
+  font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em;text-transform:uppercase;
 }
 
-.nav-cta:hover{
-  background:var(--gold);
-  color:var(--ink) !important;
-}
+.nav-cta:hover{background:var(--gold);color:var(--ink) !important;}
 
-.burger{
-  display:none;
-  background:none;
-  border:none;
-  color:var(--white);
-  font-size:1.4rem;
-  cursor:pointer;
-}
+.burger{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:4px 8px;}
 
 @media(max-width:900px){
-
   nav.links{
-    position:fixed;
-    top:64px;
-    left:0;
-    right:0;
-    background:var(--ink);
-    flex-direction:column;
-    gap:0;
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .4s ease;
-    border-bottom:1px solid var(--gold-dim);
+    position:fixed;top:64px;left:0;right:0;background:var(--ink);
+    flex-direction:column;gap:0;max-height:0;overflow:hidden;
+    transition:max-height .4s ease;border-bottom:1px solid var(--gold-dim);
   }
-
-  nav.links.open{
-    max-height:500px;
-  }
-
-  nav.links a{
-    width:100%;
-    padding:16px 32px;
-    border-top:1px solid rgba(255,255,255,0.06);
-  }
-
-  nav.links a::after{
-    display:none;
-  }
-
-  .burger{
-    display:block;
-  }
+  nav.links.open{max-height:500px;}
+  nav.links a{width:100%;padding:16px 32px;border-top:1px solid rgba(255,255,255,0.06);}
+  nav.links a::after{display:none;}
+  .burger{display:block;}
 }
 
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero{
-  position:relative;
-  background:var(--ink);
-  color:var(--white);
-  padding:170px 0 90px;
-  overflow:hidden;
+  position:relative;background:var(--ink);color:var(--white);
+  padding:170px 0 90px;overflow:hidden;
 }
 
 .hero::before{
-  content:'';
-  position:absolute;
-  top:-30%;
-  right:-10%;
-  width:60%;
-  height:160%;
-  background:radial-gradient(
-    circle,
-    rgba(199,161,89,0.10) 0%,
-    rgba(199,161,89,0) 65%
-  );
+  content:'';position:absolute;top:-30%;right:-10%;width:60%;height:160%;
+  background:radial-gradient(circle, rgba(190,157,93,0.12) 0%, rgba(190,157,93,0) 70%);
   pointer-events:none;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:40px;
-  position:relative;
-  z-index:2;
-}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;position:relative;z-index:2;}
 
 .hero h1{
-  font-size:clamp(2.6rem,6vw,4.6rem);
-  line-height:1.02;
-  color:var(--white);
-  max-width:950px;
+  font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;color:var(--white);max-width:950px;
 }
 
-.hero h1 em{
-  color:var(--gold);
-  font-style:italic;
-  font-weight:500;
-}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:500;}
 
 .hero-sub{
-  font-size:1.08rem;
-  color:var(--stone-light);
-  max-width:700px;
-  margin-top:22px;
-  line-height:1.6;
-  font-weight:400;
+  font-size:1.08rem;color:var(--stone-light);max-width:700px;
+  margin-top:22px;line-height:1.6;font-weight:400;
 }
 
-.hero-actions{
-  display:flex;
-  gap:16px;
-  margin-top:36px;
-  flex-wrap:wrap;
-}
+.hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
 
 .hero-note{
-  margin-top:20px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  color:var(--stone-light);
-  letter-spacing:0.02em;
+  margin-top:20px;font-family:'IBM Plex Mono',monospace;
+  font-size:0.72rem;color:var(--stone-light);letter-spacing:0.02em;
 }
 
-.hero-note span{
-  color:var(--gold);
-  margin-right:10px;
-}
+.hero-note span{color:var(--gold);margin-right:10px;}
 
 .btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  padding:14px 26px;
-  border-radius:var(--radius);
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition:all .25s ease;
-  cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
+  text-transform:uppercase;letter-spacing:0.06em;padding:14px 26px;
+  border-radius:var(--radius);text-decoration:none;display:inline-flex;
+  align-items:center;gap:8px;transition:all .25s ease;cursor:pointer;
   border:1px solid transparent;
 }
 
-.btn-gold{
-  background:var(--gold);
-  color:var(--ink);
-  font-weight:600;
-}
+.btn-gold{background:var(--gold);color:var(--ink);font-weight:600;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
 
-.btn-gold:hover{
-  background:var(--gold-light);
-  transform:translateY(-2px);
-}
-
-.btn-outline{
-  border-color:rgba(252,250,243,0.35);
-  color:var(--white);
-}
-
-.btn-outline:hover{
-  border-color:var(--gold);
-  color:var(--gold);
-  transform:translateY(-2px);
-}
-
-/* =========================================================
-   LEDGER STRIP
-========================================================= */
+.btn-outline{border-color:rgba(252,250,243,0.35);color:var(--white);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
 
 .ledger-strip{
-  margin-top:64px;
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
-  padding:28px 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  position:relative;
-  z-index:2;
+  margin-top:64px;border-top:1px solid var(--gold-dim);
+  border-bottom:1px solid var(--gold-dim);padding:28px 0;
+  display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2;
 }
 
-.stat{
-  padding:0 24px;
-  border-left:1px solid var(--gold-dim);
-}
-
-.stat:first-child{
-  border-left:none;
-  padding-left:0;
-}
+.stat{padding:0 24px;border-left:1px solid var(--gold-dim);}
+.stat:first-child{border-left:none;padding-left:0;}
 
 .stat .num{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:clamp(1.5rem,3vw,2.2rem);
-  color:var(--gold);
-  font-weight:600;
-  display:block;
-  letter-spacing:-0.01em;
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(1.5rem,3vw,2.2rem);
+  color:var(--gold);font-weight:600;display:block;letter-spacing:-0.01em;
+  font-feature-settings:"tnum" 1;
 }
 
 .stat .lbl{
-  font-size:0.72rem;
-  color:var(--stone-light);
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  margin-top:6px;
-  display:block;
+  font-size:0.72rem;color:var(--stone-light);
+  text-transform:uppercase;letter-spacing:0.1em;margin-top:6px;display:block;
 }
 
 @media(max-width:760px){
-
-  .ledger-strip{
-    grid-template-columns:repeat(2,1fr);
-    row-gap:26px;
-  }
-
-  .stat:nth-child(3){
-    border-left:none;
-  }
+  .ledger-strip{grid-template-columns:repeat(2,1fr);row-gap:26px;}
+  .stat:nth-child(3){border-left:none;}
 }
 
-/* =========================================================
-   GENERIC SECTIONS
-========================================================= */
+section{padding:100px 0;position:relative;z-index:2;}
 
-section{
-  padding:100px 0;
-  position:relative;
-  z-index:2;
-}
+.section-head{max-width:700px;margin-bottom:56px;}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-top:10px;}
+.section-head p{color:var(--stone);margin-top:16px;line-height:1.7;font-size:1rem;}
 
-.section-head{
-  max-width:700px;
-  margin-bottom:56px;
-}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
 
-.section-head h2{
-  font-size:clamp(1.9rem,3.4vw,2.6rem);
-  margin-top:10px;
-}
+.perfil{background:var(--paper);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);}
 
-.section-head p{
-  color:var(--stone);
-  margin-top:16px;
-  line-height:1.7;
-  font-size:1rem;
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:opacity .7s ease, transform .7s ease;
-}
-
-.reveal.in{
-  opacity:1;
-  transform:none;
-}
-
-/* =========================================================
-   PERFIL
-========================================================= */
-
-.perfil{
-  background:var(--paper);
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
-}
-
-.perfil-grid{
-  display:grid;
-  grid-template-columns:280px 1fr;
-  gap:64px;
-  align-items:start;
-}
-
-@media(max-width:800px){
-  .perfil-grid{
-    grid-template-columns:1fr;
-  }
-}
+.perfil-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start;}
+@media(max-width:800px){.perfil-grid{grid-template-columns:1fr;}}
 
 .monogram{
-  width:220px;
-  height:220px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
+  width:220px;height:220px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;position:relative;
 }
 
-.monogram::before{
-  content:'';
-  position:absolute;
-  inset:12px;
-  border:1px solid var(--gold-dim);
-  border-radius:50%;
-}
+.monogram::before{content:'';position:absolute;inset:12px;border:1px solid var(--gold-dim);border-radius:50%;}
+.monogram span{font-family:'Fraunces',serif;font-size:3.4rem;color:var(--forest);font-weight:600;}
 
-.monogram span{
-  font-family:'Fraunces',serif;
-  font-size:3.4rem;
-  color:var(--forest);
-  font-weight:600;
-}
+.perfil-text p{line-height:1.85;font-size:1.02rem;color:#2b2c26;margin:0 0 18px;}
+.perfil-text strong{color:var(--forest);}
 
-.perfil-text p{
-  line-height:1.85;
-  font-size:1.02rem;
-  color:#2b2c26;
-  margin:0 0 18px;
-}
-
-.perfil-text strong{
-  color:var(--forest);
-}
-
-.badge-row{
-  display:flex;
-  gap:14px;
-  margin-top:28px;
-  flex-wrap:wrap;
-}
+.badge-row{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
 
 .badge{
-  border:1px solid var(--gold-dim);
-  padding:10px 16px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.74rem;
-  letter-spacing:0.04em;
-  color:var(--forest);
-  background:var(--cream);
+  border:1px solid var(--gold-dim);padding:10px 16px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.74rem;
+  letter-spacing:0.04em;color:var(--forest);background:var(--champagne);
 }
 
-/* =========================================================
-   STACK
-========================================================= */
-
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:8px;
-}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;}
 
 .chip{
-  border:1px solid var(--forest);
-  color:var(--forest);
-  padding:9px 18px;
-  font-size:0.85rem;
-  font-weight:600;
-  border-radius:20px;
-  background:transparent;
-  transition:all .25s ease;
+  border:1px solid var(--forest);color:var(--forest);
+  padding:9px 18px;font-size:0.85rem;font-weight:600;
+  border-radius:20px;background:transparent;transition:all .25s ease;
 }
 
-.chip:hover{
-  background:var(--forest);
-  color:var(--white);
-}
+.chip:hover{background:var(--forest);color:var(--white);}
 
-/* =========================================================
-   ARQUITECTURA
-========================================================= */
+.architecture-section{background:var(--paper);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);}
 
-.architecture-section{
-  background:var(--paper);
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
-}
-
-.architecture-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
+.architecture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
 
 .architecture-card{
-  border:1px solid var(--gold-dim);
-  padding:30px;
-  background:var(--cream);
+  border:1px solid var(--gold-dim);padding:30px;background:var(--cream);
   transition:transform .25s ease, border-color .25s ease;
 }
 
-.architecture-card:hover{
-  transform:translateY(-3px);
-  border-color:var(--gold);
-}
+.architecture-card:hover{transform:translateY(-3px);border-color:var(--gold);}
 
-.architecture-num{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:.75rem;
-}
-
-.architecture-card h3{
-  color:var(--forest);
-  font-size:1.35rem;
-  margin-top:10px;
-}
+.architecture-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;}
+.architecture-card h3{color:var(--forest);font-size:1.35rem;margin-top:10px;}
 
 .architecture-flow{
-  margin-top:24px;
-  padding:14px 10px;
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:7px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.65rem;
-  color:var(--forest);
+  margin-top:24px;padding:14px 10px;
+  border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
+  display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+  font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--forest);
 }
 
-.architecture-flow b{
-  color:var(--gold);
-}
+.architecture-flow b{color:var(--gold);}
 
-.architecture-card p{
-  color:var(--stone);
-  font-size:.88rem;
-  line-height:1.7;
-  margin-top:20px;
-}
+.architecture-card p{color:var(--stone);font-size:.88rem;line-height:1.7;margin-top:20px;}
 
-.architecture-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:20px;
-}
+.architecture-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
 
 .architecture-tags span{
-  border:1px solid var(--gold-dim);
-  padding:5px 9px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.65rem;
-  color:var(--forest);
+  border:1px solid var(--gold-dim);padding:5px 9px;
+  font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--forest);
 }
 
-@media(max-width:800px){
+@media(max-width:800px){.architecture-grid{grid-template-columns:1fr;}}
 
-  .architecture-grid{
-    grid-template-columns:1fr;
-  }
-}
+.featured-section{background:var(--paper);}
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 
-/* =========================================================
-   DESTACADOS
-========================================================= */
+.featured-card{border:1px solid var(--gold-dim);padding:30px;background:var(--cream);position:relative;}
 
-.featured-section{
-  background:var(--paper);
-}
-
-.featured-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.featured-card{
-  border:1px solid var(--gold-dim);
-  padding:30px;
-  background:var(--cream);
-  position:relative;
-}
-
-.featured-num{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:.75rem;
-  letter-spacing:.08em;
-}
+.featured-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;letter-spacing:.08em;}
 
 .featured-hours{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--forest);
-  font-size:1.5rem;
-  font-weight:600;
-  margin-top:28px;
+  font-family:'IBM Plex Mono',monospace;color:var(--forest);
+  font-size:1.5rem;font-weight:600;margin-top:28px;
+  font-feature-settings:"tnum" 1;
 }
 
-.featured-card h3{
-  font-size:1.35rem;
-  color:var(--forest);
-  margin-top:10px;
-}
-
-.featured-card p{
-  font-size:.9rem;
-  line-height:1.7;
-  color:#414238;
-  margin-top:14px;
-}
+.featured-card h3{font-size:1.35rem;color:var(--forest);margin-top:10px;}
+.featured-card p{font-size:.9rem;line-height:1.7;color:#414238;margin-top:14px;}
 
 .featured-meta{
-  margin-top:24px;
-  padding-top:14px;
-  border-top:1px solid var(--gold-dim);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.72rem;
-  color:var(--stone);
+  margin-top:24px;padding-top:14px;border-top:1px solid var(--gold-dim);
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--stone);
 }
 
-.featured-meta strong{
-  color:var(--forest);
-}
+.featured-meta strong{color:var(--forest);}
 
-.featured-cta{
-  text-align:center;
-  margin-top:32px;
-}
+.featured-card:first-child .featured-meta strong{color:var(--burgundy);}
 
-/* =========================================================
-   AUTOMATIZACIÓN
-========================================================= */
+.featured-cta{text-align:center;margin-top:32px;}
 
-.automation-section{
-  background:var(--cream);
-}
+.automation-section{background:var(--cream);}
 
-.automation-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-  border-top:1px solid var(--gold-dim);
-}
+.automation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--gold-dim);}
 
 .automation-item{
-  display:grid;
-  grid-template-columns:36px 1fr;
-  gap:14px;
-  padding:26px 24px;
-  border-bottom:1px solid var(--gold-dim);
+  display:grid;grid-template-columns:36px 1fr;gap:14px;
+  padding:26px 24px;border-bottom:1px solid var(--gold-dim);
   border-right:1px solid var(--gold-dim);
 }
 
-.automation-item:nth-child(3n){
-  border-right:none;
-}
+.automation-item:nth-child(3n){border-right:none;}
+.automation-item>span{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;}
+.automation-item h3{font-family:'Fraunces',serif;color:var(--forest);font-size:1.12rem;}
+.automation-item p{margin:7px 0 0;font-size:.86rem;line-height:1.6;color:var(--stone);}
 
-.automation-item>span{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:.75rem;
-}
-
-.automation-item h3{
-  font-family:'Fraunces',serif;
-  color:var(--forest);
-  font-size:1.12rem;
-}
-
-.automation-item p{
-  margin:7px 0 0;
-  font-size:.86rem;
-  line-height:1.6;
-  color:var(--stone);
-}
-
-/* =========================================================
-   PROCESO
-========================================================= */
-
-.process-section{
-  background:var(--paper);
-  border-top:1px solid var(--gold-dim);
-}
+.process-section{background:var(--paper);border-top:1px solid var(--gold-dim);}
 
 .process-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:0;
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
 }
 
-.process-step{
-  padding:28px 20px;
-  border-right:1px solid var(--gold-dim);
-}
+.process-step{padding:28px 20px;border-right:1px solid var(--gold-dim);}
+.process-step:last-child{border-right:none;}
+.process-step>span{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.75rem;}
+.process-step h3{font-size:1.15rem;color:var(--forest);margin-top:24px;}
+.process-step p{font-size:.84rem;line-height:1.65;color:var(--stone);margin-top:8px;}
 
-.process-step:last-child{
-  border-right:none;
-}
+.measurement-section{background:var(--ink);color:var(--white);}
+.measurement-section .section-head h2{color:var(--white);}
+.measurement-section .section-head p{color:var(--stone-light);}
 
-.process-step>span{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:.75rem;
-}
+.measurement-box{border:1px solid var(--gold-dim);padding:36px;background:rgba(252,250,243,.025);}
 
-.process-step h3{
-  font-size:1.15rem;
-  color:var(--forest);
-  margin-top:24px;
-}
-
-.process-step p{
-  font-size:.84rem;
-  line-height:1.65;
-  color:var(--stone);
-  margin-top:8px;
-}
-
-/* =========================================================
-   MEDICIÓN
-========================================================= */
-
-.measurement-section{
-  background:var(--ink);
-  color:var(--white);
-}
-
-.measurement-section .section-head h2{
-  color:var(--white);
-}
-
-.measurement-section .section-head p{
-  color:var(--stone-light);
-}
-
-.measurement-box{
-  border:1px solid var(--gold-dim);
-  padding:36px;
-  background:rgba(252,250,243,.025);
-}
-
-.formula{
-  padding:30px;
-  border-left:2px solid var(--gold);
-  background:rgba(199,161,89,.07);
-}
+.formula{padding:30px;border-left:2px solid var(--gold);background:rgba(190,157,93,.08);}
 
 .formula-label{
-  display:block;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.7rem;
-  color:var(--gold);
-  letter-spacing:.12em;
-  margin-bottom:15px;
+  display:block;font-family:'IBM Plex Mono',monospace;
+  font-size:.7rem;color:var(--gold);letter-spacing:.12em;margin-bottom:15px;
 }
 
 .formula strong{
-  display:block;
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--white);
-  font-size:clamp(1rem,2vw,1.35rem);
-  font-weight:500;
+  display:block;font-family:'IBM Plex Mono',monospace;
+  color:var(--white);font-size:clamp(1rem,2vw,1.35rem);font-weight:500;
 }
 
 .formula-result{
-  display:block;
-  margin-top:10px;
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold-light);
-  font-size:.8rem;
+  display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;
+  color:var(--gold-light);font-size:.8rem;
 }
 
-.measurement-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  margin-top:32px;
-}
+.measurement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;}
 
-.measurement-grid>div{
-  padding:22px;
-  border-right:1px solid rgba(252,250,243,.12);
-}
+.measurement-grid>div{padding:22px;border-right:1px solid rgba(252,250,243,.12);}
+.measurement-grid>div:last-child{border-right:none;}
 
-.measurement-grid>div:last-child{
-  border-right:none;
-}
-
-.measurement-num{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:.72rem;
-}
-
-.measurement-grid h3{
-  color:var(--white);
-  font-size:1.15rem;
-  margin-top:16px;
-}
-
-.measurement-grid p{
-  color:var(--stone-light);
-  font-size:.84rem;
-  line-height:1.65;
-  margin-top:8px;
-}
+.measurement-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.72rem;}
+.measurement-grid h3{color:var(--white);font-size:1.15rem;margin-top:16px;}
+.measurement-grid p{color:var(--stone-light);font-size:.84rem;line-height:1.65;margin-top:8px;}
 
 .measurement-disclaimer{
-  margin-top:28px;
-  padding-top:20px;
-  border-top:1px solid rgba(252,250,243,.12);
-  color:var(--stone-light);
-  font-size:.72rem;
-  line-height:1.6;
+  margin-top:28px;padding-top:20px;border-top:1px solid rgba(252,250,243,.12);
+  color:var(--stone-light);font-size:.72rem;line-height:1.6;
   font-family:'IBM Plex Mono',monospace;
 }
 
-/* =========================================================
-   LEDGER / CASOS
-========================================================= */
+.ledger-section{background:var(--ink);color:var(--white);}
+.ledger-section .eyebrow{color:var(--gold);}
+.ledger-section .section-head h2{color:var(--white);}
+.ledger-section .section-head p{color:var(--stone-light);}
 
-.ledger-section{
-  background:var(--ink);
-  color:var(--white);
-}
-
-.ledger-section .eyebrow{
-  color:var(--gold);
-}
-
-.ledger-section .section-head h2{
-  color:var(--white);
-}
-
-.ledger-section .section-head p{
-  color:var(--stone-light);
-}
-
-.filters{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:8px;
-}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
 
 .filter-btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  padding:9px 16px;
-  border:1px solid rgba(252,250,243,0.25);
-  background:transparent;
-  color:var(--stone-light);
-  cursor:pointer;
-  border-radius:20px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+  letter-spacing:0.05em;text-transform:uppercase;padding:9px 16px;
+  border:1px solid rgba(252,250,243,0.25);background:transparent;
+  color:var(--stone-light);cursor:pointer;border-radius:20px;
   transition:all .2s ease;
 }
 
-.filter-btn:hover{
-  border-color:var(--gold);
-  color:var(--gold);
-}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold);}
 
 .filter-btn.active{
-  background:var(--gold);
-  border-color:var(--gold);
-  color:var(--ink);
-  font-weight:600;
+  background:var(--gold);border-color:var(--gold);
+  color:var(--ink);font-weight:600;
 }
 
 .ledger-summary{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.82rem;
-  color:var(--gold-light);
-  margin:26px 0 30px;
-  border-top:1px solid var(--gold-dim);
-  border-bottom:1px solid var(--gold-dim);
-  padding:14px 0;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.82rem;
+  color:var(--gold-light);margin:26px 0 30px;
+  border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
+  padding:14px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
 }
 
-.ledger-list{
-  display:flex;
-  flex-direction:column;
-}
-
-.ledger-row{
-  border-bottom:1px solid rgba(252,250,243,0.12);
-}
+.ledger-list{display:flex;flex-direction:column;}
+.ledger-row{border-bottom:1px solid rgba(252,250,243,0.12);}
 
 .ledger-row-head{
-  display:grid;
-  grid-template-columns:52px 1fr 140px 150px 110px 24px;
-  align-items:center;
-  gap:18px;
-  padding:20px 4px;
-  cursor:pointer;
+  display:grid;grid-template-columns:52px 1fr 140px 150px 110px 24px;
+  align-items:center;gap:18px;padding:20px 4px;cursor:pointer;
   transition:background .2s ease;
+  background:none;border:none;width:100%;text-align:left;color:inherit;font:inherit;
 }
 
-.ledger-row-head:hover{
-  background:rgba(199,161,89,0.06);
-}
+.ledger-row-head:hover{background:rgba(190,157,93,0.06);}
+.ledger-row.open .ledger-row-head{background:rgba(190,157,93,0.08);}
 
-.ledger-row.open .ledger-row-head{
-  background:rgba(199,161,89,0.08);
-}
-
-.l-num{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold);
-  font-size:0.85rem;
-}
-
-.l-name{
-  font-family:'Fraunces',serif;
-  font-size:1.08rem;
-  font-weight:500;
-}
+.l-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:0.85rem;}
+.l-name{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:500;}
 
 .l-name .market{
-  display:block;
-  font-family:'Manrope',sans-serif;
-  font-size:0.76rem;
-  color:var(--stone-light);
-  margin-top:3px;
-  font-weight:400;
+  display:block;font-family:'Manrope',sans-serif;
+  font-size:0.76rem;color:var(--stone-light);margin-top:3px;font-weight:400;
 }
 
-.l-bar-wrap{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
+.l-bar-wrap{display:flex;flex-direction:column;gap:6px;}
+.l-bar-track{height:4px;background:rgba(252,250,243,0.12);width:100%;overflow:hidden;}
+.l-bar-fill{height:100%;background:var(--gold);}
 
-.l-bar-track{
-  height:4px;
-  background:rgba(252,250,243,0.12);
-  width:100%;
-  overflow:hidden;
-}
-
-.l-bar-fill{
-  height:100%;
-  background:var(--gold);
-}
-
-.l-hours{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.82rem;
-  color:var(--white);
-}
+.l-hours{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--white);}
 
 .l-pct{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.85rem;
-  color:var(--gold-light);
-  text-align:right;
+  font-family:'IBM Plex Mono',monospace;font-size:0.85rem;
+  color:var(--gold-light);text-align:right;
 }
 
 .l-chevron{
-  font-size:1.1rem;
-  color:var(--stone-light);
-  transition:transform .3s ease;
-  text-align:center;
+  font-size:1.1rem;color:var(--stone-light);
+  transition:transform .3s ease;text-align:center;
 }
 
-.ledger-row.open .l-chevron{
-  transform:rotate(45deg);
-  color:var(--gold);
-}
+.ledger-row.open .l-chevron{transform:rotate(45deg);color:var(--gold);}
 
 .ledger-detail{
-  max-height:0;
-  overflow:hidden;
+  max-height:0;overflow:hidden;
   transition:max-height .5s ease, padding .5s ease;
   padding:0 4px;
 }
 
-.ledger-row.open .ledger-detail{
-  max-height:900px;
-  padding:4px 4px 32px;
-}
+.ledger-row.open .ledger-detail{max-height:900px;padding:4px 4px 32px;}
 
-.detail-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  padding-top:12px;
-}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:12px;}
 
 .detail-block h4{
-  font-family:'IBM Plex Mono',monospace;
-  text-transform:uppercase;
-  font-size:0.7rem;
-  letter-spacing:0.1em;
-  color:var(--gold);
-  font-weight:600;
-  margin-bottom:10px;
+  font-family:'IBM Plex Mono',monospace;text-transform:uppercase;
+  font-size:0.7rem;letter-spacing:0.1em;color:var(--gold);
+  font-weight:600;margin-bottom:10px;
 }
 
-.detail-block p{
-  font-size:0.92rem;
-  line-height:1.7;
-  color:var(--stone-light);
-  margin:0;
-}
+.detail-block p{font-size:0.92rem;line-height:1.7;color:var(--stone-light);margin:0;}
 
-.flow{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:14px;
-}
+.flow{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
 
 .flow-line{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  color:var(--white);
-  display:flex;
-  gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
+  color:var(--white);display:flex;gap:10px;
 }
 
-.flow-line .tag{
-  color:var(--gold);
-  min-width:56px;
-}
+.flow-line .tag{color:var(--gold);min-width:56px;}
 
-.stack-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:16px;
-}
+.stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 
 .stack-tag{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.68rem;
-  border:1px solid rgba(252,250,243,0.25);
-  padding:5px 10px;
-  color:var(--stone-light);
-  letter-spacing:0.02em;
+  font-family:'IBM Plex Mono',monospace;font-size:0.68rem;
+  border:1px solid rgba(252,250,243,0.25);padding:5px 10px;
+  color:var(--stone-light);letter-spacing:0.02em;
 }
 
 .evidence-btn{
-  margin-top:20px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:transparent;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.75rem;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  padding:11px 18px;
-  cursor:pointer;
-  transition:all .25s ease;
+  margin-top:20px;display:inline-flex;align-items:center;gap:8px;
+  background:transparent;border:1px solid var(--gold);color:var(--gold);
+  font-family:'IBM Plex Mono',monospace;font-size:0.75rem;
+  text-transform:uppercase;letter-spacing:0.05em;padding:11px 18px;
+  cursor:pointer;transition:all .25s ease;
 }
 
-.evidence-btn:hover{
-  background:var(--gold);
-  color:var(--ink);
-}
-
-/* =========================================================
-   EXPERIENCIA
-========================================================= */
+.evidence-btn:hover{background:var(--gold);color:var(--ink);}
 
 .timeline{
-  border-left:1px solid var(--gold-dim);
-  margin-left:8px;
-  padding-left:36px;
-  display:flex;
-  flex-direction:column;
-  gap:44px;
+  border-left:1px solid var(--gold-dim);margin-left:8px;
+  padding-left:36px;display:flex;flex-direction:column;gap:44px;
 }
 
-.tl-item{
-  position:relative;
-}
+.tl-item{position:relative;}
 
 .tl-item::before{
-  content:'';
-  position:absolute;
-  left:-42px;
-  top:6px;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--gold);
-  border:2px solid var(--cream);
+  content:'';position:absolute;left:-42px;top:6px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);border:2px solid var(--cream);
 }
 
 .tl-date{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.74rem;
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:0.06em;
+  font-family:'IBM Plex Mono',monospace;font-size:0.74rem;
+  color:var(--gold);text-transform:uppercase;letter-spacing:0.06em;
 }
 
-.tl-role{
-  font-family:'Fraunces',serif;
-  font-size:1.28rem;
-  margin-top:6px;
-  color:var(--forest);
-}
+.tl-role{font-family:'Fraunces',serif;font-size:1.28rem;margin-top:6px;color:var(--forest);}
+.tl-company{font-size:0.92rem;color:var(--stone);margin-top:2px;font-weight:600;}
 
-.tl-company{
-  font-size:0.92rem;
-  color:var(--stone);
-  margin-top:2px;
-  font-weight:600;
-}
+.tl-item ul{margin:14px 0 0;padding-left:18px;color:#2b2c26;}
+.tl-item li{margin-bottom:8px;line-height:1.6;font-size:0.94rem;}
+.tl-item li strong{color:var(--forest);}
 
-.tl-item ul{
-  margin:14px 0 0;
-  padding-left:18px;
-  color:#2b2c26;
-}
+.edu-section{background:var(--forest);color:var(--white);}
+.edu-section .eyebrow{color:var(--gold-light);}
+.edu-section .section-head h2{color:var(--white);}
+.edu-section .section-head p{color:rgba(252,250,243,0.75);}
 
-.tl-item li{
-  margin-bottom:8px;
-  line-height:1.6;
-  font-size:0.94rem;
-}
-
-.tl-item li strong{
-  color:var(--forest);
-}
-
-/* =========================================================
-   EDUCACIÓN
-========================================================= */
-
-.edu-section{
-  background:var(--forest);
-  color:var(--white);
-}
-
-.edu-section .eyebrow{
-  color:var(--gold-light);
-}
-
-.edu-section .section-head h2{
-  color:var(--white);
-}
-
-.edu-section .section-head p{
-  color:rgba(252,250,243,0.75);
-}
-
-.edu-grid{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:24px;
-}
+.edu-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;}
 
 .edu-card{
-  border:1px solid rgba(199,161,89,0.4);
-  padding:32px;
+  border:1px solid rgba(190,157,93,0.4);padding:32px;
   background:rgba(252,250,243,0.03);
 }
 
-.edu-card h3{
-  font-size:1.2rem;
-  color:var(--gold-light);
-  font-weight:500;
-}
-
-.edu-card .school{
-  color:rgba(252,250,243,0.7);
-  font-size:0.88rem;
-  margin-top:6px;
-}
+.edu-card h3{font-size:1.2rem;color:var(--gold-light);font-weight:500;}
+.edu-card .school{color:rgba(252,250,243,0.7);font-size:0.88rem;margin-top:6px;}
 
 .edu-card .meta{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.74rem;
-  color:var(--gold);
-  margin-top:12px;
-  letter-spacing:0.02em;
+  font-family:'IBM Plex Mono',monospace;font-size:0.74rem;
+  color:var(--gold);margin-top:12px;letter-spacing:0.02em;
 }
 
-.cert-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
+.cert-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
 
 .cert-list li{
-  border-bottom:1px solid rgba(252,250,243,0.12);
-  padding-bottom:12px;
-  font-size:0.92rem;
-  color:rgba(252,250,243,0.85);
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
+  border-bottom:1px solid rgba(252,250,243,0.12);padding-bottom:12px;
+  font-size:0.92rem;color:rgba(252,250,243,0.85);
+  display:flex;justify-content:space-between;gap:12px;
 }
 
 .cert-list li span{
-  color:var(--stone-light);
-  font-size:0.78rem;
+  color:var(--stone-light);font-size:0.78rem;
   font-family:'IBM Plex Mono',monospace;
 }
 
 .award-box{
-  margin-top:24px;
-  border-left:2px solid var(--gold);
-  padding:18px 22px;
-  background:rgba(199,161,89,0.08);
+  margin-top:24px;border-left:2px solid var(--burgundy-light);
+  padding:18px 22px;background:rgba(156,82,82,0.10);
 }
 
-.award-box p{
-  margin:0;
-  font-size:0.92rem;
-  line-height:1.6;
-  color:rgba(252,250,243,0.9);
-}
+.award-box p{margin:0;font-size:0.92rem;line-height:1.6;color:rgba(252,250,243,0.9);}
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-  background:var(--ink);
-  color:var(--white);
-  padding:80px 0 40px;
-  text-align:center;
-}
-
-footer h2{
-  font-size:clamp(1.8rem,4vw,2.6rem);
-  color:var(--white);
-}
-
-footer .hero-sub{
-  margin:18px auto 0;
-  text-align:center;
-}
-
-.contact-links{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  margin-top:38px;
-  flex-wrap:wrap;
-}
+footer{background:var(--ink);color:var(--white);padding:80px 0 40px;text-align:center;}
+footer h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);}
+footer .hero-sub{margin:18px auto 0;text-align:center;}
+.contact-links{display:flex;gap:20px;justify-content:center;margin-top:38px;flex-wrap:wrap;}
 
 .foot-meta{
-  margin-top:70px;
-  padding-top:26px;
-  border-top:1px solid rgba(252,250,243,0.1);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  color:var(--stone-light);
-  letter-spacing:0.03em;
+  margin-top:70px;padding-top:26px;border-top:1px solid rgba(252,250,243,0.1);
+  font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+  color:var(--stone-light);letter-spacing:0.03em;
 }
-
-/* =========================================================
-   LIGHTBOX
-========================================================= */
 
 .lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(6,8,7,0.94);
-  z-index:1000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-  flex-direction:column;
+  position:fixed;inset:0;background:rgba(6,8,7,0.94);z-index:1000;
+  display:none;align-items:center;justify-content:center;
+  padding:40px;flex-direction:column;
 }
 
-.lightbox.show{
-  display:flex;
-}
+.lightbox.show{display:flex;}
 
 .lightbox img{
-  max-width:min(1000px,92vw);
-  max-height:78vh;
-  border:1px solid var(--gold-dim);
-  background:#111;
+  max-width:min(1000px,92vw);max-height:78vh;
+  border:1px solid var(--gold-dim);background:#111;
 }
 
 .lightbox-cap{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--gold-light);
-  font-size:0.8rem;
-  margin-top:18px;
-  text-align:center;
-  letter-spacing:0.03em;
+  font-family:'IBM Plex Mono',monospace;color:var(--gold-light);
+  font-size:0.8rem;margin-top:18px;text-align:center;letter-spacing:0.03em;
 }
 
 .lightbox-close{
-  position:absolute;
-  top:28px;
-  right:32px;
-  background:none;
-  border:1px solid rgba(252,250,243,0.3);
-  color:var(--white);
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:1.2rem;
-  transition:all .2s ease;
+  position:absolute;top:28px;right:32px;background:none;
+  border:1px solid rgba(252,250,243,0.3);color:var(--white);
+  width:42px;height:42px;border-radius:50%;cursor:pointer;
+  font-size:1.2rem;transition:all .2s ease;
 }
 
-.lightbox-close:hover{
-  border-color:var(--gold);
-  color:var(--gold);
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+.lightbox-close:hover{border-color:var(--gold);color:var(--gold);}
 
 @media(max-width:900px){
-
-  .featured-grid{
-    grid-template-columns:1fr;
-  }
-
-  .automation-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .automation-item:nth-child(3n){
-    border-right:1px solid var(--gold-dim);
-  }
-
-  .automation-item:nth-child(2n){
-    border-right:none;
-  }
-
-  .process-grid{
-    grid-template-columns:1fr;
-  }
-
-  .process-step{
-    border-right:none;
-    border-bottom:1px solid var(--gold-dim);
-  }
-
-  .process-step:last-child{
-    border-bottom:none;
-  }
-
-  .edu-grid{
-    grid-template-columns:1fr;
-  }
+  .featured-grid{grid-template-columns:1fr;}
+  .automation-grid{grid-template-columns:repeat(2,1fr);}
+  .automation-item:nth-child(3n){border-right:1px solid var(--gold-dim);}
+  .automation-item:nth-child(2n){border-right:none;}
+  .process-grid{grid-template-columns:1fr;}
+  .process-step{border-right:none;border-bottom:1px solid var(--gold-dim);}
+  .process-step:last-child{border-bottom:none;}
+  .edu-grid{grid-template-columns:1fr;}
 }
 
 @media(max-width:800px){
-
-  .detail-grid{
-    grid-template-columns:1fr;
-  }
-
-  .measurement-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .measurement-grid>div:nth-child(2){
-    border-right:none;
-  }
-
-  .measurement-grid>div{
-    border-bottom:1px solid rgba(252,250,243,.12);
-  }
+  .detail-grid{grid-template-columns:1fr;}
+  .measurement-grid{grid-template-columns:repeat(2,1fr);}
+  .measurement-grid>div:nth-child(2){border-right:none;}
+  .measurement-grid>div{border-bottom:1px solid rgba(252,250,243,.12);}
 }
 
 @media(max-width:760px){
-
-  .ledger-row-head{
-    grid-template-columns:32px 1fr 24px;
-    row-gap:8px;
-  }
-
-  .l-bar-wrap,
-  .l-pct,
-  .l-hours{
-    grid-column:2 / 3;
-  }
-
+  .ledger-row-head{grid-template-columns:32px 1fr 24px;row-gap:8px;}
+  .l-bar-wrap,.l-pct,.l-hours{grid-column:2 / 3;}
   .ledger-row-head{
     grid-template-areas:
       "num name chev"
       ". hours ."
       ". bar .";
   }
-
-  .l-num{
-    grid-area:num;
-  }
-
-  .l-name{
-    grid-area:name;
-  }
-
-  .l-chevron{
-    grid-area:chev;
-  }
-
-  .l-hours{
-    grid-area:hours;
-  }
-
-  .l-bar-wrap{
-    grid-area:bar;
-  }
-
-  .l-pct{
-    display:none;
-  }
+  .l-num{grid-area:num;}
+  .l-name{grid-area:name;}
+  .l-chevron{grid-area:chev;}
+  .l-hours{grid-area:hours;}
+  .l-bar-wrap{grid-area:bar;}
+  .l-pct{display:none;}
 }
 
 @media(max-width:600px){
-
-  .automation-grid{
-    grid-template-columns:1fr;
-  }
-
+  .automation-grid{grid-template-columns:1fr;}
   .automation-item,
   .automation-item:nth-child(3n),
-  .automation-item:nth-child(2n){
-    border-right:none;
-  }
-
-  .measurement-grid{
-    grid-template-columns:1fr;
-  }
-
-  .measurement-grid>div{
-    border-right:none;
-  }
-
-  .measurement-box{
-    padding:20px;
-  }
-
-  .formula{
-    padding:22px;
-  }
+  .automation-item:nth-child(2n){border-right:none;}
+  .measurement-grid{grid-template-columns:1fr;}
+  .measurement-grid>div{border-right:none;}
+  .measurement-box{padding:20px;}
+  .formula{padding:22px;}
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="grain"></div>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+<div class="grain" aria-hidden="true"></div>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
+<!-- NAV -->
 <header class="nav">
-
   <div class="nav-inner">
-
     <div class="logo">
-      <span class="mono">EM</span>
+      <span class="mono" aria-hidden="true">EM</span>
       Edgar Maldonado
     </div>
 
-    <button
-      class="burger"
-      id="burger"
-      aria-label="Abrir menú">
-      ☰
-    </button>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
 
-    <nav class="links" id="navLinks">
-
+    <nav class="links" id="navLinks" aria-label="Navegación principal">
       <a href="#perfil">Perfil</a>
-
       <a href="#stack">Stack</a>
-
       <a href="#arquitectura">Arquitectura</a>
-
       <a href="#destacados">Proyectos</a>
-
       <a href="#ledger">21 casos</a>
-
       <a href="#experiencia">Experiencia</a>
-
       <a href="#educacion">Educación</a>
-
-      <a href="#contacto" class="nav-cta">
-        Contacto
-      </a>
-
+      <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
-
   </div>
-
 </header>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
+<!-- HERO -->
 <section class="hero" id="inicio">
-
   <div class="container hero-grid">
-
     <div>
-
-      <span class="eyebrow">
-        AUTOMATIZACIÓN &amp; CONTROL FINANCIERO
-      </span>
+      <span class="eyebrow">FINANZAS · OPERACIONES · AUTOMATIZACIÓN</span>
 
       <h1>
         Automatizo procesos financieros con
@@ -1639,156 +808,60 @@ footer .hero-sub{
       </h1>
 
       <p class="hero-sub">
-        Diseño soluciones de automatización para procesos financieros y
-        administrativos: ETL, conciliaciones, facturación, cobranza,
-        validaciones, segmentación y distribución de información.
-        Excel VBA es mi principal motor de automatización, complementado
-        con Power Automate y RPA cuando el proceso lo requiere.
+        Diseño soluciones de automatización para procesos financieros y administrativos: ETL, conciliaciones, facturación, cobranza, validaciones, segmentación y distribución de información. Excel VBA es mi principal motor de automatización, complementado con Power Automate y RPA cuando el proceso lo requiere.
       </p>
 
       <div class="hero-actions">
-
-        <a
-          href="#destacados"
-          class="btn btn-gold">
-          Ver proyectos destacados →
-        </a>
-
-        <a
-          href="Edgar_Maldonado_CV.pdf"
-          class="btn btn-outline"
-          download>
-          Descargar CV
-        </a>
-
-        <a
-          href="Edgar_Maldonado_Reporte_Impacto_Automatizaciones_Procesos.pdf"
-          class="btn btn-outline"
-          download>
-          Descargar Reporte de Impacto
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/maldonadoedgar"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-outline">
-          LinkedIn
-        </a>
-
+        <a href="#destacados" class="btn btn-gold">Ver proyectos destacados →</a>
+        <a href="Edgar_Maldonado_CV.pdf" class="btn btn-outline" download>Descargar CV</a>
+        <a href="Edgar_Maldonado_Reporte_Impacto_Automatizaciones_Procesos.pdf" class="btn btn-outline" download>Descargar Reporte de Impacto</a>
+        <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
       </div>
 
       <p class="hero-note">
         <span>ENFOQUE</span>
         No empiezo por la herramienta. Empiezo por el proceso.
       </p>
-
     </div>
-
 
     <div class="ledger-strip">
-
       <div class="stat">
-
-        <span
-          class="num"
-          data-count="9052">
-          0
-        </span>
-
-        <span class="lbl">
-          Horas / año ahorradas
-        </span>
-
+        <span class="num" data-count="9052">9,052</span>
+        <span class="lbl">Horas / año ahorradas</span>
       </div>
 
-
       <div class="stat">
-
-        <span
-          class="num"
-          data-count="21">
-          0
-        </span>
-
-        <span class="lbl">
-          Soluciones implementadas
-        </span>
-
+        <span class="num" data-count="21">21</span>
+        <span class="lbl">Soluciones implementadas</span>
       </div>
 
-
       <div class="stat">
-
-        <span
-          class="num"
-          data-count="84.4"
-          data-decimal="1">
-          0
-        </span>
-
-        <span class="lbl">
-          % reducción promedio / proceso
-        </span>
-
+        <span class="num" data-count="84.4" data-decimal="1">84.4</span>
+        <span class="lbl">% reducción agregada de tiempo</span>
       </div>
 
-
       <div class="stat">
-
-        <span
-          class="num"
-          data-count="4">
-          0
-        </span>
-
-        <span class="lbl">
-          Países operados
-        </span>
-
+        <span class="num" data-count="4">4</span>
+        <span class="lbl">Países operados</span>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     PERFIL
-===================================================== -->
-
+<!-- PERFIL -->
 <section class="perfil" id="perfil">
-
   <div class="container perfil-grid">
-
     <div class="reveal">
-
-      <div class="monogram">
-        <span>EM</span>
-      </div>
-
+      <div class="monogram" aria-hidden="true"><span>EM</span></div>
       <div class="badge-row">
-
-        <span class="badge">
-          CHIHUAHUA, MX
-        </span>
-
-        <span class="badge">
-          MENCIÓN HONORÍFICA IA
-        </span>
-
+        <span class="badge">CHIHUAHUA, MX</span>
+        <span class="badge">BECA 100% · IA</span>
+        <span class="badge">MENCIÓN HONORÍFICA</span>
       </div>
-
     </div>
 
-
     <div class="perfil-text reveal">
-
-      <span class="eyebrow">
-        Perfil profesional
-      </span>
+      <span class="eyebrow">Perfil profesional</span>
 
       <h2 style="margin-top:10px;color:var(--forest);">
         Rigor en control financiero y auditoría operativa,
@@ -1796,2574 +869,959 @@ footer .hero-sub{
       </h2>
 
       <p style="margin-top:22px;">
-
-        <strong>
-          Especialista en cuentas por cobrar
-        </strong>
-
-        en EssilorLuxottica México, donde optimizo la operación financiera
-        para <strong>54 clientes en Colombia</strong>, incluidos 4 estratégicos,
-        y gestiono más de <strong>8,000 órdenes anuales</strong> de facturación,
-        notas de crédito y conciliación.
-
+        <strong>Especialista en cuentas por cobrar</strong> en EssilorLuxottica México,
+        donde administro una cartera de <strong>300 clientes en Colombia</strong>
+        y proceso más de <strong>8,500 documentos anuales</strong>
+        (facturas, notas de crédito, conciliaciones y devoluciones).
       </p>
 
       <p>
-
-        Mi trabajo diario combina el rigor del control financiero con la
-        construcción de herramientas. Mi principal especialidad es
-        <strong>Excel VBA aplicado a automatización de procesos</strong>:
+        Mi especialidad es <strong>Excel VBA aplicado a automatización de procesos</strong>:
         ETL, limpieza de datos, reglas de negocio, conciliaciones,
         búsquedas multicriterio, generación de archivos y procesamiento masivo.
-
-        Complemento este stack con
-        <strong>Power Automate y UiPath StudioX</strong>
+        Complemento el stack con <strong>Power Automate y UiPath StudioX</strong>
         cuando el proceso requiere integración o ejecución desatendida.
-
       </p>
 
       <p>
-
-        Actualmente curso el
-        <strong>Máster en Inteligencia Artificial</strong>
-        (Universidad TecMilenio × IBM), con beca del 100% por el impacto
-        operativo de mis soluciones.
-
+        He implementado <strong>13 automatizaciones propias</strong> para mi cartera
+        (983 hrs/año, −74% tiempos) y <strong>7 herramientas a medida</strong> para
+        6 analistas de AR, Collections y AP en México, Canadá, Colombia y República Dominicana
+        (7,900 hrs/año, −86% trabajo manual).
+        Adicionalmente asesoro a <strong>10 analistas</strong> en Excel y Power Automate.
       </p>
 
       <p>
-
-        Asesoro a equipos de AR/AP de distintas entidades en la
-        optimización de procesos con Excel y la evaluación de flujos
-        en Power Automate.
-
+        Transformé los controles de cartera y las dinámicas de cierre para absorber
+        un <strong>crecimiento de 68% en la facturación anual entre 2022 y 2025</strong>
+        sin ampliar la plantilla en Chihuahua. Doy respaldo a la operación de AR de
+        Luxottica Argentina en ausencias y picos de demanda, aplicando en promedio
+        <strong>122 pagos mensuales en SAP (F-28)</strong>.
       </p>
 
+      <p>
+        <strong>Máster en Inteligencia Artificial</strong> (Universidad TecMilenio × IBM),
+        graduado con <strong>mención honorífica de excelencia académica</strong> y
+        <strong>beca del 100%</strong> otorgada por el impacto operativo de mis soluciones.
+      </p>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     STACK
-===================================================== -->
-
+<!-- STACK -->
 <section id="stack">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Stack de automatización
-      </span>
-
-      <h2>
-        Excel VBA como núcleo. Automatización más allá de Excel
-        cuando el proceso lo requiere.
-      </h2>
-
+      <span class="eyebrow">Stack de automatización</span>
+      <h2>Excel VBA como núcleo. Automatización más allá de Excel cuando el proceso lo requiere.</h2>
       <p>
-
         Mi principal experiencia está en Excel VBA, especialmente en ETL,
-        transformación de datos, reglas de negocio, conciliaciones y
-        generación de archivos.
-
+        transformación de datos, reglas de negocio, conciliaciones y generación de archivos.
         Power Automate y UiPath complementan los procesos que requieren
         integración, distribución o ejecución desatendida.
-
       </p>
-
     </div>
-
 
     <div class="chips reveal">
-
-      <span class="chip">
-        Excel Avanzado (VBA / Macros)
-      </span>
-
-      <span class="chip">
-        Power Automate
-      </span>
-
-      <span class="chip">
-        UiPath StudioX
-      </span>
-
-      <span class="chip">
-        SAP FI (AR/AP)
-      </span>
-
-      <span class="chip">
-        DMS Advance ERP
-      </span>
-
-      <span class="chip">
-        Microsip ERP
-      </span>
-
-      <span class="chip">
-        QlikView
-      </span>
-
-      <span class="chip">
-        Parsing ETL (CSV/TXT)
-      </span>
-
-      <span class="chip">
-        CDO / SMTP
-      </span>
-
-      <span class="chip">
-        OneDrive · Outlook API
-      </span>
-
+      <span class="chip">Excel Avanzado (VBA / Macros)</span>
+      <span class="chip">Power Automate</span>
+      <span class="chip">UiPath StudioX</span>
+      <span class="chip">SAP FI (AR/AP)</span>
+      <span class="chip">DMS Advance ERP</span>
+      <span class="chip">Microsip ERP</span>
+      <span class="chip">QlikView</span>
+      <span class="chip">Parsing ETL (CSV/TXT)</span>
+      <span class="chip">CDO / SMTP</span>
+      <span class="chip">OneDrive · Outlook API</span>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     ARQUITECTURA
-===================================================== -->
-
-<section
-  class="architecture-section"
-  id="arquitectura">
-
+<!-- ARQUITECTURA -->
+<section class="architecture-section" id="arquitectura">
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Arquitectura de soluciones
-      </span>
-
-      <h2>
-        No desarrollo macros aisladas.
-        Construyo flujos completos.
-      </h2>
-
+      <span class="eyebrow">Arquitectura de soluciones</span>
+      <h2>No desarrollo macros aisladas.<br>Construyo flujos completos.</h2>
       <p>
-
         Las automatizaciones parten del proceso y sus reglas de negocio.
         La herramienta se selecciona según el problema, volumen, frecuencia,
         integración requerida y nivel de intervención humana.
-
       </p>
-
     </div>
-
 
     <div class="architecture-grid reveal">
-
-
-      <!-- ETL -->
-
       <article class="architecture-card">
-
-        <span class="architecture-num">
-          01
-        </span>
-
-        <h3>
-          ETL en Excel VBA
-        </h3>
-
+        <span class="architecture-num">01</span>
+        <h3>ETL en Excel VBA</h3>
         <div class="architecture-flow">
-
-          <span>INPUT</span>
-          <b>→</b>
-          <span>VALIDACIÓN</span>
-          <b>→</b>
-          <span>TRANSFORMACIÓN</span>
-          <b>→</b>
-          <span>REGLAS</span>
-          <b>→</b>
-          <span>OUTPUT</span>
-
+          <span>INPUT</span><b>→</b><span>VALIDACIÓN</span><b>→</b>
+          <span>TRANSFORMACIÓN</span><b>→</b><span>REGLAS</span><b>→</b><span>OUTPUT</span>
         </div>
-
         <p>
-
-          Procesamiento de CSV, TXT y múltiples libros Excel,
-          limpieza de datos, enriquecimiento mediante búsquedas,
-          aplicación de reglas de negocio y generación automática
-          de archivos finales.
-
+          Procesamiento de CSV, TXT y múltiples libros Excel, limpieza de datos,
+          enriquecimiento mediante búsquedas, aplicación de reglas de negocio
+          y generación automática de archivos finales.
         </p>
-
         <div class="architecture-tags">
-
-          <span>VBA</span>
-          <span>CSV</span>
-          <span>TXT</span>
-          <span>VLOOKUP</span>
-          <span>Data Cleaning</span>
-
+          <span>VBA</span><span>CSV</span><span>TXT</span>
+          <span>VLOOKUP</span><span>Data Cleaning</span>
         </div>
-
       </article>
 
-
-      <!-- HYBRID -->
-
       <article class="architecture-card">
-
-        <span class="architecture-num">
-          02
-        </span>
-
-        <h3>
-          Automatización híbrida
-        </h3>
-
+        <span class="architecture-num">02</span>
+        <h3>Automatización híbrida</h3>
         <div class="architecture-flow">
-
-          <span>EXCEL</span>
-          <b>→</b>
-          <span>ONEDRIVE</span>
-          <b>→</b>
-          <span>POWER AUTOMATE</span>
-          <b>→</b>
-          <span>OUTLOOK</span>
-
+          <span>EXCEL</span><b>→</b><span>ONEDRIVE</span><b>→</b>
+          <span>POWER AUTOMATE</span><b>→</b><span>OUTLOOK</span>
         </div>
-
         <p>
-
-          VBA prepara, divide y estructura la información;
-          Power Automate se encarga de la distribución y ejecución
-          desatendida del flujo.
-
+          VBA prepara, divide y estructura la información; Power Automate
+          se encarga de la distribución y ejecución desatendida del flujo.
         </p>
-
         <div class="architecture-tags">
-
-          <span>Excel VBA</span>
-          <span>Power Automate</span>
-          <span>OneDrive</span>
-          <span>Outlook</span>
-
+          <span>Excel VBA</span><span>Power Automate</span>
+          <span>OneDrive</span><span>Outlook</span>
         </div>
-
       </article>
 
-
-      <!-- CONCILIACIÓN -->
-
       <article class="architecture-card">
-
-        <span class="architecture-num">
-          03
-        </span>
-
-        <h3>
-          Conciliación y control
-        </h3>
-
+        <span class="architecture-num">03</span>
+        <h3>Conciliación y control</h3>
         <div class="architecture-flow">
-
-          <span>FUENTE A</span>
-          <b>+</b>
-          <span>FUENTE B</span>
-          <b>→</b>
-          <span>MATCHING</span>
-          <b>→</b>
-          <span>EXCEPCIONES</span>
-
+          <span>FUENTE A</span><b>+</b><span>FUENTE B</span><b>→</b>
+          <span>MATCHING</span><b>→</b><span>EXCEPCIONES</span>
         </div>
-
         <p>
-
-          Cruce de diferentes fuentes de información para identificar
-          coincidencias, diferencias, duplicados y registros que requieren
-          revisión humana.
-
+          Cruce de diferentes fuentes de información para identificar coincidencias,
+          diferencias, duplicados y registros que requieren revisión humana.
         </p>
-
         <div class="architecture-tags">
-
-          <span>Cross-Validation</span>
-          <span>Matching</span>
-          <span>Deduplication</span>
-          <span>Auditoría</span>
-
+          <span>Cross-Validation</span><span>Matching</span>
+          <span>Deduplication</span><span>Auditoría</span>
         </div>
-
       </article>
 
-
-      <!-- BUSINESS RULES -->
-
       <article class="architecture-card">
-
-        <span class="architecture-num">
-          04
-        </span>
-
-        <h3>
-          Reglas de negocio
-        </h3>
-
+        <span class="architecture-num">04</span>
+        <h3>Reglas de negocio</h3>
         <div class="architecture-flow">
-
-          <span>DATOS</span>
-          <b>→</b>
-          <span>REGLAS</span>
-          <b>→</b>
-          <span>CLASIFICACIÓN</span>
-          <b>→</b>
-          <span>DECISIÓN</span>
-
+          <span>DATOS</span><b>→</b><span>REGLAS</span><b>→</b>
+          <span>CLASIFICACIÓN</span><b>→</b><span>DECISIÓN</span>
         </div>
-
         <p>
-
-          Automatización de criterios de facturación, precios,
-          categorías, condiciones comerciales, validaciones
-          y asignación de registros.
-
+          Automatización de criterios de facturación, precios, categorías,
+          condiciones comerciales, validaciones y asignación de registros.
         </p>
-
         <div class="architecture-tags">
-
-          <span>Pricing</span>
-          <span>Business Rules</span>
-          <span>Validation</span>
-          <span>SAP</span>
-
+          <span>Pricing</span><span>Business Rules</span>
+          <span>Validation</span><span>SAP</span>
         </div>
-
       </article>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     PROYECTOS DESTACADOS
-===================================================== -->
-
-<section
-  id="destacados"
-  class="featured-section">
-
+<!-- PROYECTOS DESTACADOS -->
+<section id="destacados" class="featured-section">
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Impacto destacado
-      </span>
-
-      <h2>
-        Tres automatizaciones que resumen cómo trabajo.
-      </h2>
-
+      <span class="eyebrow">Impacto destacado</span>
+      <h2>Tres automatizaciones que resumen cómo trabajo.</h2>
       <p>
-
         Seleccioné los casos con mayor impacto anual para mostrar primero
         el tipo de problemas que puedo detectar, automatizar y medir.
-
       </p>
-
     </div>
 
-
     <div class="featured-grid">
-
-
       <article class="featured-card reveal">
-
-        <span class="featured-num">
-          01
-        </span>
-
-        <div class="featured-hours">
-          5,756.8 hrs/año
-        </div>
-
-        <h3>
-          Envío de Correos de Cobranza
-        </h3>
-
+        <span class="featured-num">01</span>
+        <div class="featured-hours">5,756.8 hrs/año</div>
+        <h3>Envío de Correos de Cobranza</h3>
         <p>
-
           Automatización de reportes y despacho masivo para más de
           300 clientes mediante Excel VBA, Power Automate, OneDrive
           y Outlook API.
-
         </p>
-
         <div class="featured-meta">
-
-          <strong>99.9%</strong>
-          reducción · Canadá (CAD)
-
+          <strong>99.9%</strong> reducción · Canadá (CAD)
         </div>
-
       </article>
 
-
       <article class="featured-card reveal">
-
-        <span class="featured-num">
-          02
-        </span>
-
-        <div class="featured-hours">
-          1,178 hrs/año
-        </div>
-
-        <h3>
-          Consolidación de Cobranza
-        </h3>
-
+        <span class="featured-num">02</span>
+        <div class="featured-hours">1,178 hrs/año</div>
+        <h3>Consolidación de Cobranza</h3>
         <p>
-
           Saneamiento, estandarización y consolidación de archivos
           masivos para convertir bases operativas en información
           lista para análisis.
-
         </p>
-
         <div class="featured-meta">
-
-          <strong>98.2%</strong>
-          reducción · República Dominicana
-
+          <strong>98.2%</strong> reducción · República Dominicana
         </div>
-
       </article>
 
-
       <article class="featured-card reveal">
-
-        <span class="featured-num">
-          03
-        </span>
-
-        <div class="featured-hours">
-          380 hrs/año
-        </div>
-
-        <h3>
-          Clasificador de Pagos
-        </h3>
-
+        <span class="featured-num">03</span>
+        <div class="featured-hours">380 hrs/año</div>
+        <h3>Clasificador de Pagos</h3>
         <p>
-
           Motor ETL en VBA para leer estados bancarios TXT,
           estructurar registros y asignar clasificaciones
           automáticamente.
-
         </p>
-
         <div class="featured-meta">
-
-          <strong>93.1%</strong>
-          reducción · Canadá (CAD)
-
+          <strong>93.1%</strong> reducción · Canadá (CAD)
         </div>
-
       </article>
-
     </div>
-
 
     <div class="featured-cta">
-
-      <a
-        href="#ledger"
-        class="btn btn-gold">
-        Explorar los 21 casos →
-      </a>
-
+      <a href="#ledger" class="btn btn-gold">Explorar los 21 casos →</a>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     QUÉ PUEDO AUTOMATIZAR
-===================================================== -->
-
+<!-- QUÉ PUEDO AUTOMATIZAR -->
 <section class="automation-section">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Problemas que resuelvo
-      </span>
-
-      <h2>
-        De tareas repetitivas a flujos controlados.
-      </h2>
-
+      <span class="eyebrow">Problemas que resuelvo</span>
+      <h2>De tareas repetitivas a flujos controlados.</h2>
     </div>
-
 
     <div class="automation-grid reveal">
-
-
       <div class="automation-item">
-
         <span>01</span>
-
         <div>
-
-          <h3>
-            Reportes manuales
-          </h3>
-
-          <p>
-            Generación, limpieza, segmentación y distribución
-            automática de información.
-          </p>
-
+          <h3>Reportes manuales</h3>
+          <p>Generación, limpieza, segmentación y distribución automática de información.</p>
         </div>
-
       </div>
 
-
       <div class="automation-item">
-
         <span>02</span>
-
         <div>
-
-          <h3>
-            Facturación y prefacturación
-          </h3>
-
-          <p>
-            Validación de datos, reglas de negocio,
-            conciliaciones y preparación para ERP.
-          </p>
-
+          <h3>Facturación y prefacturación</h3>
+          <p>Validación de datos, reglas de negocio, conciliaciones y preparación para ERP.</p>
         </div>
-
       </div>
 
-
       <div class="automation-item">
-
         <span>03</span>
-
         <div>
-
-          <h3>
-            Conciliaciones
-          </h3>
-
-          <p>
-            Cruce de fuentes, identificación de diferencias
-            y clasificación de excepciones.
-          </p>
-
+          <h3>Conciliaciones</h3>
+          <p>Cruce de fuentes, identificación de diferencias y clasificación de excepciones.</p>
         </div>
-
       </div>
 
-
       <div class="automation-item">
-
         <span>04</span>
-
         <div>
-
-          <h3>
-            Archivos CSV / TXT
-          </h3>
-
-          <p>
-            Parsing, transformación, limpieza y enriquecimiento
-            de bases operativas.
-          </p>
-
+          <h3>Archivos CSV / TXT</h3>
+          <p>Parsing, transformación, limpieza y enriquecimiento de bases operativas.</p>
         </div>
-
       </div>
 
-
       <div class="automation-item">
-
         <span>05</span>
-
         <div>
-
-          <h3>
-            Envíos masivos
-          </h3>
-
-          <p>
-            Automatización de distribución mediante Power Automate,
-            Outlook y servicios de correo.
-          </p>
-
+          <h3>Envíos masivos</h3>
+          <p>Automatización de distribución mediante Power Automate, Outlook y servicios de correo.</p>
         </div>
-
       </div>
-
 
       <div class="automation-item">
-
         <span>06</span>
-
         <div>
-
-          <h3>
-            Procesos repetitivos
-          </h3>
-
-          <p>
-            Identificación de tareas candidatas a VBA,
-            Power Automate o RPA con UiPath.
-          </p>
-
+          <h3>Procesos repetitivos</h3>
+          <p>Identificación de tareas candidatas a VBA, Power Automate o RPA con UiPath.</p>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     CÓMO TRABAJO
-===================================================== -->
-
+<!-- CÓMO TRABAJO -->
 <section class="process-section">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Método de trabajo
-      </span>
-
-      <h2>
-        No empiezo por la herramienta.
-        Empiezo por el proceso.
-      </h2>
-
+      <span class="eyebrow">Método de trabajo</span>
+      <h2>No empiezo por la herramienta. Empiezo por el proceso.</h2>
     </div>
-
 
     <div class="process-grid reveal">
-
-
       <div class="process-step">
-
         <span>01</span>
-
-        <h3>
-          Detectar
-        </h3>
-
-        <p>
-          Identifico tareas repetitivas,
-          cuellos de botella y puntos de error.
-        </p>
-
+        <h3>Detectar</h3>
+        <p>Identifico tareas repetitivas, cuellos de botella y puntos de error.</p>
       </div>
 
-
       <div class="process-step">
-
         <span>02</span>
-
-        <h3>
-          Analizar
-        </h3>
-
-        <p>
-          Mapeo entradas, reglas de negocio,
-          excepciones y resultado esperado.
-        </p>
-
+        <h3>Analizar</h3>
+        <p>Mapeo entradas, reglas de negocio, excepciones y resultado esperado.</p>
       </div>
 
-
       <div class="process-step">
-
         <span>03</span>
-
-        <h3>
-          Automatizar
-        </h3>
-
-        <p>
-          Construyo la solución con la herramienta
-          adecuada al problema.
-        </p>
-
+        <h3>Automatizar</h3>
+        <p>Construyo la solución con la herramienta adecuada al problema.</p>
       </div>
 
-
       <div class="process-step">
-
         <span>04</span>
-
-        <h3>
-          Validar
-        </h3>
-
-        <p>
-          Pruebo resultados y mantengo controles
-          humanos donde son necesarios.
-        </p>
-
+        <h3>Validar</h3>
+        <p>Pruebo resultados y mantengo controles humanos donde son necesarios.</p>
       </div>
-
 
       <div class="process-step">
-
         <span>05</span>
-
-        <h3>
-          Medir
-        </h3>
-
-        <p>
-          Comparo antes vs. después para cuantificar
-          tiempo e impacto operativo.
-        </p>
-
+        <h3>Medir</h3>
+        <p>Comparo antes vs. después para cuantificar tiempo e impacto operativo.</p>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     MEDICIÓN DE IMPACTO
-===================================================== -->
-
+<!-- MEDICIÓN -->
 <section class="measurement-section">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Medición de impacto
-      </span>
-
-      <h2>
-        El ahorro no se declara. Se calcula.
-      </h2>
-
+      <span class="eyebrow">Medición de impacto</span>
+      <h2>El ahorro no se declara. Se calcula.</h2>
       <p>
-
         Cada automatización compara el tiempo requerido antes y después
         de implementar la solución, considerando la frecuencia con la
         que se ejecuta el proceso.
-
       </p>
-
     </div>
 
-
     <div class="measurement-box reveal">
-
-
       <div class="formula">
-
-        <span class="formula-label">
-          CÁLCULO DE AHORRO
-        </span>
-
-        <strong>
-          (Tiempo manual − Tiempo automatizado)
-          × Frecuencia anual
-        </strong>
-
-        <span class="formula-result">
-          = Horas operativas recuperadas
-        </span>
-
+        <span class="formula-label">CÁLCULO DE AHORRO</span>
+        <strong>(Tiempo manual − Tiempo automatizado) × Frecuencia anual</strong>
+        <span class="formula-result">= Horas operativas recuperadas</span>
       </div>
-
 
       <div class="measurement-grid">
-
-
         <div>
-
-          <span class="measurement-num">
-            01
-          </span>
-
-          <h3>
-            Antes
-          </h3>
-
-          <p>
-            Se registra el tiempo necesario para ejecutar
-            manualmente el proceso completo.
-          </p>
-
+          <span class="measurement-num">01</span>
+          <h3>Antes</h3>
+          <p>Se registra el tiempo necesario para ejecutar manualmente el proceso completo.</p>
         </div>
-
-
         <div>
-
-          <span class="measurement-num">
-            02
-          </span>
-
-          <h3>
-            Después
-          </h3>
-
-          <p>
-            Se mide el tiempo requerido después de implementar
-            la automatización.
-          </p>
-
+          <span class="measurement-num">02</span>
+          <h3>Después</h3>
+          <p>Se mide el tiempo requerido después de implementar la automatización.</p>
         </div>
-
-
         <div>
-
-          <span class="measurement-num">
-            03
-          </span>
-
-          <h3>
-            Frecuencia
-          </h3>
-
-          <p>
-            Se considera la frecuencia real de ejecución para
-            proyectar el impacto anual.
-          </p>
-
+          <span class="measurement-num">03</span>
+          <h3>Frecuencia</h3>
+          <p>Se considera la frecuencia real de ejecución para proyectar el impacto anual.</p>
         </div>
-
-
         <div>
-
-          <span class="measurement-num">
-            04
-          </span>
-
-          <h3>
-            Impacto
-          </h3>
-
-          <p>
-            El resultado permite comparar objetivamente
-            el esfuerzo operativo antes y después.
-          </p>
-
+          <span class="measurement-num">04</span>
+          <h3>Impacto</h3>
+          <p>El resultado permite comparar objetivamente el esfuerzo operativo antes y después.</p>
         </div>
-
       </div>
 
-
       <div class="measurement-disclaimer">
-
         Las horas presentadas corresponden a estimaciones de ahorro
         operativo calculadas a partir de tiempos de ejecución y
         frecuencia de cada proceso. No representan necesariamente
         reducción equivalente de plantilla.
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     LEDGER: 21 CASOS
-===================================================== -->
-
-<section
-  class="ledger-section"
-  id="ledger">
-
+<!-- LEDGER 21 CASOS -->
+<section class="ledger-section" id="ledger">
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Catálogo Operativo · 21 casos de uso
-      </span>
-
-      <h2>
-        Ordenado por impacto, no por antigüedad.
-      </h2>
-
+      <span class="eyebrow">Catálogo Operativo · 21 casos de uso</span>
+      <h2>Ordenado por impacto, no por antigüedad.</h2>
       <p>
-
         Soluciones diseñadas para transformar horas de carga manual
         en ejecuciones automatizadas de pocos minutos.
-
         Selecciona cualquier registro para consultar el problema,
         la solución implementada, las herramientas utilizadas y
         la comparativa antes vs. después.
-
       </p>
 
       <div style="margin-top:20px;">
-
-        <a
-          href="Edgar_Maldonado_Reporte_Impacto_Automatizaciones_Procesos.pdf"
-          class="btn btn-outline"
-          download>
-
+        <a href="Edgar_Maldonado_Reporte_Impacto_Automatizaciones_Procesos.pdf" class="btn btn-outline" download>
           Descargar Reporte PDF de Impacto Completo
-
         </a>
-
       </div>
-
     </div>
 
+    <noscript>
+      <div style="background:#6B2E2E;color:#FCFAF3;padding:14px 20px;margin-bottom:24px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;line-height:1.5;">
+        Para consultar el catálogo interactivo de 21 casos necesitas activar JavaScript en tu navegador.
+      </div>
+    </noscript>
 
-    <!-- FILTERS -->
-
-    <div
-      class="filters reveal"
-      id="filters">
-
-      <button
-        class="filter-btn active"
-        data-cat="all">
-        Todos (21)
-      </button>
-
-      <button
-        class="filter-btn"
-        data-cat="mailing">
-        Mailing &amp; Cloud (4)
-      </button>
-
-      <button
-        class="filter-btn"
-        data-cat="etl">
-        Ingesta &amp; Cobranza (5)
-      </button>
-
-      <button
-        class="filter-btn"
-        data-cat="facturacion">
-        Facturación &amp; Auditoría (11)
-      </button>
-
-      <button
-        class="filter-btn"
-        data-cat="tesoreria">
-        Tesorería (1)
-      </button>
-
+    <div class="filters reveal" id="filters" role="group" aria-label="Filtrar proyectos por categoría">
+      <button class="filter-btn active" data-cat="all" aria-pressed="true">Todos (21)</button>
+      <button class="filter-btn" data-cat="mailing" aria-pressed="false">Mailing &amp; Cloud (4)</button>
+      <button class="filter-btn" data-cat="etl" aria-pressed="false">Ingesta &amp; Cobranza (5)</button>
+      <button class="filter-btn" data-cat="facturacion" aria-pressed="false">Facturación &amp; Auditoría (11)</button>
+      <button class="filter-btn" data-cat="tesoreria" aria-pressed="false">Tesorería (1)</button>
     </div>
 
-
-    <div
-      class="ledger-summary reveal"
-      id="ledgerSummary">
-    </div>
-
-
-    <div
-      class="ledger-list reveal"
-      id="ledgerList">
-    </div>
-
+    <div class="ledger-summary reveal" id="ledgerSummary" aria-live="polite"></div>
+    <div class="ledger-list reveal" id="ledgerList"></div>
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     EXPERIENCIA
-===================================================== -->
-
+<!-- EXPERIENCIA -->
 <section id="experiencia">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Trayectoria Profesional
-      </span>
-
-      <h2>
-        Evolución en la gestión financiera
-        y optimización de procesos.
-      </h2>
-
+      <span class="eyebrow">Trayectoria Profesional</span>
+      <h2>Evolución en la gestión financiera y optimización de procesos.</h2>
     </div>
-
 
     <div class="timeline reveal">
-
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Sep 2021 — Actualidad
-        </div>
-
-        <div class="tl-role">
-          Especialista de Cuentas por Cobrar
-        </div>
-
-        <div class="tl-company">
-          EssilorLuxottica México
-        </div>
-
+        <div class="tl-date">Sep 2021 — Actualidad</div>
+        <div class="tl-role">Especialista de cuentas por cobrar</div>
+        <div class="tl-company">EssilorLuxottica México</div>
         <ul>
-
           <li>
-            Optimizo AR para <strong>54 clientes</strong>
-            en Colombia, gestionando +8,000 órdenes anuales
-            de facturación y conciliación.
+            Administro una cartera de <strong>300 clientes</strong> en Colombia y proceso
+            más de <strong>8,500 documentos anuales</strong> (facturas, notas de crédito,
+            conciliaciones y devoluciones).
           </li>
-
           <li>
-            Aumenté la facturación semanal
-            <strong>50%</strong>
-            con un control de órdenes pendientes.
+            Creé <strong>13 automatizaciones</strong> con Excel VBA y Power Automate
+            para mi cartera: <strong>−74% tiempos de ejecución</strong> y
+            <strong>983 hrs/año</strong> de ahorro.
           </li>
-
           <li>
-            Desarrollé <strong>21 automatizaciones</strong>
-            (VBA + Power Automate + UiPath) que representan
-            <strong>9,052 hrs/año</strong>
-            de ahorro operativo.
+            Diseñé <strong>7 herramientas a medida</strong> para 6 analistas de AR,
+            Collections y AP en México, Canadá, Colombia y República Dominicana:
+            <strong>−86% trabajo manual</strong> y <strong>7,900 hrs/año</strong> liberadas.
           </li>
-
           <li>
-            Soporte a pagos SAP (F-28) para Luxottica Argentina:
-            hasta 146 aplicaciones diarias con 99% de precisión.
+            Absorbí un <strong>crecimiento de 68% en la facturación anual (2022–2025)</strong>
+            sin ampliar la plantilla en Chihuahua, transformando controles de cartera
+            y dinámicas de cierre contable.
           </li>
-
           <li>
-            <strong>3.er lugar</strong>
-            en el Hackathon Corporativo de Automatización 2.0 —
-            robot UiPath que redujo 15% el tiempo de facturación.
+            Doy respaldo a AR de Luxottica Argentina en ausencias y picos de demanda,
+            aplicando en promedio <strong>122 pagos mensuales en SAP (F-28)</strong>.
           </li>
-
+          <li>
+            Asesoro a <strong>10 analistas</strong> en Excel y Power Automate;
+            una analista adaptó una solución de cobranza de mi autoría para automatizar
+            recordatorios de descuentos y avisos de cambios bancarios
+            (<strong>−20 min por ejecución</strong>).
+          </li>
+          <li>
+            <strong>3.er lugar</strong> en el Hackathon Corporativo de Automatización 2.0
+            (2022): robot UiPath StudioX que redujo el tiempo de facturación de
+            <strong>17 a 4 minutos (−76%)</strong> y generó
+            <strong>169 hrs/año</strong> de ahorro.
+          </li>
         </ul>
-
       </div>
 
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Sep 2020 — Mayo 2021
-        </div>
-
-        <div class="tl-role">
-          Auxiliar Contable en Cuentas por Cobrar
-        </div>
-
-        <div class="tl-company">
-          GWS Grupo Watt Solar
-        </div>
-
+        <div class="tl-date">Sep 2020 — Mayo 2021</div>
+        <div class="tl-role">Auxiliar contable en cuentas por cobrar</div>
+        <div class="tl-company">GWS Grupo Watt Solar</div>
         <ul>
-
           <li>
-            Diseñé un sistema de alertas de riesgo en Excel
-            para 60 clientes, recuperando
-            <strong>54%</strong>
-            de cartera vencida en 3 meses.
+            Diseñé en Excel un sistema de alertas de cobranza para una cartera de
+            <strong>100 clientes</strong>, que contribuyó a regularizar en tres meses el
+            <strong>30%</strong> de las cuentas con tres y cinco mensualidades vencidas.
           </li>
-
         </ul>
-
       </div>
 
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Jul 2019 — Feb 2020
-        </div>
-
-        <div class="tl-role">
-          Jefe Administrativo
-        </div>
-
-        <div class="tl-company">
-          INIFAP Centro Experimental La Campana
-        </div>
-
+        <div class="tl-date">Jul 2019 — Feb 2020</div>
+        <div class="tl-role">Jefe administrativo</div>
+        <div class="tl-company">INIFAP Centro Experimental La Campana</div>
         <ul>
-
           <li>
-            Incrementé la eficiencia administrativa
-            <strong>30%</strong>
-            liderando un equipo de 3 personas.
+            Coordiné a <strong>3 colaboradores</strong> de Finanzas, Recursos Humanos
+            y Recursos Materiales, y supervisé un presupuesto de
+            <strong>$50 millones MXN</strong> para <strong>5 proyectos</strong>.
           </li>
-
           <li>
-            Controlé un presupuesto de
-            <strong>$50 MDP</strong>
-            en 5 proyectos con un tablero analítico en Excel.
+            Implementé un tablero de seguimiento presupuestal para prevenir desviaciones,
+            reduje <strong>15% el tiempo de conciliación bancaria</strong> y establecí
+            conteos cíclicos semanales de inventario.
           </li>
-
         </ul>
-
       </div>
 
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Jun 2018 — Dic 2018
-        </div>
-
-        <div class="tl-role">
-          Analista de Contraloría de Crédito
-        </div>
-
-        <div class="tl-company">
-          Unión de Crédito Progreso
-        </div>
-
+        <div class="tl-date">Jun 2018 — Dic 2018</div>
+        <div class="tl-role">Analista de contraloría de crédito</div>
+        <div class="tl-company">Unión de Crédito Progreso</div>
         <ul>
-
           <li>
-            Auditoría de expedientes en 4 sucursales,
-            fortaleciendo el cumplimiento normativo.
+            Revisé más de <strong>100 expedientes crediticios</strong> en
+            <strong>4 sucursales</strong> y corregí inconsistencias documentales
+            para mitigar riesgos regulatorios y de incumplimiento en materia de
+            prevención de lavado de dinero.
           </li>
-
         </ul>
-
       </div>
 
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Oct 2016 — Jul 2017
-        </div>
-
-        <div class="tl-role">
-          Analista Financiero Regional
-        </div>
-
-        <div class="tl-company">
-          Grupo Yazaki
-        </div>
-
+        <div class="tl-date">Oct 2016 — Jul 2017</div>
+        <div class="tl-role">Analista financiero regional</div>
+        <div class="tl-company">Grupo Yazaki</div>
         <ul>
-
           <li>
-            Capacité a 35 empleados en conteos cíclicos;
-            mejoré el control de inventarios
-            <strong>25%</strong>
-            en 7 plantas.
+            Audité inventarios y mermas en <strong>7 plantas</strong>,
+            coordinando acciones con Producción y Fletes; elevé la exactitud
+            regional del inventario del <strong>65% al 81%</strong> mediante
+            seguimiento diario y capacitación a <strong>35 colaboradores</strong>.
           </li>
-
         </ul>
-
       </div>
 
-
       <div class="tl-item">
-
-        <div class="tl-date">
-          Sep 2015 — Mar 2016
-        </div>
-
-        <div class="tl-role">
-          Auxiliar Financiero en Cuentas por Pagar
-        </div>
-
-        <div class="tl-company">
-          Southco Inc.
-        </div>
-
+        <div class="tl-date">Sep 2015 — Mar 2016</div>
+        <div class="tl-role">Auxiliar financiero en cuentas por pagar</div>
+        <div class="tl-company">Southco Inc.</div>
         <ul>
-
           <li>
-            Administré pagos a +100 proveedores en SAP;
-            incrementé eficiencia de recepción y AP
-            <strong>40%</strong>.
+            Gestioné pagos a más de <strong>100 proveedores</strong> en SAP e incorporé
+            controles de validación con Almacén antes de liberar facturas,
+            reduciendo en <strong>25%</strong> las incidencias por mercancía no recibida.
           </li>
-
         </ul>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     EDUCACIÓN
-===================================================== -->
-
-<section
-  class="edu-section"
-  id="educacion">
-
+<!-- EDUCACIÓN -->
+<section class="edu-section" id="educacion">
   <div class="container">
-
     <div class="section-head reveal">
-
-      <span class="eyebrow">
-        Formación
-      </span>
-
-      <h2>
-        Certificado por el impacto,
-        becado por los resultados.
-      </h2>
-
+      <span class="eyebrow">Formación</span>
+      <h2>Certificado por el impacto, becado por los resultados.</h2>
     </div>
-
 
     <div class="edu-grid reveal">
-
-
       <div>
-
-
-        <div
-          class="edu-card"
-          style="margin-bottom:20px;">
-
-          <h3>
-            Máster en Inteligencia Artificial
-          </h3>
-
-          <div class="school">
-            Universidad TecMilenio · en colaboración con IBM
-          </div>
-
+        <div class="edu-card" style="margin-bottom:20px;">
+          <h3>Máster en Inteligencia Artificial</h3>
+          <div class="school">Universidad TecMilenio · en colaboración con IBM</div>
           <div class="meta">
-            SEP 2024 — ABR 2026 · BECA 100% ·
-            MENCIÓN HONORÍFICA DE EXCELENCIA
+            SEP 2024 — JUN 2026 · BECA 100% · MENCIÓN HONORÍFICA DE EXCELENCIA
           </div>
-
         </div>
-
 
         <div class="edu-card">
-
-          <h3>
-            Licenciatura en Administración Financiera
-          </h3>
-
-          <div class="school">
-            Universidad Autónoma de Chihuahua
-          </div>
-
-          <div class="meta">
-            2012 — 2016 · TITULADO
-          </div>
-
+          <h3>Licenciatura en Administración Financiera</h3>
+          <div class="school">Universidad Autónoma de Chihuahua</div>
+          <div class="meta">2012 — 2016 · TITULADO</div>
         </div>
-
 
         <div class="award-box">
-
           <p>
-
-            Becado por el comité corporativo de EssilorLuxottica
-            para cursar el Máster en Inteligencia Artificial,
-            en reconocimiento al impacto operativo y financiero
-            de las soluciones de automatización implementadas.
-
+            Becado por el comité corporativo de EssilorLuxottica (25%) junto con
+            la Secretaría de Innovación y Desarrollo Económico (25%) y TecMilenio (50%)
+            para cursar el Máster en Inteligencia Artificial, en reconocimiento al
+            impacto operativo y financiero de las soluciones de automatización implementadas.
           </p>
-
         </div>
-
       </div>
-
 
       <div class="edu-card">
-
-        <h3 style="margin-bottom:18px;">
-          Certificaciones
-        </h3>
-
+        <h3 style="margin-bottom:18px;">Certificaciones</h3>
         <ul class="cert-list">
-
-          <li>
-            RPA Developer
-            <span>UiPath Academy</span>
-          </li>
-
-          <li>
-            Excel avanzado
-            <span>Vanguardia Académica</span>
-          </li>
-
-          <li>
-            Dashboards y análisis de datos
-            <span>Udemy</span>
-          </li>
-
-          <li>
-            Excel profesional
-            <span>Udemy</span>
-          </li>
-
+          <li>Excel avanzado <span>Vanguardia Académica · 2025</span></li>
+          <li>RPA Developer <span>UiPath Academy · 2022</span></li>
+          <li>Excel profesional, dashboards y análisis de datos <span>Udemy · 2021</span></li>
         </ul>
 
+        <h3 style="margin:28px 0 14px;font-size:1rem;">Idiomas</h3>
+        <ul class="cert-list">
+          <li>Español <span>Nativo</span></li>
+          <li>Inglés <span>Intermedio · B1</span></li>
+        </ul>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =====================================================
-     CONTACTO
-===================================================== -->
-
+<!-- CONTACTO -->
 <footer id="contacto">
-
   <div class="container">
-
-    <span class="eyebrow">
-      Hablemos
-    </span>
+    <span class="eyebrow">Hablemos</span>
 
     <h2 style="margin-top:12px;">
-
-      Si tu equipo pierde horas en captura manual,
-      ya sé por dónde empezar.
-
+      Si tu equipo pierde horas en captura manual, ya sé por dónde empezar.
     </h2>
 
     <p class="hero-sub">
-
       Chihuahua, México · Disponible para conversar sobre
       automatización de procesos financieros y operativos.
-
     </p>
 
-
     <div class="contact-links">
-
-      <a
-        href="mailto:edgar079302@gmail.com"
-        class="btn btn-gold">
-
-        edgar079302@gmail.com
-
-      </a>
-
-
-      <a
-        href="https://www.linkedin.com/in/maldonadoedgar"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-outline">
-
-        LinkedIn ↗
-
-      </a>
-
+      <a href="mailto:edgar079302@gmail.com" class="btn btn-gold">edgar079302@gmail.com</a>
+      <a href="https://www.linkedin.com/in/maldonadoedgar" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn ↗</a>
     </div>
-
 
     <div class="foot-meta">
-
-      EDGAR MALDONADO GONZÁLEZ ·
-      +52 614 405 9373 ·
-      PORTAFOLIO DE AUTOMATIZACIÓN
-
+      EDGAR MALDONADO GONZÁLEZ · +52 614 405 9373 · PORTAFOLIO DE AUTOMATIZACIÓN
     </div>
-
   </div>
-
 </footer>
 
-
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
-
-<div
-  class="lightbox"
-  id="lightbox">
-
-  <button
-    class="lightbox-close"
-    id="lightboxClose"
-    aria-label="Cerrar evidencia">
-    ✕
-  </button>
-
-  <img
-    id="lightboxImg"
-    src=""
-    alt="Evidencia de automatización">
-
-  <div
-    class="lightbox-cap"
-    id="lightboxCap">
-  </div>
-
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCap" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar evidencia">✕</button>
+  <img id="lightboxImg" src="" alt="" loading="lazy" decoding="async">
+  <div class="lightbox-cap" id="lightboxCap"></div>
 </div>
 
-
 <script>
-
-/* =========================================================
+/* ============================================================
    DATA — 21 CASOS
-========================================================= */
+   Ajusta ASSETS_BASE si tus imágenes no están en /assets/
+   ============================================================ */
+const ASSETS_BASE = 'assets/';
 
 const projects = [
-
-  {
-    id:1,
-    name:"Envío de Correos de Cobranza",
-    market:"Canadá (CAD)",
-    hours:5756.8,
-    pct:99.9,
-    cat:"mailing",
-
-    stack:[
-      "Excel VBA",
-      "Power Automate",
-      "OneDrive",
-      "Outlook API"
-    ],
-
-    problem:
-      "Creación manual de reportes de cobranza y edición individual de plantillas para más de 300 clientes.",
-
-    solution:
-      "Motor VBA que separa los datos y genera archivos independientes, integrado con un flujo de Power Automate para el despacho masivo y desatendido vía OneDrive.",
-
-    before:"7,200 min/ejecución",
-    after:"4 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:2,
-    name:"Consolidación de Cobranza",
-    market:"República Dominicana",
-    hours:1178,
-    pct:98.2,
-    cat:"etl",
-
-    stack:[
-      "Excel VBA",
-      "Suite ETL",
-      "Data Cleaning"
-    ],
-
-    problem:
-      "Archivos masivos con miles de filas en blanco que bloquean los filtros operacionales de las sucursales Santo Domingo y Santiago.",
-
-    solution:
-      "Suite en VBA para saneamiento profundo de registros vacíos, estandarización y unificación instantánea de sucursales en una sola base analítica.",
-
-    before:"600 min/ejecución",
-    after:"11 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:3,
-    name:"Clasificador de Pagos",
-    market:"Canadá (CAD)",
-    hours:380,
-    pct:93.1,
-    cat:"etl",
-
-    stack:[
-      "Excel VBA",
-      "Parsing TXT/ASCII",
-      "Lookup dinámico"
-    ],
-
-    problem:
-      "Ingesta manual de estados bancarios en TXT a Excel, con clasificación y actualización manual en reportes compartidos.",
-
-    solution:
-      "Motor de ingesta ETL en VBA que lee el archivo TXT directo, estructura los datos y asigna clasificaciones por tipo de pago.",
-
-    before:"510 min/ejecución",
-    after:"7 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:4,
-    name:"Búsqueda e Identificación de Pagos",
-    market:"México (MEX)",
-    hours:292.5,
-    pct:37.5,
-    cat:"etl",
-
-    stack:[
-      "Excel VBA",
-      "Algoritmos de búsqueda",
-      "Depuración de duplicados"
-    ],
-
-    problem:
-      "Elevada carga operativa diaria en Cuentas por Cobrar para identificar pagos no reconocidos en extractos bancarios.",
-
-    solution:
-      "Motor de búsqueda y conciliación avanzada en VBA que concilia automáticamente entre 80% y 90% de los pagos no identificados sobre bases de Banamex y Santander.",
-
-    before:"60 min/ejecución",
-    after:"37.5 min/ejecución",
-
-    evidence:"Búsqueda e Identificación de Pagos.png"
-  },
-
-
-  {
-    id:5,
-    name:"Prefactura Luxottica",
-    market:"Operación propia (COL)",
-    hours:205.4,
-    pct:91.9,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Motor de reglas de precio",
-      "SAP"
-    ],
-
-    problem:
-      "Actualización manual de códigos SAP cruzando listas de precios, ajuste por renglón y segregación de devoluciones.",
-
-    solution:
-      "Solución VBA que consolida reportes, consulta la lista de precios del cliente, mapea códigos SAP/precios y aísla devoluciones para revisión focalizada.",
-
-    before:"258 min/ejecución",
-    after:"21 min/ejecución",
-
-    evidence:"Prefactura Luxottica.png"
-  },
-
-
-  {
-    id:6,
-    name:"Envío de Edo. Cuenta Opti Express",
-    market:"República Dominicana",
-    hours:184.0,
-    pct:95.8,
-    cat:"mailing",
-
-    stack:[
-      "Excel VBA",
-      "Power Automate",
-      "Outlook"
-    ],
-
-    problem:
-      "Envío manual y procesamiento individual de estados de cuenta para los clientes de Opti Express en República Dominicana.",
-
-    solution:
-      "Automatización mediante VBA para la generación masiva de los reportes e integración con Power Automate para su distribución desatendida.",
-
-    before:"120 min/ejecución",
-    after:"5 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:7,
-    name:"Envío de Consolidados (Outlook)",
-    market:"Operación propia (COL)",
-    hours:177.7,
-    pct:95.3,
-    cat:"mailing",
-
-    stack:[
-      "Excel VBA",
-      "Power Automate",
-      "Outlook API"
-    ],
-
-    problem:
-      "Despacho manual de adjuntos divididos por cliente, complicado tras la migración corporativa de Gmail a Outlook Web.",
-
-    solution:
-      "Solución híbrida: macro VBA que separa el reporte por NIT, y flujo desatendido en Power Automate que lee destinatarios y adjuntos desde OneDrive para el envío vía Outlook API.",
-
-    before:"215 min/ejecución",
-    after:"10 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:8,
-    name:"Facturación Automatizada (Robot)",
-    market:"Operación propia (COL)",
-    hours:169.0,
-    pct:76.5,
-    cat:"facturacion",
-
-    stack:[
-      "UiPath StudioX",
-      "Excel VBA",
-      "CSV"
-    ],
-
-    problem:
-      "Procesos repetitivos de digitación y ejecución de facturación que consumían tiempo operativo en la operación de Colombia.",
-
-    solution:
-      "Robot RPA desarrollado con UiPath StudioX en combinación con macros de Excel VBA para la ejecución desatendida de la facturación.",
-
-    before:"200 min/ejecución",
-    after:"47 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:9,
-    name:"Envío de Consolidados (Gmail)",
-    market:"Operación propia (COL)",
-    hours:123.1,
-    pct:90.4,
-    cat:"mailing",
-
-    stack:[
-      "Excel VBA",
-      "CDO / SMTP",
-      "QlikView"
-    ],
-
-    problem:
-      "Formateo manual, segregación por NIT y envío uno a uno del reporte semanal de facturación.",
-
-    solution:
-      "Automatización VBA en dos fases: macro de división por NIT y macro de envío masivo vía CDO/SMTP a cada destinatario.",
-
-    before:"157 min/ejecución",
-    after:"15 min/ejecución",
-
-    evidence:"Envío de Consolidados (Gmail).png"
-  },
-
-
-  {
-    id:10,
-    name:"Estructurador de Precios de Lentes Oftálmicos",
-    market:"Operación propia (COL)",
-    hours:117,
-    pct:34.6,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Conversión de divisas",
-      "CSV / DMS"
-    ],
-
-    problem:
-      "Alto tiempo depurando bases de importación, ajustando unidades de lentes y asignando precios antes de cargar al ERP DMS.",
-
-    solution:
-      "Depuración de registros, asignación de precios USD por cliente/categoría (PCAT) y exportación de CSV listo para ingesta en DMS.",
-
-    before:"26 min/factura",
-    after:"17 min/factura",
-
-    evidence:"Estructurador de Precios de Lentes Oftálmicos.png"
-  },
-
-
-  {
-    id:11,
-    name:"Programación de Pagos",
-    market:"Colombia (AP / CxP)",
-    hours:104,
-    pct:12.5,
-    cat:"tesoreria",
-
-    stack:[
-      "Excel VBA",
-      "Tablas dinámicas",
-      "Validaciones de tesorería"
-    ],
-
-    problem:
-      "Recolección y captura manual de información para el archivo semanal de pagos a proveedores del equipo de Tesorería.",
-
-    solution:
-      "Modelo de preparación en VBA que elimina la digitación de fechas, categorías y comentarios, manteniendo la validación humana de liquidez.",
-
-    before:"16 hrs/ejecución",
-    after:"14 hrs/ejecución",
-
-    evidence:"Programación de Pagos.png"
-  },
-
-
-  {
-    id:12,
-    name:"Segmentación Masiva por Clientes",
-    market:"Operación propia (COL)",
-    hours:103.1,
-    pct:95.2,
-    cat:"etl",
-
-    stack:[
-      "Excel VBA",
-      "Split Engine"
-    ],
-
-    problem:
-      "Filtrado, copiado y generación manual de archivos independientes por cliente desde el reporte general de facturación.",
-
-    solution:
-      "Motor VBA de segmentación masiva que filtra por NIT y guarda automáticamente libros individuales con nombres parametrizados.",
-
-    before:"125 min/ejecución",
-    after:"6 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:13,
-    name:"Prefactura Colsanitas (Laboratorios)",
-    market:"Operación propia (COL)",
-    hours:67.6,
-    pct:92.9,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Consolidación multi-fuente"
-    ],
-
-    problem:
-      "Inversión excesiva de tiempo en formateo y consolidación manual de remisiones pendientes quincenales.",
-
-    solution:
-      "Script VBA que consolida de forma desatendida datos de 3 fuentes distintas, aplicando la estructura solicitada por el cliente.",
-
-    before:"182 min quincenal",
-    after:"13 min quincenal",
-
-    evidence:"Prefactura Colsanitas.png"
-  },
-
-
-  {
-    id:14,
-    name:"Prefactura Precisionlab",
-    market:"Operación propia (COL)",
-    hours:46.8,
-    pct:75,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Dynamic VLOOKUP"
-    ],
-
-    problem:
-      "Aplicación manual de fórmulas de búsqueda complejas y formateo sobre el reporte de órdenes pendientes.",
-
-    solution:
-      "Script VBA parametrizado (InputBox) con VLOOKUPs dinámicos para depuración y formateo automático.",
-
-    before:"72 min/ejecución",
-    after:"18 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:15,
-    name:"Criterio de Facturación",
-    market:"Operación propia (COL)",
-    hours:45.9,
-    pct:75.7,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Pivot Tables",
-      "Slicers"
-    ],
-
-    problem:
-      "Proceso manual extenso para categorizar clientes según esquemas de facturación y armar resúmenes operacionales.",
-
-    solution:
-      "Solución VBA que limpia la base, aplica reglas de negocio de categorización y genera tablas dinámicas interactivas con Slicers.",
-
-    before:"70 min/ejecución",
-    after:"17 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:16,
-    name:"Validación de Entrega DIAN vs. DMS",
-    market:"Operación propia (COL)",
-    hours:43.3,
-    pct:83.3,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Conciliación fiscal"
-    ],
-
-    problem:
-      "Revisión manual línea por línea para verificar si las facturas del ERP DMS se enviaron a la DIAN y llegaron al cliente.",
-
-    solution:
-      "Motor de conciliación y auditoría en VBA que cruza bases, clasifica el estado real de notificación y genera el reporte de facturas no entregadas.",
-
-    before:"60 min/ejecución",
-    after:"10 min/ejecución",
-
-    evidence:"Validación de Entrega DIAN vs. DMS.png"
-  },
-
-
-  {
-    id:17,
-    name:"Asignación Automática de Facturas",
-    market:"Operación propia (COL)",
-    hours:33.8,
-    pct:78,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Cross-Validation",
-      "External Lookup"
-    ],
-
-    problem:
-      "Búsqueda y asignación manual del número de factura correcta cruzando QlikView contra ERP DMS Advance.",
-
-    solution:
-      "Script VBA que ejecuta la validación cruzada multicriterio y aplica fórmulas de asignación de forma instantánea.",
-
-    before:"50 min/ejecución",
-    after:"11 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:18,
-    name:"Prefactura LAFAM",
-    market:"Operación propia (COL)",
-    hours:7.8,
-    pct:40.9,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Formateo dinámico"
-    ],
-
-    problem:
-      "Edición y estructuración visual manual del reporte de órdenes pendientes por facturar para el cliente LAFAM.",
-
-    solution:
-      "Automatización VBA que aplica la maquetación y estructura exacta requerida con un solo clic.",
-
-    before:"22 min/ejecución",
-    after:"13 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:19,
-    name:"Prefactura Colsanitas (Stellest)",
-    market:"Operación propia (COL)",
-    hours:7.6,
-    pct:76,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "FileDialog API",
-      "VLOOKUP condicional"
-    ],
-
-    problem:
-      "Formateo y consolidación manual de la estructura de facturación desde ERP DMS hacia las plantillas requeridas.",
-
-    solution:
-      "Script VBA con cuadro de diálogo para selección de archivos y unificación automática con la prefactura de laboratorios.",
-
-    before:"25 min/ejecución",
-    after:"6 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:20,
-    name:"Analizador de Antigüedad de Cartera",
-    market:"Canadá (CAD)",
-    hours:5.2,
-    pct:86.7,
-    cat:"etl",
-
-    stack:[
-      "Excel VBA",
-      "CSV Parsing",
-      "Multi-VLOOKUP"
-    ],
-
-    problem:
-      "Procesamiento manual de reportes CSV de antigüedad de saldo, con conversión de formato y enriquecimiento de contacto.",
-
-    solution:
-      "Script que convierte CSV a XLSX, enriquece registros con datos de contacto mediante búsquedas dinámicas y clasifica saldos por antigüedad.",
-
-    before:"30 min/ejecución",
-    after:"4 min/ejecución",
-
-    evidence:null
-  },
-
-
-  {
-    id:21,
-    name:"Prefactura Stellest (LAFAM & Luxottica)",
-    market:"Operación propia (COL)",
-    hours:3.5,
-    pct:40,
-    cat:"facturacion",
-
-    stack:[
-      "Excel VBA",
-      "Data Cleaning"
-    ],
-
-    problem:
-      "Ajuste visual y saneamiento de columnas sobre el reporte del producto Stellest extraído del ERP DMS.",
-
-    solution:
-      "Script VBA de formateo estándar y eliminación de inconsistencias de datos.",
-
-    before:"10 min/ejecución",
-    after:"6 min/ejecución",
-
-    evidence:null
-  }
-
+  {id:1,name:"Envío de Correos de Cobranza",market:"Canadá (CAD)",hours:5756.8,pct:99.9,cat:"mailing",
+    stack:["Excel VBA","Power Automate","OneDrive","Outlook API"],
+    problem:"Creación manual de reportes de cobranza y edición individual de plantillas para más de 300 clientes.",
+    solution:"Motor VBA que separa los datos y genera archivos independientes, integrado con un flujo de Power Automate para el despacho masivo y desatendido vía OneDrive.",
+    before:"7,200 min/ejecución",after:"4 min/ejecución",evidence:null},
+  {id:2,name:"Consolidación de Cobranza",market:"República Dominicana",hours:1178,pct:98.2,cat:"etl",
+    stack:["Excel VBA","Suite ETL","Data Cleaning"],
+    problem:"Archivos masivos con miles de filas en blanco que bloquean los filtros operacionales de las sucursales Santo Domingo y Santiago.",
+    solution:"Suite en VBA para saneamiento profundo de registros vacíos, estandarización y unificación instantánea de sucursales en una sola base analítica.",
+    before:"600 min/ejecución",after:"11 min/ejecución",evidence:null},
+  {id:3,name:"Clasificador de Pagos",market:"Canadá (CAD)",hours:380,pct:93.1,cat:"etl",
+    stack:["Excel VBA","Parsing TXT/ASCII","Lookup dinámico"],
+    problem:"Ingesta manual de estados bancarios en TXT a Excel, con clasificación y actualización manual en reportes compartidos.",
+    solution:"Motor de ingesta ETL en VBA que lee el archivo TXT directo, estructura los datos y asigna clasificaciones por tipo de pago.",
+    before:"510 min/ejecución",after:"7 min/ejecución",evidence:null},
+  {id:4,name:"Búsqueda e Identificación de Pagos",market:"México (MEX)",hours:292.5,pct:37.5,cat:"etl",
+    stack:["Excel VBA","Algoritmos de búsqueda","Depuración de duplicados"],
+    problem:"Elevada carga operativa diaria en Cuentas por Cobrar para identificar pagos no reconocidos en extractos bancarios.",
+    solution:"Motor de búsqueda y conciliación avanzada en VBA que concilia automáticamente entre 80% y 90% de los pagos no identificados sobre bases de Banamex y Santander.",
+    before:"60 min/ejecución",after:"37.5 min/ejecución",evidence:"Búsqueda e Identificación de Pagos.png"},
+  {id:5,name:"Prefactura Luxottica",market:"Operación propia (COL)",hours:205.4,pct:91.9,cat:"facturacion",
+    stack:["Excel VBA","Motor de reglas de precio","SAP"],
+    problem:"Actualización manual de códigos SAP cruzando listas de precios, ajuste por renglón y segregación de devoluciones.",
+    solution:"Solución VBA que consolida reportes, consulta la lista de precios del cliente, mapea códigos SAP/precios y aísla devoluciones para revisión focalizada.",
+    before:"258 min/ejecución",after:"21 min/ejecución",evidence:"Prefactura Luxottica.png"},
+  {id:6,name:"Envío de Edo. Cuenta Opti Express",market:"República Dominicana",hours:184.0,pct:95.8,cat:"mailing",
+    stack:["Excel VBA","Power Automate","Outlook"],
+    problem:"Envío manual y procesamiento individual de estados de cuenta para los clientes de Opti Express en República Dominicana.",
+    solution:"Automatización mediante VBA para la generación masiva de los reportes e integración con Power Automate para su distribución desatendida.",
+    before:"120 min/ejecución",after:"5 min/ejecución",evidence:null},
+  {id:7,name:"Envío de Consolidados (Outlook)",market:"Operación propia (COL)",hours:177.7,pct:95.3,cat:"mailing",
+    stack:["Excel VBA","Power Automate","Outlook API"],
+    problem:"Despacho manual de adjuntos divididos por cliente, complicado tras la migración corporativa de Gmail a Outlook Web.",
+    solution:"Solución híbrida: macro VBA que separa el reporte por NIT, y flujo desatendido en Power Automate que lee destinatarios y adjuntos desde OneDrive para el envío vía Outlook API.",
+    before:"215 min/ejecución",after:"10 min/ejecución",evidence:null},
+  {id:8,name:"Facturación Automatizada (Robot · Hackathon 3.er lugar)",market:"Operación propia (COL)",hours:169.0,pct:76.5,cat:"facturacion",
+    stack:["UiPath StudioX","Excel VBA","CSV"],
+    problem:"Procesos repetitivos de digitación y ejecución de facturación que consumían tiempo operativo en la operación de Colombia.",
+    solution:"Robot RPA desarrollado con UiPath StudioX en combinación con macros de Excel VBA para la ejecución desatendida de la facturación. 3.er lugar en Hackathon Corporativo 2022.",
+    before:"17 min/ejecución",after:"4 min/ejecución",evidence:null},
+  {id:9,name:"Envío de Consolidados (Gmail)",market:"Operación propia (COL)",hours:123.1,pct:90.4,cat:"mailing",
+    stack:["Excel VBA","CDO / SMTP","QlikView"],
+    problem:"Formateo manual, segregación por NIT y envío uno a uno del reporte semanal de facturación.",
+    solution:"Automatización VBA en dos fases: macro de división por NIT y macro de envío masivo vía CDO/SMTP a cada destinatario.",
+    before:"157 min/ejecución",after:"15 min/ejecución",evidence:"Envío de Consolidados (Gmail).png"},
+  {id:10,name:"Estructurador de Precios de Lentes Oftálmicos",market:"Operación propia (COL)",hours:117,pct:34.6,cat:"facturacion",
+    stack:["Excel VBA","Conversión de divisas","CSV / DMS"],
+    problem:"Alto tiempo depurando bases de importación, ajustando unidades de lentes y asignando precios antes de cargar al ERP DMS.",
+    solution:"Depuración de registros, asignación de precios USD por cliente/categoría (PCAT) y exportación de CSV listo para ingesta en DMS.",
+    before:"26 min/factura",after:"17 min/factura",evidence:"Estructurador de Precios de Lentes Oftálmicos.png"},
+  {id:11,name:"Programación de Pagos",market:"Colombia (AP / CxP)",hours:104,pct:12.5,cat:"tesoreria",
+    stack:["Excel VBA","Tablas dinámicas","Validaciones de tesorería"],
+    problem:"Recolección y captura manual de información para el archivo semanal de pagos a proveedores del equipo de Tesorería.",
+    solution:"Modelo de preparación en VBA que elimina la digitación de fechas, categorías y comentarios, manteniendo la validación humana de liquidez.",
+    before:"16 hrs/ejecución",after:"14 hrs/ejecución",evidence:"Programación de Pagos.png"},
+  {id:12,name:"Segmentación Masiva por Clientes",market:"Operación propia (COL)",hours:103.1,pct:95.2,cat:"etl",
+    stack:["Excel VBA","Split Engine"],
+    problem:"Filtrado, copiado y generación manual de archivos independientes por cliente desde el reporte general de facturación.",
+    solution:"Motor VBA de segmentación masiva que filtra por NIT y guarda automáticamente libros individuales con nombres parametrizados.",
+    before:"125 min/ejecución",after:"6 min/ejecución",evidence:null},
+  {id:13,name:"Prefactura Colsanitas (Laboratorios)",market:"Operación propia (COL)",hours:67.6,pct:92.9,cat:"facturacion",
+    stack:["Excel VBA","Consolidación multi-fuente"],
+    problem:"Inversión excesiva de tiempo en formateo y consolidación manual de remisiones pendientes quincenales.",
+    solution:"Script VBA que consolida de forma desatendida datos de 3 fuentes distintas, aplicando la estructura solicitada por el cliente.",
+    before:"182 min quincenal",after:"13 min quincenal",evidence:"Prefactura Colsanitas.png"},
+  {id:14,name:"Prefactura Precisionlab",market:"Operación propia (COL)",hours:46.8,pct:75,cat:"facturacion",
+    stack:["Excel VBA","Dynamic VLOOKUP"],
+    problem:"Aplicación manual de fórmulas de búsqueda complejas y formateo sobre el reporte de órdenes pendientes.",
+    solution:"Script VBA parametrizado (InputBox) con VLOOKUPs dinámicos para depuración y formateo automático.",
+    before:"72 min/ejecución",after:"18 min/ejecución",evidence:null},
+  {id:15,name:"Criterio de Facturación",market:"Operación propia (COL)",hours:45.9,pct:75.7,cat:"facturacion",
+    stack:["Excel VBA","Pivot Tables","Slicers"],
+    problem:"Proceso manual extenso para categorizar clientes según esquemas de facturación y armar resúmenes operacionales.",
+    solution:"Solución VBA que limpia la base, aplica reglas de negocio de categorización y genera tablas dinámicas interactivas con Slicers.",
+    before:"70 min/ejecución",after:"17 min/ejecución",evidence:null},
+  {id:16,name:"Validación de Entrega DIAN vs. DMS",market:"Operación propia (COL)",hours:43.3,pct:83.3,cat:"facturacion",
+    stack:["Excel VBA","Conciliación fiscal"],
+    problem:"Revisión manual línea por línea para verificar si las facturas del ERP DMS se enviaron a la DIAN y llegaron al cliente.",
+    solution:"Motor de conciliación y auditoría en VBA que cruza bases, clasifica el estado real de notificación y genera el reporte de facturas no entregadas.",
+    before:"60 min/ejecución",after:"10 min/ejecución",evidence:"Validación de Entrega DIAN vs. DMS.png"},
+  {id:17,name:"Asignación Automática de Facturas",market:"Operación propia (COL)",hours:33.8,pct:78,cat:"facturacion",
+    stack:["Excel VBA","Cross-Validation","External Lookup"],
+    problem:"Búsqueda y asignación manual del número de factura correcta cruzando QlikView contra ERP DMS Advance.",
+    solution:"Script VBA que ejecuta la validación cruzada multicriterio y aplica fórmulas de asignación de forma instantánea.",
+    before:"50 min/ejecución",after:"11 min/ejecución",evidence:null},
+  {id:18,name:"Prefactura LAFAM",market:"Operación propia (COL)",hours:7.8,pct:40.9,cat:"facturacion",
+    stack:["Excel VBA","Formateo dinámico"],
+    problem:"Edición y estructuración visual manual del reporte de órdenes pendientes por facturar para el cliente LAFAM.",
+    solution:"Automatización VBA que aplica la maquetación y estructura exacta requerida con un solo clic.",
+    before:"22 min/ejecución",after:"13 min/ejecución",evidence:null},
+  {id:19,name:"Prefactura Colsanitas (Stellest)",market:"Operación propia (COL)",hours:7.6,pct:76,cat:"facturacion",
+    stack:["Excel VBA","FileDialog API","VLOOKUP condicional"],
+    problem:"Formateo y consolidación manual de la estructura de facturación desde ERP DMS hacia las plantillas requeridas.",
+    solution:"Script VBA con cuadro de diálogo para selección de archivos y unificación automática con la prefactura de laboratorios.",
+    before:"25 min/ejecución",after:"6 min/ejecución",evidence:null},
+  {id:20,name:"Analizador de Antigüedad de Cartera",market:"Canadá (CAD)",hours:5.2,pct:86.7,cat:"etl",
+    stack:["Excel VBA","CSV Parsing","Multi-VLOOKUP"],
+    problem:"Procesamiento manual de reportes CSV de antigüedad de saldo, con conversión de formato y enriquecimiento de contacto.",
+    solution:"Script que convierte CSV a XLSX, enriquece registros con datos de contacto mediante búsquedas dinámicas y clasifica saldos por antigüedad.",
+    before:"30 min/ejecución",after:"4 min/ejecución",evidence:null},
+  {id:21,name:"Prefactura Stellest (LAFAM & Luxottica)",market:"Operación propia (COL)",hours:3.5,pct:40,cat:"facturacion",
+    stack:["Excel VBA","Data Cleaning"],
+    problem:"Ajuste visual y saneamiento de columnas sobre el reporte del producto Stellest extraído del ERP DMS.",
+    solution:"Script VBA de formateo estándar y eliminación de inconsistencias de datos.",
+    before:"10 min/ejecución",after:"6 min/ejecución",evidence:null}
 ];
 
+/* ELEMENTOS */
+const ledgerList = document.getElementById('ledgerList');
+const summaryEl = document.getElementById('ledgerSummary');
 
-/* =========================================================
-   ELEMENTOS
-========================================================= */
-
-const ledgerList =
-  document.getElementById('ledgerList');
-
-const summaryEl =
-  document.getElementById('ledgerSummary');
-
-
-/* =========================================================
-   RENDER LEDGER
-========================================================= */
-
+/* RENDER LEDGER */
 function renderLedger(filter){
+  const filtered = projects.filter(p => filter === 'all' ? true : p.cat === filter);
 
-  const filtered =
-    projects.filter(
-      p => filter === 'all'
-        ? true
-        : p.cat === filter
-    );
-
-
-  ledgerList.innerHTML =
-    filtered.map(p => `
-
-      <div
-        class="ledger-row"
-        data-id="${p.id}">
-
-        <div class="ledger-row-head">
-
-          <span class="l-num">
-            ${String(p.id).padStart(2,'0')}
+  ledgerList.innerHTML = filtered.map(p => `
+    <div class="ledger-row" data-id="${p.id}">
+      <button class="ledger-row-head" type="button" aria-expanded="false" aria-controls="detail-${p.id}">
+        <span class="l-num">${String(p.id).padStart(2,'0')}</span>
+        <span class="l-name">
+          ${p.name}
+          <span class="market">${p.market}</span>
+        </span>
+        <span class="l-bar-wrap" aria-hidden="true">
+          <span class="l-bar-track">
+            <span class="l-bar-fill" style="width:${p.pct}%"></span>
           </span>
-
-          <span class="l-name">
-
-            ${p.name}
-
-            <span class="market">
-              ${p.market}
-            </span>
-
-          </span>
-
-
-          <span class="l-bar-wrap">
-
-            <span class="l-bar-track">
-
-              <span
-                class="l-bar-fill"
-                style="width:${p.pct}%">
-              </span>
-
-            </span>
-
-            <span class="l-hours">
-              ${p.hours.toLocaleString('es-MX')}
-              hrs/año
-            </span>
-
-          </span>
-
-
-          <span class="l-pct">
-            ${p.pct}% reducción
-          </span>
-
-
-          <span class="l-chevron">
-            +
-          </span>
-
-        </div>
-
-
-        <div class="ledger-detail">
-
-          <div class="detail-grid">
-
-
-            <div class="detail-block">
-
-              <h4>
-                Problema
-              </h4>
-
-              <p>
-                ${p.problem}
-              </p>
-
-
-              <h4 style="margin-top:20px;">
-                Solución implementada
-              </h4>
-
-              <p>
-                ${p.solution}
-              </p>
-
-
-              <div class="stack-tags">
-
-                ${p.stack.map(
-                  s => `<span class="stack-tag">${s}</span>`
-                ).join('')}
-
-              </div>
-
+          <span class="l-hours">${p.hours.toLocaleString('es-MX')} hrs/año</span>
+        </span>
+        <span class="l-pct">${p.pct}% reducción</span>
+        <span class="l-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="ledger-detail" id="detail-${p.id}">
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Problema</h4>
+            <p>${p.problem}</p>
+            <h4 style="margin-top:20px;">Solución implementada</h4>
+            <p>${p.solution}</p>
+            <div class="stack-tags">
+              ${p.stack.map(s => `<span class="stack-tag">${s}</span>`).join('')}
             </div>
-
-
-            <div class="detail-block">
-
-              <h4>
-                Impacto operativo
-              </h4>
-
-
-              <div class="flow">
-
-                <div class="flow-line">
-
-                  <span class="tag">
-                    ANTES
-                  </span>
-
-                  ${p.before}
-
-                </div>
-
-
-                <div class="flow-line">
-
-                  <span class="tag">
-                    DESPUÉS
-                  </span>
-
-                  ${p.after}
-
-                </div>
-
-              </div>
-
-
-              ${
-                p.evidence
-                ?
-                `
-                  <button
-                    class="evidence-btn"
-                    data-img="${p.evidence}"
-                    data-name="${p.name}">
-
-                    Ver evidencia — Mejora Continua ↗
-
-                  </button>
-                `
-                :
-                ''
-              }
-
-            </div>
-
           </div>
-
+          <div class="detail-block">
+            <h4>Impacto operativo</h4>
+            <div class="flow">
+              <div class="flow-line"><span class="tag">ANTES</span>${p.before}</div>
+              <div class="flow-line"><span class="tag">DESPUÉS</span>${p.after}</div>
+            </div>
+            ${p.evidence ? `
+              <button class="evidence-btn" data-img="${ASSETS_BASE}${p.evidence}" data-name="${p.name}">
+                Ver evidencia — Mejora Continua ↗
+              </button>` : ''}
+          </div>
         </div>
-
       </div>
+    </div>
+  `).join('');
 
-    `).join('');
-
-
-  /* =====================================================
-     SUMMARY
-  ===================================================== */
-
-  const totalHours =
-    filtered.reduce(
-      (a,p) => a + p.hours,
-      0
-    );
-
-
-  const avgPct =
-    (
-      filtered.reduce(
-        (a,p) => a + p.pct,
-        0
-      ) / filtered.length
-    ).toFixed(1);
-
+  /* Reducción agregada ponderada por horas:
+     total ahorrado / total manual = totalHours / Σ(hours / pct·100) */
+  const totalHours = filtered.reduce((a,p) => a + p.hours, 0);
+  const totalManual = filtered.reduce((a,p) => a + (p.hours / (p.pct / 100)), 0);
+  const aggPct = totalManual > 0 ? ((totalHours / totalManual) * 100).toFixed(1) : '0.0';
 
   summaryEl.innerHTML = `
-
-    <span>
-      Mostrando ${filtered.length} de 21 casos
-    </span>
-
-    <span>
-      ${totalHours.toLocaleString(
-        'es-MX',
-        {maximumFractionDigits:1}
-      )}
-      hrs/año ·
-      ${avgPct}%
-      reducción promedio por proceso
-    </span>
-
+    <span>Mostrando ${filtered.length} de 21 casos</span>
+    <span>${totalHours.toLocaleString('es-MX',{maximumFractionDigits:1})} hrs/año · ${aggPct}% reducción agregada de tiempo</span>
   `;
 
-
-  /* =====================================================
-     ROW EXPAND
-  ===================================================== */
-
-  document
-    .querySelectorAll('.ledger-row-head')
-    .forEach(head => {
-
-      head.addEventListener('click', () => {
-
-        const row =
-          head.parentElement;
-
-        const wasOpen =
-          row.classList.contains('open');
-
-
-        document
-          .querySelectorAll('.ledger-row.open')
-          .forEach(r =>
-            r.classList.remove('open')
-          );
-
-
-        if(!wasOpen){
-
-          row.classList.add('open');
-
-        }
-
-      });
-
+  /* Bind expand / collapse */
+  document.querySelectorAll('.ledger-row-head').forEach(head => {
+    head.addEventListener('click', () => toggleRow(head));
+  });
+  /* Evidencia */
+  document.querySelectorAll('.evidence-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      openLightbox(btn.dataset.img, btn.dataset.name);
     });
-
-
-  /* =====================================================
-     EVIDENCE BUTTONS
-  ===================================================== */
-
-  document
-    .querySelectorAll('.evidence-btn')
-    .forEach(btn => {
-
-      btn.addEventListener('click', e => {
-
-        e.stopPropagation();
-
-        openLightbox(
-          btn.dataset.img,
-          btn.dataset.name
-        );
-
-      });
-
-    });
-
+  });
 }
 
+function toggleRow(head){
+  const row = head.parentElement;
+  const wasOpen = row.classList.contains('open');
 
-/* =========================================================
-   INITIAL RENDER
-========================================================= */
+  document.querySelectorAll('.ledger-row.open').forEach(r => {
+    r.classList.remove('open');
+    const h = r.querySelector('.ledger-row-head');
+    if (h) h.setAttribute('aria-expanded','false');
+  });
+
+  if(!wasOpen){
+    row.classList.add('open');
+    head.setAttribute('aria-expanded','true');
+  }
+}
 
 renderLedger('all');
 
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-document
-  .querySelectorAll('.filter-btn')
-  .forEach(btn => {
-
-    btn.addEventListener('click', () => {
-
-      document
-        .querySelectorAll('.filter-btn')
-        .forEach(b =>
-          b.classList.remove('active')
-        );
-
-
-      btn.classList.add('active');
-
-
-      renderLedger(
-        btn.dataset.cat
-      );
-
+/* FILTERS */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed','false');
     });
-
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');
+    renderLedger(btn.dataset.cat);
   });
+});
 
+/* LIGHTBOX */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCap = document.getElementById('lightboxCap');
+const lightboxClose = document.getElementById('lightboxClose');
+let lastFocused = null;
 
-/* =========================================================
-   LIGHTBOX
-========================================================= */
+lightboxImg.addEventListener('error', () => {
+  lightboxImg.style.display = 'none';
+  lightboxCap.textContent = 'EVIDENCIA NO DISPONIBLE — ' + lightboxCap.textContent;
+});
+lightboxImg.addEventListener('load', () => {
+  lightboxImg.style.display = '';
+});
 
-const lightbox =
-  document.getElementById('lightbox');
-
-const lightboxImg =
-  document.getElementById('lightboxImg');
-
-const lightboxCap =
-  document.getElementById('lightboxCap');
-
-
-function openLightbox(src,name){
-
+function openLightbox(src, name){
+  lastFocused = document.activeElement;
+  lightboxCap.textContent = "EVIDENCIA · MEJORA CONTINUA — " + name.toUpperCase();
+  lightboxImg.style.display = '';
+  lightboxImg.alt = "Evidencia: " + name;
   lightboxImg.src = src;
-
-  lightboxImg.alt =
-    "Evidencia: " + name;
-
-  lightboxCap.textContent =
-    "EVIDENCIA · MEJORA CONTINUA — " +
-    name.toUpperCase();
-
   lightbox.classList.add('show');
-
+  lightbox.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  lightboxClose.focus();
 }
-
 
 function closeLightbox(){
-
   lightbox.classList.remove('show');
-
+  lightbox.setAttribute('aria-hidden','true');
   lightboxImg.src = '';
-
+  document.body.style.overflow = '';
+  if(lastFocused && lastFocused.focus) lastFocused.focus();
 }
 
+lightboxClose.addEventListener('click', closeLightbox);
 
-document
-  .getElementById('lightboxClose')
-  .addEventListener(
-    'click',
-    closeLightbox
-  );
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) closeLightbox();
+});
 
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
+});
 
-lightbox.addEventListener(
-  'click',
-  e => {
+/* BURGER */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
 
-    if(e.target === lightbox){
+function setNav(open){
+  navLinks.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+}
 
-      closeLightbox();
+burger.addEventListener('click', () => setNav(!navLinks.classList.contains('open')));
 
-    }
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => setNav(false));
+});
 
-  }
-);
+document.addEventListener('click', e => {
+  if(!navLinks.classList.contains('open')) return;
+  if(navLinks.contains(e.target) || burger.contains(e.target)) return;
+  setNav(false);
+});
 
-
-document.addEventListener(
-  'keydown',
-  e => {
-
-    if(e.key === 'Escape'){
-
-      closeLightbox();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   BURGER MENU
-========================================================= */
-
-const burger =
-  document.getElementById('burger');
-
-const navLinks =
-  document.getElementById('navLinks');
-
-
-burger.addEventListener(
-  'click',
-  () => {
-
-    navLinks.classList.toggle('open');
-
-  }
-);
-
-
-navLinks
-  .querySelectorAll('a')
-  .forEach(a => {
-
-    a.addEventListener(
-      'click',
-      () => {
-
-        navLinks.classList.remove('open');
-
-      }
-    );
-
-  });
-
-
-/* =========================================================
-   COUNT-UP
-========================================================= */
-
-const counters =
-  document.querySelectorAll(
-    '.num[data-count]'
-  );
-
-
+/* COUNT-UP */
+const counters = document.querySelectorAll('.num[data-count]');
 let counted = false;
 
-
 function runCounters(){
-
   if(counted) return;
-
   counted = true;
-
-
   counters.forEach(el => {
-
-    const target =
-      parseFloat(el.dataset.count);
-
-    const decimals =
-      parseInt(
-        el.dataset.decimal || 0
-      );
-
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimal || 0);
     const duration = 1400;
-
-    const start =
-      performance.now();
-
-
+    const start = performance.now();
     function tick(now){
-
-      const p =
-        Math.min(
-          (now - start) / duration,
-          1
-        );
-
-
-      const eased =
-        1 - Math.pow(1-p,3);
-
-
-      const val =
-        target * eased;
-
-
-      el.textContent =
-        decimals
-        ?
-        val.toFixed(decimals)
-        :
-        Math.round(val)
-          .toLocaleString('es-MX');
-
-
-      if(p < 1){
-
-        requestAnimationFrame(tick);
-
-      }else{
-
-        el.textContent =
-          decimals
-          ?
-          target.toFixed(decimals)
-          :
-          target.toLocaleString('es-MX');
-
-      }
-
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1-p,3);
+      const val = target * eased;
+      el.textContent = decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('es-MX');
+      if(p < 1){ requestAnimationFrame(tick); }
+      else { el.textContent = decimals ? target.toFixed(decimals) : target.toLocaleString('es-MX'); }
     }
-
-
     requestAnimationFrame(tick);
-
   });
-
 }
 
+setTimeout(runCounters, 300);
 
-setTimeout(
-  runCounters,
-  300
-);
-
-
-/* =========================================================
-   REVEAL ON SCROLL
-========================================================= */
-
-const revealEls =
-  document.querySelectorAll('.reveal');
-
-
-const io =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-          entry.target.classList.add('in');
-
-          io.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-    {
-      threshold:0.12
-    }
-  );
-
-
-revealEls.forEach(
-  el => io.observe(el)
-);
-
+/* REVEAL */
+const revealEls = document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
 </script>
 
 </body>
